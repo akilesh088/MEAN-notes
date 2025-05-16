@@ -1,0 +1,1491 @@
+4. Closures in Event Listeners
+
+Closures are commonly used in event listeners to maintain state.
+
+function buttonClickHandler() {
+    let clicks = 0;
+
+    return function () {
+        clicks++;
+        console.log(`Button clicked ${clicks} times`);
+    };
+}
+
+const button = document.createElement("button");
+button.innerText = "Click Me";
+document.body.appendChild(button);
+
+const handleClick = buttonClickHandler();
+button.addEventListener("click", handleClick);
+
+Explanation:
+
+Each time the button is clicked, handleClick keeps track of the clicks count.
+handleClick retains access to clicks because of closure, even after buttonClickHandler has finished execution.
+
+Summary
+
+Feature	Description
+Lexical Scope	Functions can access variables from their parent scope.
+Closure	Functions retain access to variables from their original scope even after execution.
+Use Cases	Data encapsulation, maintaining state, and event handling.
+
+
+
+Event Loop, Callback Queue, and Microtasks Queue :
+
+JavaScript is single-threaded, meaning it executes one operation at a time. However, it can handle asynchronous operations efficiently using the Event Loop, Callback Queue, and Microtasks Queue.
+
+1. Event Loop
+The Event Loop is a mechanism that ensures JavaScript's non-blocking behavior by managing asynchronous operations efficiently. It continuously checks whether the Call Stack is empty and executes pending tasks from the Callback Queue or Microtasks Queue.
+
+Event Loop Process
+Executes synchronous code from the Call Stack.
+Processes Microtasks Queue (e.g., Promise.then, MutationObserver).
+Moves to the Callback Queue and executes any pending tasks (e.g., setTimeout, setInterval, I/O operations).
+Repeats the cycle.
+
+2. Callback Queue (Task Queue)
+
+Stores callbacks from macrotasks (e.g., setTimeout, setInterval, setImmediate, I/O operations).
+The event loop processes these tasks after the microtasks queue is empty.
+
+Example of Callback Queue
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout Callback");
+}, 0);
+
+
+console.log("End");
+
+Execution Flow
+
+"Start" is logged.
+setTimeout registers a callback and moves it to the Callback Queue.
+"End" is logged.
+The Event Loop checks the Microtasks Queue (empty in this case).
+The Callback Queue executes setTimeout's callback, logging "Timeout Callback".
+
+3. Microtasks Queue
+
+Stores higher-priority tasks like:
+
+Promises (.then, .catch, .finally)
+
+MutationObserver
+Always executed before the Callback Queue.
+Example of Microtasks Queue
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("setTimeout Callback");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise Microtask");
+});
+
+console.log("End");
+Execution Flow
+"Start" is logged.
+setTimeout callback is placed in the Callback Queue.
+Promise.then is placed in the Microtasks Queue.
+"End" is logged.
+Microtasks Queue executes "Promise Microtask".
+Callback Queue executes "setTimeout Callback".
+
+4. Combining Event Loop, Microtasks, and Callback Queue
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("setTimeout Callback");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise Microtask 1");
+});
+
+Promise.resolve().then(() => {
+  console.log("Promise Microtask 2");
+});
+
+console.log("End");
+Execution Flow
+"Start" is logged.
+setTimeout moves its callback to the Callback Queue.
+Promise.then moves both microtasks to the Microtasks Queue.
+"End" is logged.
+Microtasks Queue executes:
+"Promise Microtask 1"
+"Promise Microtask 2"
+Callback Queue executes:
+"setTimeout Callback"
+Final Output
+
+Start
+End
+Promise Microtask 1
+Promise Microtask 2
+setTimeout Callback
+
+Summary
+
+Type	Example Functions	Priority	Executed When?
+Microtasks	Promise.then(), MutationObserver	High	Before Callback Queue
+Callback Queue	setTimeout(), setInterval(), I/O	Low	After Microtasks Queue
+Key Takeaways
+The Event Loop ensures JavaScript remains non-blocking.
+Microtasks Queue has higher priority than the Callback Queue.
+Promises (.then) execute before setTimeout callbacks, even if both are scheduled at the same time.
+
+
+The Role of JavaScript in Web Applications :
+
+JavaScript (JS) is one of the core technologies of web development, alongside HTML (HyperText Markup Language) and CSS (Cascading Style Sheets). It is a client-side scripting language that enables interactivity, dynamic behavior, and advanced functionalities in web applications.
+
+1. What is JavaScript?
+JavaScript is a lightweight, interpreted programming language that runs in web browsers. It is mainly used for:
+
+Enhancing user experience by making web pages interactive
+Manipulating HTML & CSS dynamically
+Handling user input events like clicks, scrolls, form submissions
+Communicating with servers using APIs (like fetching data without reloading pages)
+2. Role of JavaScript in Web Applications
+1. Enhancing User Interactivity
+JavaScript enables interactive features such as:
+✅ Dropdown menus
+✅ Sliders & carousels
+✅ Modals & pop-ups
+✅ Drag-and-drop functionality
+✅ Live form validation (e.g., password strength checks)
+
+Example:
+
+<button onclick="showMessage()">Click Me</button>
+<p id="message"></p>
+
+<script>
+  function showMessage() {
+    document.getElementById("message").innerText = "Hello, JavaScript!";
+  }
+</script>
+
+👉 Clicking the button displays a message dynamically without refreshing the page.
+
+2. Manipulating the DOM (Document Object Model)
+
+The DOM represents the webpage structure as a tree of elements. JavaScript allows real-time modifications to HTML content and styles.
+
+Example: Change text and color dynamically
+
+<p id="demo">Original Text</p>
+<button onclick="changeText()">Change</button>
+
+<script>
+  function changeText() {
+    document.getElementById("demo").innerHTML = "Updated Text!";
+    document.getElementById("demo").style.color = "blue";
+  }
+</script>
+👉 Clicking the button updates the text and changes its color.
+
+3. Handling User Events
+
+JavaScript listens for events like clicks, mouse movements, keyboard inputs, and form submissions.
+
+Example: Show alert on button click
+
+<button onclick="alert('Button Clicked!')">Click Me</button>
+
+4. Form Validation
+
+JavaScript prevents invalid form submissions without needing a server.
+
+Example: Check if a field is empty
+
+<form onsubmit="return validateForm()">
+  <input type="text" id="name" placeholder="Enter Name">
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  function validateForm() {
+    let name = document.getElementById("name").value;
+    if (name === "") {
+      alert("Name cannot be empty!");
+      return false;
+    }
+    return true;
+  }
+</script>
+👉 If the user submits an empty form, an alert appears.
+
+5. Asynchronous Communication with Servers (AJAX & Fetch API) :
+
+JavaScript enables web pages to communicate with the server without refreshing the page.
+
+Example: Fetch data from an API
+
+<button onclick="loadData()">Load Data</button>
+<p id="data"></p>
+
+<script>
+  function loadData() {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then(response => response.json())
+      .then(data => document.getElementById("data").innerText = data.title);
+  }
+</script>
+👉 Clicking the button fetches and displays data from an API.
+
+6. Creating Animations and Effects:
+
+JavaScript, along with CSS, can create smooth animations and visual effects.
+
+Example: Fade-out effect
+
+<p id="fadeText">This will fade out</p>
+<button onclick="fadeOut()">Fade Out</button>
+
+<script>
+  function fadeOut() {
+    let element = document.getElementById("fadeText");
+    element.style.transition = "opacity 1s";
+    element.style.opacity = "0";
+  }
+</script>
+
+👉 The text slowly disappears when the button is clicked.
+
+7. Storing Data Locally (Local Storage & Cookies)
+
+JavaScript allows storing user data without a server using Local Storage & Cookies.
+
+Example: Store and retrieve user data
+
+<input type="text" id="username" placeholder="Enter your name">
+<button onclick="saveName()">Save</button>
+<p id="greet"></p>
+
+<script>
+  function saveName() {
+    let name = document.getElementById("username").value;
+    localStorage.setItem("user", name);
+    document.getElementById("greet").innerText = "Hello, " + name;
+  }
+</script>
+👉 Saves and displays the username, even after refreshing the page.
+
+8. Using JavaScript Frameworks & Libraries
+
+Modern JavaScript frameworks help build fast & scalable web applications:
+
+✅ React.js – Used for dynamic UI components Next.js
+✅ Angular.js – Full-featured framework for large applications
+✅ Vue.js – Lightweight and easy-to-use frontend framework
+✅ Node.js – Enables JavaScript to run on the server-side
+
+3. Why is JavaScript Essential for Web Applications?
+✅ Cross-Browser Support – Runs on all browsers without installation
+✅ Client-Side Execution – Reduces server load and improves performance
+✅ Rich User Experience – Enables interactivity and real-time updates
+✅ Strong Community Support – Large ecosystem of libraries and frameworks
+
+4. Summary
+Feature	Role in JavaScript
+Interactivity	Handles user actions, events, and UI updates
+DOM Manipulation	Dynamically updates HTML and CSS
+Event Handling	Responds to clicks, keystrokes, and other events
+Form Validation	Ensures correct user input before submission
+AJAX & Fetch API	Fetches data from servers without reloading
+Animations	Creates smooth visual effects
+Local Storage	Saves user data in the browser
+Frameworks	Provides powerful tools for development
+
+
+The Document Object Model (DOM) :
+
+The Document Object Model (DOM) is a programming interface provided by web browsers that allows developers to manipulate HTML and XML documents dynamically. It represents a webpage as a structured tree of objects, where each part of the document (elements, attributes, and text) is treated as a node.
+
+1. What is the DOM?
+The DOM is a structured representation of a document. It is an API (Application Programming Interface) that enables JavaScript to interact with and manipulate the webpage dynamically.
+
+Key Features of the DOM:
+Tree Structure: Represents the HTML document as a hierarchical tree.
+Platform-Independent: Works across different programming languages.
+Modifiable: Allows dynamic changes to content, structure, and styling.
+
+2. DOM Representation of an HTML Document
+
+Consider the following HTML code:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+</head>
+<body>
+    <h1>Hello, DOM!</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+The DOM representation of this document looks like a tree:
+
+
+Document
+ ├── html
+ │   ├── head
+ │   │   └── title ("DOM Example")
+ │   ├── body
+ │   │   ├── h1 ("Hello, DOM!")
+ │   │   └── p ("This is a paragraph.")
+Each part of the document (tags, text, and attributes) is represented as a node.
+
+3. Types of Nodes in the DOM
+
+The DOM consists of different types of nodes:
+
+Document Node: Represents the entire HTML document.
+Element Nodes: HTML tags like <html>, <body>, <p>, etc.
+Attribute Nodes: Represent attributes of elements (id, class, href, etc.).
+Text Nodes: Contain the text inside elements.
+
+4. Accessing the DOM using JavaScript
+
+JavaScript interacts with the DOM using various methods. Let's explore some common ways.
+
+4.1 Selecting Elements
+
+JavaScript provides multiple ways to select elements in the DOM:
+
+// Select an element by ID
+let heading = document.getElementById("heading");
+
+// Select elements by class name
+let paragraphs = document.getElementsByClassName("para");
+
+// Select elements by tag name
+let allParagraphs = document.getElementsByTagName("p");
+
+// Select elements using query selector
+let firstParagraph = document.querySelector("p");
+let allDivs = document.querySelectorAll("div");
+
+4.2 Modifying Elements
+
+Once an element is selected, we can modify its content, attributes, and styles.
+
+Change Text Content:
+
+document.getElementById("heading").innerText = "Modified Heading!";
+document.getElementById("heading").innerHTML = "<span>New Heading</span>";
+
+Change Attributes
+
+document.getElementById("myImage").src = "new-image.jpg";
+document.getElementById("myLink").href = "https://example.com";
+
+Change Styles
+
+document.getElementById("heading").style.color = "red";
+document.getElementById("heading").style.fontSize = "24px";
+
+4.3 Creating and Removing Elements:
+
+We can dynamically create and remove elements in the DOM.
+
+Create a New Element:
+
+let newParagraph = document.createElement("p");
+newParagraph.innerText = "This is a new paragraph!";
+document.body.appendChild(newParagraph);
+
+Remove an Element
+
+let oldParagraph = document.getElementById("oldPara");
+oldParagraph.remove();
+
+4.4 Handling Events
+
+JavaScript can interact with the DOM using events.
+
+Adding Event Listeners
+
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+
+Common Events
+click
+mouseover
+keydown
+change
+submit
+
+Example:
+
+document.getElementById("myInput").addEventListener("input", function() {
+    console.log("Text changed!");
+});
+
+5. DOM Traversal
+
+DOM traversal allows navigating between parent, child, and sibling elements.
+
+let parent = document.getElementById("childElement").parentNode;
+let firstChild = document.getElementById("parentElement").firstChild;
+let lastChild = document.getElementById("parentElement").lastChild;
+let nextSibling = document.getElementById("current").nextSibling;
+let prevSibling = document.getElementById("current").previousSibling;
+
+
+Fundamentals of JavaScript :
+
+
+JavaScript (JS) is a high-level, interpreted programming language that enables developers to create dynamic and interactive web applications. It is a key technology of the web development stack alongside HTML and CSS.
+
+1. Introduction to JavaScript:
+
+What is JavaScript? :
+
+JavaScript is a client-side scripting language used to make web pages interactive.
+It can also be used on the server-side using Node.js.
+JavaScript follows the ECMAScript standard.
+
+Why Use JavaScript?
+
+Enhances user interactivity (e.g., dropdown menus, sliders).
+Enables form validation without requiring server requests.
+Supports asynchronous programming (AJAX, Fetch API).
+Can interact with HTML and CSS to modify web pages dynamically.
+
+2. How to Run JavaScript?
+
+JavaScript can be written:
+
+Inside an HTML file (Embedded)
+
+<script>
+    console.log("Hello, JavaScript!");
+</script>
+
+As an External File
+
+Save your JavaScript code in a .js file.
+Include it in your HTML file:
+
+<script src="script.js"></script>
+
+In the Browser Console
+
+Open Developer Tools (F12 or Ctrl + Shift + I) → Console → Type JS code.
+
+3. JavaScript Basics
+
+3.1 Variables and Data Types
+
+JavaScript has three ways to declare variables:
+
+var (Old way, function-scoped)
+let (Modern way, block-scoped)
+const (Constant value, block-scoped)
+Example:
+
+var name = "John";  // Function-scoped variable
+let age = 25;       // Block-scoped variable
+const PI = 3.1416;  // Cannot be changed
+
+Data Types in JavaScript
+
+JavaScript has two types of data:
+
+Primitive Data Types (Immutable)
+
+String → "Hello"
+Number → 100, 3.14
+Boolean → true, false
+Null → null (intentional absence of value)
+Undefined → undefined (value not assigned)
+Symbol (ES6) → Unique identifier
+BigInt (ES11) → Large numbers
+
+Non-Primitive (Reference) Data Types
+
+Object → { name: "John", age: 30 }
+Array → [1, 2, 3]
+Function → A block of reusable code
+
+4. Operators in JavaScript
+
+Arithmetic Operators
+
+let a = 10, b = 5;
+console.log(a + b);  // Addition -> 15
+console.log(a - b);  // Subtraction -> 5
+console.log(a * b);  // Multiplication -> 50
+console.log(a / b);  // Division -> 2
+console.log(a % b);  // Modulus -> 0
+
+Comparison Operators
+
+console.log(5 == "5");   // true (Loose comparison)
+console.log(5 === "5");  // false (Strict comparison)
+console.log(5 !== 10);   // true
+console.log(5 > 3);      // true
+console.log(5 <= 3);     // false
+
+Logical Operators
+
+console.log(true && false); // false (AND)
+console.log(true || false); // true (OR)
+console.log(!true);         // false (NOT)
+
+5. Conditional Statements
+
+Used to execute code based on conditions.
+
+If-Else
+let age = 18;
+if (age >= 18) {
+    console.log("You can vote.");
+} else {
+    console.log("You cannot vote.");
+}
+
+Switch Case
+
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("Start of the week!");
+        break;
+    case "Friday":
+        console.log("Weekend is near!");
+        break;
+    default:
+        console.log("Regular day.");
+}
+
+6. Loops in JavaScript
+
+Loops are used to execute code repeatedly.
+
+For Loop
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration:", i);
+}
+
+While Loop
+
+let i = 0;
+while (i < 5) {
+    console.log("While Loop:", i);
+    i++;
+}
+
+Do-While Loop
+
+let j = 0;
+do {
+    console.log("Do-While:", j);
+    j++;
+} while (j < 5);
+
+7. Functions in JavaScript
+
+Functions help reuse code.
+
+Function Declaration
+
+function greet(name) {
+    return "Hello, " + name;
+}
+console.log(greet("Alice"));
+
+Arrow Function (ES6)
+const add = (a, b) => a + b;
+console.log(add(3, 4));
+
+8. Arrays and Objects
+
+Arrays
+
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[1]); // Banana
+
+Objects
+
+let person = {
+    name: "John",
+    age: 25,
+    greet: function() {
+        return "Hello!";
+    }
+};
+console.log(person.name);  // John
+console.log(person.greet()); // Hello!
+
+9. DOM Manipulation
+
+The Document Object Model (DOM) allows JavaScript to interact with HTML.
+
+Selecting Elements
+
+let heading = document.getElementById("title"); // By ID
+let paragraphs = document.getElementsByClassName("text"); // By Class
+let divs = document.querySelectorAll("div"); // By Tag
+
+Changing Content
+
+document.getElementById("title").innerText = "New Title!";
+document.getElementById("title").style.color = "red";
+
+Event Handling
+
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Button Clicked!");
+});
+
+10. Asynchronous JavaScript
+
+JavaScript can handle tasks asynchronously using Callbacks, Promises, and Async/Await.
+
+Using setTimeout (Callback)
+
+setTimeout(() => {
+    console.log("Executed after 2 seconds");
+}, 2000);
+
+Using Promises
+
+let promise = new Promise((resolve, reject) => {
+    let success = true;
+    success ? resolve("Task completed!") : reject("Error occurred!");
+});
+
+promise.then(msg => console.log(msg)).catch(err => console.log(err));
+Using Async/Await
+javascript
+Copy
+Edit
+async function fetchData() {
+    let response = await fetch("https://api.example.com/data");
+    let data = await response.json();
+    console.log(data);
+}
+fetchData();
+
+11. ES6+ Features
+
+let and const (Block-scoped variables) :
+
+Arrow functions (() => {})
+
+Template literals (`Hello, ${name}`)
+
+Destructuring (const {name} = person)
+
+Spread Operator (...arr)
+
+Modules (import and export)
+
+
+JavaScript Arrays and Functions :
+
+
+An array in JavaScript is a data structure that allows storing multiple values in a single variable. Arrays can contain elements of different data types (numbers, strings, objects, or even other arrays).
+
+Creating an Array
+Arrays in JavaScript can be created using:
+
+Array Literal (Recommended)
+
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits); // ["Apple", "Banana", "Mango"]
+
+Using new Array() (Not Recommended)
+
+let numbers = new Array(1, 2, 3, 4);
+console.log(numbers); // [1, 2, 3, 4]
+
+Empty Array
+
+let emptyArray = [];
+console.log(emptyArray); // []
+
+Accessing Array Elements
+
+let colors = ["Red", "Green", "Blue"];
+
+console.log(colors[0]); // "Red"
+console.log(colors[1]); // "Green"
+console.log(colors[2]); // "Blue"
+
+Modifying Arrays
+
+let cars = ["BMW", "Audi", "Mercedes"];
+cars[1] = "Tesla"; // Modifying second element
+console.log(cars); // ["BMW", "Tesla", "Mercedes"]
+
+Common Array Methods
+
+Method	Description	Example
+push()	Adds an element to the end of the array	arr.push("newItem");
+pop()	Removes the last element	arr.pop();
+shift()	Removes the first element	arr.shift();
+unshift()	Adds an element to the beginning	arr.unshift("firstItem");
+splice()	Adds/removes elements at a specific index	arr.splice(1, 2, "NewItem");
+slice()	Returns a portion of the array	arr.slice(1, 3);
+indexOf()	Finds the index of an element	arr.indexOf("value");
+includes()	Checks if an array contains a value	arr.includes("item");
+join()	Converts array to a string	arr.join("-");
+reverse()	Reverses the array order	arr.reverse();
+sort()	Sorts the array	arr.sort();
+
+Example of Array Methods
+
+let numbers = [10, 20, 30, 40, 50];
+
+numbers.push(60);
+console.log(numbers); // [10, 20, 30, 40, 50, 60]
+
+numbers.pop();
+console.log(numbers); // [10, 20, 30, 40, 50]
+
+numbers.shift();
+console.log(numbers); // [20, 30, 40, 50]
+
+numbers.unshift(5);
+console.log(numbers); // [5, 20, 30, 40, 50]
+
+Looping Through an Array:
+
+Using for Loop
+
+let names = ["John", "Jane", "Joe"];
+for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+}
+
+Using forEach()
+
+names.forEach((name) => console.log(name));
+
+Using map()
+let doubled = [1, 2, 3, 4].map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+
+JavaScript Functions:
+
+A function in JavaScript is a block of reusable code that performs a specific task.
+
+Declaring a Function
+
+Function Declaration (Named Function)
+
+function greet() {
+    console.log("Hello, World!");
+}
+greet(); // Calling the function
+
+Function with Parameters
+
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 10)); // 15
+
+Function Expression (Anonymous Function)
+
+let multiply = function(x, y) {
+    return x * y;
+};
+console.log(multiply(3, 4)); // 12
+
+Arrow Function (ES6)
+
+const subtract = (a, b) => a - b;
+console.log(subtract(10, 3)); // 7
+
+Functions with Default Parameters
+
+function greetUser(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+greetUser(); // "Hello, Guest!"
+greetUser("Alice"); // "Hello, Alice!"
+
+Functions Returning Multiple Values
+
+function getValues() {
+    return [10, 20, 30];
+}
+let [a, b, c] = getValues();
+console.log(a, b, c); // 10, 20, 30
+
+Function Calling Another Function
+
+function square(num) {
+    return num * num;
+}
+function calculateArea(length, width) {
+    return square(length) + square(width);
+}
+console.log(calculateArea(2, 3)); // 13
+
+Higher-Order Functions:
+
+Functions that take another function as an argument or return a function.
+
+function operate(a, b, callback) {
+    return callback(a, b);
+}
+
+let result = operate(10, 5, (x, y) => x + y);
+console.log(result); // 15
+
+Immediately Invoked Function Expression (IIFE) :
+
+(function() {
+    console.log("This function runs immediately!");
+})();
+
+Practical Examples :
+
+Example: Filtering Even Numbers from an Array
+
+let numbers = [1, 2, 3, 4, 5, 6];
+let evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4, 6]
+
+Example: Sorting an Array of Objects
+
+let users = [
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 25 },
+    { name: "Charlie", age: 35 }
+];
+
+users.sort((a, b) => a.age - b.age);
+console.log(users);
+/*
+[
+    { name: "Bob", age: 25 },
+    { name: "Alice", age: 30 },
+    { name: "Charlie", age: 35 }
+]
+*/
+
+Example: Counting Occurrences in an Array
+
+let fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+let count = fruits.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+}, {});
+
+console.log(count);
+
+// { apple: 3, banana: 2, orange: 1 }
+
+
+JavaScript Objects :
+
+
+What is a JavaScript Object?
+In JavaScript, an object is a collection of key-value pairs where keys (also called properties) are strings (or Symbols), and values can be of any data type, including functions, arrays, and even other objects.
+
+Objects are one of the most fundamental data structures in JavaScript and are widely used to store and manipulate data.
+
+1. Creating JavaScript Objects
+There are multiple ways to create objects in JavaScript:
+
+1.1 Using Object Literal Notation
+This is the most common way to define an object.
+
+let person = {
+    name: "John",
+    age: 30,
+    isMarried: false,
+    greet: function() {
+        return `Hello, my name is ${this.name}`;
+    }
+};
+
+console.log(person.name); // Output: John
+console.log(person.greet()); // Output: Hello, my name is John
+
+1.2 Using the new Object() Constructor
+
+Another way to create an object is by using the Object constructor.
+
+let car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2022;
+
+console.log(car.brand); // Output: Toyota
+
+1.3 Using Object.create()
+
+The Object.create() method allows you to create an object with a specified prototype.
+
+let animal = {
+    makeSound: function() {
+        console.log("Animal sound");
+    }
+};
+
+let dog = Object.create(animal);
+dog.bark = function() {
+    console.log("Woof! Woof!");
+};
+
+dog.makeSound(); // Output: Animal sound
+dog.bark(); // Output: Woof! Woof!
+
+1.4 Using a Constructor Function
+
+Constructor functions are used to create multiple objects of the same type.
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function() {
+        return `Hi, I'm ${this.name}`;
+    };
+}
+
+let person1 = new Person("Alice", 25);
+let person2 = new Person("Bob", 28);
+
+console.log(person1.greet()); // Output: Hi, I'm Alice
+console.log(person2.greet()); // Output: Hi, I'm Bob
+
+1.5 Using ES6 Classes (Recommended)
+
+ES6 introduced class syntax to create objects more elegantly.
+
+class Employee {
+    constructor(name, position) {
+        this.name = name;
+        this.position = position;
+    }
+
+    getDetails() {
+        return `${this.name} works as a ${this.position}`;
+    }
+}
+
+let emp1 = new Employee("John Doe", "Software Engineer");
+console.log(emp1.getDetails()); // Output: John Doe works as a Software Engineer
+
+2. Accessing Object Properties
+
+You can access object properties using dot notation (.) or bracket notation ([]).
+
+let student = {
+    name: "David",
+    grade: "A",
+    "favorite subject": "Math"
+};
+
+console.log(student.name); // Output: David
+console.log(student["grade"]); // Output: A
+console.log(student["favorite subject"]); // Output: Math
+
+3. Modifying Object Properties
+
+let user = {
+    username: "john_doe",
+    email: "john@example.com"
+};
+
+// Updating properties
+
+user.email = "newemail@example.com";
+console.log(user.email); // Output: newemail@example.com
+
+// Adding new properties
+
+user.age = 25;
+console.log(user.age); // Output: 25
+
+// Deleting properties
+delete user.username;
+console.log(user.username); // Output: undefined
+
+4. Checking If a Property Exists
+
+You can check if an object contains a specific property using in operator or hasOwnProperty() method.
+
+let book = {
+    title: "JavaScript for Beginners",
+    author: "John Doe"
+};
+
+console.log("title" in book); // Output: true
+console.log(book.hasOwnProperty("author")); // Output: true
+console.log(book.hasOwnProperty("price")); // Output: false
+
+5. Looping Through an Object
+
+You can iterate over object properties using for...in loop.
+
+let laptop = {
+    brand: "Dell",
+    processor: "Intel i7",
+    RAM: "16GB"
+};
+
+for (let key in laptop) {
+    console.log(`${key}: ${laptop[key]}`);
+}
+// Output:
+// brand: Dell
+// processor: Intel i7
+// RAM: 16GB
+
+6. Object Methods
+
+6.1 Object.keys() - Returns an array of object property names.
+
+let car = { brand: "Tesla", model: "Model 3", year: 2023 };
+console.log(Object.keys(car)); // Output: [ 'brand', 'model', 'year' ]
+
+6.2 Object.values() - Returns an array of object property values.
+
+console.log(Object.values(car)); // Output: [ 'Tesla', 'Model 3', 2023 ]
+
+6.3 Object.entries() - Returns an array of key-value pairs.
+
+console.log(Object.entries(car));
+
+// Output: [ [ 'brand', 'Tesla' ], [ 'model', 'Model 3' ], [ 'year', 2023 ] ]
+
+6.4 Object.assign() - Copies properties from one or more source objects to a target object.
+
+let obj1 = { a: 1, b: 2 };
+let obj2 = { c: 3, d: 4 };
+
+let mergedObj = Object.assign({}, obj1, obj2);
+console.log(mergedObj); // Output: { a: 1, b: 2, c: 3, d: 4 }
+
+6.5 Object.freeze() - Prevents modifications to an object.
+
+let user = { name: "Alice", age: 25 };
+Object.freeze(user);
+user.age = 30; // This won't work
+console.log(user.age); // Output: 25
+
+6.6 Object.seal() - Allows modifying existing properties but prevents adding or deleting properties.
+
+let settings = { theme: "dark", language: "English" };
+Object.seal(settings);
+settings.theme = "light"; // Allowed
+settings.newSetting = "test"; // Not allowed
+console.log(settings); // Output: { theme: 'light', language: 'English' }
+
+7. Nested Objects
+
+Objects can contain other objects.
+
+let company = {
+    name: "TechCorp",
+    address: {
+        city: "New York",
+        country: "USA"
+    }
+};
+
+console.log(company.address.city); // Output: New York
+
+8. JSON (JavaScript Object Notation)
+
+JavaScript objects can be converted to JSON format using JSON.stringify() and JSON.parse().
+
+let data = { name: "Alice", age: 25 };
+
+let jsonData = JSON.stringify(data); // Convert object to JSON string
+console.log(jsonData); // Output: {"name":"Alice","age":25}
+
+let parsedData = JSON.parse(jsonData); // Convert JSON string back to object
+
+console.log(parsedData.name); // Output: Alice
+
+
+
+Programming Concepts in JavaScript :
+
+JavaScript is a versatile programming language used for web development, backend development, and more. Below are fundamental programming concepts in JavaScript explained with examples.
+
+1. Variables and Data Types
+Variables are used to store values, and JavaScript supports different data types.
+
+Example
+
+let name = "John";    // String
+const age = 25;       // Number
+var isStudent = true; // Boolean
+let height;           // Undefined
+let weight = null;    // Null
+
+2. Operators
+
+JavaScript provides arithmetic, comparison, logical, and assignment operators.
+
+Example
+
+let a = 10;
+let b = 5;
+
+console.log(a + b);  // Addition: 15
+console.log(a - b);  // Subtraction: 5
+console.log(a * b);  // Multiplication: 50
+console.log(a / b);  // Division: 2
+console.log(a % b);  // Modulus: 0
+console.log(a > b);  // Comparison: true
+console.log(a == b); // Equality check: false
+console.log(a !== b);// Not equal: true
+
+3. Control Flow (if-else, switch)
+
+Control flow statements help execute different blocks of code based on conditions.
+
+Example
+
+let num = 20;
+
+if (num > 10) {
+    console.log("Number is greater than 10");
+} else {
+    console.log("Number is 10 or less");
+}
+
+// Switch Statement Example
+let fruit = "Apple";
+
+switch (fruit) {
+    case "Banana":
+        console.log("It's a banana");
+        break;
+    case "Apple":
+        console.log("It's an apple");
+        break;
+    default:
+        console.log("Unknown fruit");
+}
+
+4. Loops (for, while, do-while)
+
+Loops allow repeating a block of code multiple times.
+
+Example
+
+// For loop
+for (let i = 1; i <= 5; i++) {
+    console.log("Iteration:", i);
+}
+
+// While loop
+let count = 3;
+while (count > 0) {
+    console.log("Count:", count);
+    count--;
+}
+
+// Do-While loop
+let x = 1;
+do {
+    console.log("Value of x:", x);
+    x++;
+} while (x <= 3);
+
+5. Functions
+
+Functions are reusable blocks of code.
+
+Example
+
+// Function declaration
+function greet(name) {
+    return "Hello, " + name;
+}
+
+console.log(greet("Alice")); // Output: Hello, Alice
+
+// Arrow Function
+const add = (x, y) => x + y;
+
+console.log(add(4, 5)); // Output: 9
+
+6. Arrays
+
+Arrays store multiple values in a single variable.
+
+Example
+
+let colors = ["Red", "Green", "Blue"];
+
+console.log(colors[0]); // Output: Red
+colors.push("Yellow");  // Add element to end
+console.log(colors);    // Output: ["Red", "Green", "Blue", "Yellow"]
+colors.pop();          // Remove last element
+console.log(colors);   // Output: ["Red", "Green", "Blue"]
+
+7. Objects
+
+Objects store data as key-value pairs.
+
+Example
+
+let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+};
+
+console.log(person.name); // Output: John
+person.greet();          // Output: Hello, my name is John
+
+8. Higher-Order Functions (map, filter, reduce)
+
+These functions allow working with arrays in an efficient way.
+
+Example
+
+let numbers = [1, 2, 3, 4, 5];
+
+// Map: Multiply each number by 2
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Filter: Get even numbers
+let evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // Output: [2, 4]
+
+// Reduce: Sum of all numbers
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 15
+
+9. Promises and Async/Await
+
+Used for handling asynchronous operations.
+
+Example
+
+// Using Promises
+let fetchData = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data received");
+    }, 2000);
+});
+
+fetchData.then(response => console.log(response));
+
+// Using Async/Await
+async function getData() {
+    let response = await fetchData;
+    console.log(response);
+}
+getData();
+
+10. Classes and Inheritance
+
+JavaScript supports object-oriented programming with classes.
+
+Example
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    makeSound() {
+        console.log(this.name + " makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log(this.name + " barks");
+    }
+}
+
+let dog = new Dog("Buddy");
+dog.makeSound(); // Output: Buddy barks
+
+11. ES6 Modules
+
+Modules help in organizing JavaScript code.
+
+Example
+File: math.js
+
+export function add(a, b) {
+    return a + b;
+}
+
+File: main.js
+
+import { add } from './math.js';
+
+console.log(add(3, 7)); // Output: 10
+
+12. Event Handling in JavaScript
+
+Used for responding to user interactions.
+
+Example
+
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Button Clicked!");
+});
+HTML
+
+<button id="btn">Click Me</button>
+
+
+Manipulating Data with Arrays and String Functions :
+
+JavaScript provides various built-in methods to manipulate arrays and strings. These functions help in sorting, filtering, modifying, and handling data efficiently.
+
+1. Manipulating Data with Arrays
+
+Arrays in JavaScript are used to store multiple values in a single variable. JavaScript provides many methods to manipulate arrays.
+
+Common Array Methods
+push() – Adds an element at the end.
+pop() – Removes the last element.
+shift() – Removes the first element.
+unshift() – Adds an element at the beginning.
+splice() – Adds or removes elements from an array.
+slice() – Extracts a section of an array.
+map() – Iterates over an array and returns a new array.
+filter() – Filters elements based on a condition.
+reduce() – Reduces the array to a single value.
+forEach() – Iterates through each element.
+find() – Finds an element based on a condition.
+sort() – Sorts the elements.
+
+Example: Array Manipulation
+
+let numbers = [10, 20, 30, 40, 50];
+
+// Add an element at the end
+numbers.push(60);
+console.log(numbers); // [10, 20, 30, 40, 50, 60]
+
+// Remove the last element
+numbers.pop();
+console.log(numbers); // [10, 20, 30, 40, 50]
+
+// Add element at the beginning
+numbers.unshift(5);
+console.log(numbers); // [5, 10, 20, 30, 40, 50]
+
+// Remove the first element
+numbers.shift();
+console.log(numbers); // [10, 20, 30, 40, 50]
+
+// Slice - Extract elements from index 1 to 3
+let slicedArray = numbers.slice(1, 4);
+console.log(slicedArray); // [20, 30, 40]
+
+// Splice - Remove 2 elements from index 1 and insert 100, 200
+numbers.splice(1, 2, 100, 200);
+console.log(numbers); // [10, 100, 200, 40, 50]
+
+// Map - Multiply each element by 2
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // [20, 200, 400, 80, 100]
+
+// Filter - Get numbers greater than 50
+let filtered = numbers.filter(num => num > 50);
+console.log(filtered); // [100, 200]
+
+// Reduce - Get sum of array elements
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 400
+
+// Find - Get first number greater than 30
+let found = numbers.find(num => num > 30);
+console.log(found); // 100
+
+// Sort - Sort the numbers in ascending order
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [10, 40, 50, 100, 200]
+
+2. Manipulating Data with String Functions
+
+Strings in JavaScript are sequences of characters. JavaScript provides various methods to manipulate strings.
+
+Common String Methods
+length – Gets the length of the string.
+toUpperCase() – Converts a string to uppercase.
+toLowerCase() – Converts a string to lowercase.
+trim() – Removes whitespace from both ends.
+split() – Splits a string into an array.
+replace() – Replaces a specified substring with another.
+indexOf() – Finds the index of a substring.
+substring() – Extracts a portion of a string.
+charAt() – Gets a character at a specified index.
+includes() – Checks if a substring exists.
+
+Example: String Manipulation
+
+let text = "  JavaScript is powerful!  ";
+
+// Length of the string
+console.log(text.length); // 26
+
+// Convert to uppercase
+console.log(text.toUpperCase()); // "  JAVASCRIPT IS POWERFUL!  "
+
+// Convert to lowercase
+console.log(text.toLowerCase()); // "  javascript is powerful!  "
+
+// Trim whitespace
+console.log(text.trim()); // "JavaScript is powerful!"
+
+// Split into array (separating by space)
+let words = text.trim().split(" ");
+console.log(words); // ["JavaScript", "is", "powerful!"]
+
+// Replace a word
+let newText = text.replace("powerful", "awesome");
+console.log(newText); // "  JavaScript is awesome!  "
+
+// Find index of a word
+console.log(text.indexOf("is")); // 14
+
+// Extract substring from index 2 to 10
+console.log(text.substring(2, 10)); // "JavaScri"
+
+// Get character at index 5
+console.log(text.charAt(5)); // "S"
+
+// Check if string includes "JavaScript"
+console.log(text.includes("JavaScript")); // true
+
+Combining Arrays and Strings
+
+We can manipulate arrays and strings together in real-world applications.
+
+let sentence = "Learning JavaScript is fun!";
+let wordsArray = sentence.split(" "); // Convert string to array
+
+console.log(wordsArray); // ["Learning", "JavaScript", "is", "fun!"]
+
+let reversedSentence = wordsArray.reverse().join(" "); // Reverse and join back
+console.log(reversedSentence); // "fun! is JavaScript Learning"
+
+

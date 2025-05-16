@@ -1,0 +1,1213 @@
+6. Font Weight & Italic
+
+Bootstrap allows control over font-weight and style.
+
+Example: Font Weight & Italic
+
+<p class="font-weight-bold">Bold text</p>
+<p class="font-weight-normal">Normal text</p>
+<p class="font-weight-light">Light text</p>
+<p class="font-italic">Italic text</p>
+
+7. Text Colors
+
+Bootstrap provides .text-primary, .text-success, .text-danger, .text-warning, etc.
+
+Example: Text Colors
+
+<p class="text-primary">Primary text</p>
+<p class="text-secondary">Secondary text</p>
+<p class="text-success">Success text</p>
+<p class="text-danger">Danger text</p>
+<p class="text-warning">Warning text</p>
+<p class="text-info">Info text</p>
+<p class="text-light bg-dark">Light text</p>
+<p class="text-dark">Dark text</p>
+
+8. Lists in Bootstrap
+
+Bootstrap provides .list-unstyled and .list-inline classes for list styling.
+
+Example: List Styling
+
+<ul class="list-unstyled">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<ul class="list-inline">
+    <li class="list-inline-item">Inline Item 1</li>
+    <li class="list-inline-item">Inline Item 2</li>
+    <li class="list-inline-item">Inline Item 3</li>
+</ul>
+
+9. Blockquotes
+
+Bootstrap allows you to create beautifully styled blockquotes.
+
+Example: Blockquotes
+
+<blockquote class="blockquote">
+    <p class="mb-0">This is a blockquote example.</p>
+    <footer class="blockquote-footer">Author Name</footer>
+</blockquote>
+
+
+Bootstrap Tables, Forms :
+
+Bootstrap 4 provides a clean and responsive way to style tables and forms, making them look more modern and user-friendly. Below, I'll explain the various features and types with examples.
+
+1. Bootstrap 4 Tables :
+
+Bootstrap enhances HTML tables with classes that improve styling, spacing, and responsiveness.
+
+Basic Table:
+
+The .table class makes a table look more elegant.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Table Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h3>Basic Bootstrap Table</h3>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john@example.com</td>
+                    <td>+1234567890</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane@example.com</td>
+                    <td>+0987654321</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+Striped Table:
+
+To add alternate row coloring, use .table-striped.
+
+<table class="table table-striped">
+
+Bordered Table:
+
+To add borders to all cells, use .table-bordered.
+
+<table class="table table-bordered">
+
+Hoverable Rows
+
+To highlight rows on hover, use .table-hover.
+
+<table class="table table-hover">
+
+Responsive Table
+
+To make tables scrollable on smaller screens, wrap them inside .table-responsive.
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        ...
+    </table>
+</div>
+
+2. Bootstrap 4 Forms
+
+Bootstrap 4 offers various types of forms with responsive layouts.
+
+Basic Form
+
+<div class="container mt-4">
+    <h3>Basic Bootstrap Form</h3>
+    <form>
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+Inline Form :
+
+To create a compact, inline form, use .form-inline.
+
+<form class="form-inline">
+    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Name">
+    <input type="email" class="form-control mb-2 mr-sm-2" placeholder="Email">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+Form with Grid Layout:
+
+<form>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+        </div>
+    </div>
+</form>
+
+Form with Validation States:
+
+Bootstrap 4 allows adding validation states.
+
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control is-invalid" id="username" placeholder="Username">
+    <div class="invalid-feedback">Username is required!</div>
+</div>
+
+Full Example (Tables & Forms)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Tables and Forms</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h3>Bootstrap Table with Form</h3>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john@example.com</td>
+                    <td>+1234567890</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane@example.com</td>
+                    <td>+0987654321</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="mt-4">Bootstrap Form Example</h3>
+        <form>
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="emailAddress">Email:</label>
+                <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+Bootstrap Form :
+
+Bootstrap 4 provides a flexible and responsive way to create forms using predefined classes. Forms in Bootstrap 4 are built using HTML5 and enhanced with CSS classes to make them visually appealing and mobile-friendly.
+
+1. Basic Bootstrap 4 Form
+
+To create a simple form using Bootstrap 4, wrap your form inside a <form> tag and use Bootstrap classes like .form-group, .form-control, and .btn.
+
+Example: Basic Form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Bootstrap 4 Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Basic Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+2. Inline Form
+
+An inline form is used when you want to keep all form elements in a single row.
+
+Example: Inline Form
+
+<div class="container mt-5">
+    <h2>Inline Form</h2>
+    <form class="form-inline">
+        <label for="email" class="sr-only">Email:</label>
+        <input type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="Enter email">
+        
+        <label for="pwd" class="sr-only">Password:</label>
+        <input type="password" class="form-control mb-2 mr-sm-2" id="pwd" placeholder="Enter password">
+        
+        <button type="submit" class="btn btn-success mb-2">Login</button>
+    </form>
+</div>
+
+3. Form with Grid Layout
+
+Bootstrap provides a grid system to align form controls properly.
+
+Example: Grid Form
+
+<div class="container mt-5">
+    <h2>Grid Form</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+4. Form with Validation States
+
+Bootstrap 4 provides classes to show validation states like success, warning, and error.
+
+Example: Form Validation States
+
+<div class="container mt-5">
+    <h2>Form with Validation States</h2>
+    <form>
+        <div class="form-group">
+            <label for="validInput">Valid Input:</label>
+            <input type="text" class="form-control is-valid" id="validInput" value="Correct input">
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="form-group">
+            <label for="invalidInput">Invalid Input:</label>
+            <input type="text" class="form-control is-invalid" id="invalidInput" value="Wrong input">
+            <div class="invalid-feedback">Please provide a valid input.</div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+5. Form with Custom Controls (Checkbox & Radio Buttons)
+
+Bootstrap allows you to create custom-styled checkboxes and radio buttons.
+
+Example: Custom Controls
+
+<div class="container mt-5">
+    <h2>Custom Checkboxes and Radio Buttons</h2>
+    <form>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Check this checkbox</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="customRadio1" name="customRadio">
+            <label class="custom-control-label" for="customRadio1">Select this radio</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+</div>
+
+6. Form with Floating Labels (Using Placeholder)
+
+Floating labels allow users to enter data without explicitly using a label.
+
+Example: Floating Labels
+
+<div class="container mt-5">
+    <h2>Floating Labels</h2>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="Enter your email">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+7. Horizontal Form (Aligned Labels and Inputs)
+
+Horizontal forms allow labels and input fields to be placed in a single row.
+
+Example: Horizontal Form
+
+<div class="container mt-5">
+    <h2>Horizontal Form</h2>
+    <form>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pwd" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</div>
+
+
+Bootstrap Inputs :
+
+Bootstrap 4 provides various input types with styling and customization options. These inputs are styled using the .form-control class and are placed inside form groups for proper alignment and responsiveness.
+
+1. Basic Text Input
+Bootstrap applies default styles to text inputs using the .form-control class.
+
+Example
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Inputs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h4>Basic Text Input</h4>
+        <input type="text" class="form-control" placeholder="Enter text">
+    </div>
+</body>
+</html>
+
+2. Different Input Types
+
+Bootstrap supports various HTML5 input types, such as text, email, password, number, date, and more.
+
+Example
+
+<div class="container mt-4">
+    <h4>Different Input Types</h4>
+    <form>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" class="form-control" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <label>Number:</label>
+            <input type="number" class="form-control" placeholder="Enter a number">
+        </div>
+        <div class="form-group">
+            <label>Date:</label>
+            <input type="date" class="form-control">
+        </div>
+    </form>
+</div>
+
+3. Readonly and Disabled Inputs
+
+Bootstrap provides options to make inputs readonly or disabled.
+
+Example
+
+<div class="container mt-4">
+    <h4>Readonly & Disabled Inputs</h4>
+    <input type="text" class="form-control" value="Readonly Input" readonly>
+    <br>
+    <input type="text" class="form-control" value="Disabled Input" disabled>
+</div>
+
+4. Input Sizes (Small, Default, Large)
+
+Bootstrap allows different input sizes using .form-control-sm and .form-control-lg.
+
+Example :
+
+<div class="container mt-4">
+    <h4>Input Sizes</h4>
+    <input type="text" class="form-control form-control-lg" placeholder="Large Input">
+    <br>
+    <input type="text" class="form-control" placeholder="Default Input">
+    <br>
+    <input type="text" class="form-control form-control-sm" placeholder="Small Input">
+</div>
+
+5. Input with Labels and Placeholders
+
+Using <label> for accessibility and placeholders for hints.
+
+Example
+
+<div class="container mt-4">
+    <h4>Input with Labels & Placeholders</h4>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" class="form-control" placeholder="Enter your username">
+    </div>
+</div>
+
+6. Input with Icons (Using Bootstrap Input Groups)
+
+You can add icons inside the input using .input-group.
+
+Example
+
+<div class="container mt-4">
+    <h4>Input with Icons</h4>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username">
+    </div>
+</div>
+
+7. Input with Button (Search Bar)
+
+You can place a button inside the input.
+
+Example
+
+<div class="container mt-4">
+    <h4>Input with Button</h4>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search...">
+        <div class="input-group-append">
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</div>
+
+8. Validation States (Success, Error, Warning)
+
+Bootstrap 4 provides validation classes like .is-valid and .is-invalid.
+
+Example
+
+<div class="container mt-4">
+    <h4>Validation States</h4>
+    <input type="text" class="form-control is-valid" placeholder="Valid Input">
+    <br>
+    <input type="text" class="form-control is-invalid" placeholder="Invalid Input">
+</div>
+
+9. File Input
+
+Bootstrap supports styled file inputs.
+
+Example
+
+<div class="container mt-4">
+    <h4>File Input</h4>
+    <input type="file" class="form-control-file">
+</div>
+
+10. Custom Range Input (Slider)
+
+You can use a range slider with Bootstrap.
+
+Example
+
+<div class="container mt-4">
+    <h4>Custom Range Input</h4>
+    <input type="range" class="form-control-range">
+</div>
+
+
+Form State and Buttons :
+
+Bootstrap 4 provides various utilities for styling form elements and buttons. Below, we will go through different states of forms and buttons with HTML5 and Bootstrap 4.
+
+1. Form States in Bootstrap 4
+Bootstrap provides different form control states to indicate validity, disabled, readonly, and custom states.
+
+1.1 Basic Form Example
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Form States</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h4>Basic Form</h4>
+    <form>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
+1.2 Disabled and Readonly Fields
+
+Disabled fields: Users cannot interact with them.
+
+Readonly fields: Users can see but cannot modify the value.
+
+<div class="container mt-4">
+    <h4>Disabled and Readonly Fields</h4>
+    <form>
+        <div class="form-group">
+            <label for="disabledEmail">Disabled Email:</label>
+            <input type="email" class="form-control" id="disabledEmail" placeholder="Disabled email" disabled>
+        </div>
+        <div class="form-group">
+            <label for="readonlyField">Readonly Field:</label>
+            <input type="text" class="form-control" id="readonlyField" value="Readonly Text" readonly>
+        </div>
+    </form>
+</div>
+
+1.3 Valid and Invalid Input Fields
+
+Bootstrap provides .is-valid and .is-invalid classes for validation states.
+
+<div class="container mt-4">
+    <h4>Valid and Invalid Inputs</h4>
+    <form>
+        <div class="form-group">
+            <label for="validInput">Valid Input:</label>
+            <input type="text" class="form-control is-valid" id="validInput" value="Valid data">
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="form-group">
+            <label for="invalidInput">Invalid Input:</label>
+            <input type="text" class="form-control is-invalid" id="invalidInput">
+            <div class="invalid-feedback">Please enter valid information.</div>
+        </div>
+    </form>
+</div>
+
+2. Bootstrap 4 Buttons
+
+Buttons in Bootstrap 4 come with different styles and states.
+
+2.1 Basic Buttons
+
+<div class="container mt-4">
+    <h4>Basic Buttons</h4>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+</div>
+
+2.2 Outline Buttons
+
+Outline buttons have a transparent background with a colored border.
+
+<div class="container mt-4">
+    <h4>Outline Buttons</h4>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-light">Light</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
+</div>
+
+2.3 Button Sizes
+
+You can change button sizes using .btn-lg for large and .btn-sm for small buttons.
+
+<div class="container mt-4">
+    <h4>Button Sizes</h4>
+    <button type="button" class="btn btn-primary btn-lg">Large Button</button>
+    <button type="button" class="btn btn-secondary">Default Button</button>
+    <button type="button" class="btn btn-danger btn-sm">Small Button</button>
+</div>
+
+2.4 Block-Level Buttons
+
+Make buttons full-width using .btn-block.
+
+<div class="container mt-4">
+    <h4>Block Buttons</h4>
+    <button type="button" class="btn btn-success btn-block">Full Width Button</button>
+</div>
+
+2.5 Disabled and Active Buttons
+
+Disabled buttons cannot be clicked.
+
+Active buttons appear pressed.
+
+<div class="container mt-4">
+    <h4>Disabled and Active Buttons</h4>
+    <button type="button" class="btn btn-primary active">Active Button</button>
+    <button type="button" class="btn btn-secondary" disabled>Disabled Button</button>
+</div>
+
+2.6 Button Groups
+
+You can group buttons together using .btn-group.
+
+<div class="container mt-4">
+    <h4>Button Group</h4>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Left</button>
+        <button type="button" class="btn btn-primary">Middle</button>
+        <button type="button" class="btn btn-primary">Right</button>
+    </div>
+</div>
+
+
+Bootstrap Button Groups :
+
+A Button Group in Bootstrap 4 is a component that groups a series of buttons together on a single line or stacked vertically. It allows you to group related actions, making the UI more organized.
+
+1. Basic Button Group
+You can group multiple buttons together using the .btn-group class.
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Button Groups</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-3">
+        <h3>Basic Button Group</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Button 1</button>
+            <button type="button" class="btn btn-primary">Button 2</button>
+            <button type="button" class="btn btn-primary">Button 3</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+2. Button Toolbar
+
+If you want to group multiple button groups together, use the .btn-toolbar class.
+
+Example:
+
+<div class="container mt-3">
+    <h3>Button Toolbar</h3>
+    <div class="btn-toolbar">
+        <div class="btn-group mr-2">
+            <button class="btn btn-danger">Cut</button>
+            <button class="btn btn-danger">Copy</button>
+            <button class="btn btn-danger">Paste</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-warning">Undo</button>
+            <button class="btn btn-warning">Redo</button>
+        </div>
+    </div>
+</div>
+
+3. Sizing Button Groups
+Button groups can be sized using .btn-group-lg, .btn-group-sm, or .btn-group (default size).
+
+Example:
+<div class="container mt-3">
+    <h3>Button Group Sizes</h3>
+    
+    <div class="btn-group btn-group-lg mb-2">
+        <button class="btn btn-success">Large</button>
+        <button class="btn btn-success">Large</button>
+    </div>
+    <br>
+    
+    <div class="btn-group">
+        <button class="btn btn-info">Default</button>
+        <button class="btn btn-info">Default</button>
+    </div>
+    <br><br>
+    
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-secondary">Small</button>
+        <button class="btn btn-secondary">Small</button>
+    </div>
+</div>
+
+4. Vertical Button Group
+
+You can stack buttons vertically using .btn-group-vertical.
+
+Example:
+
+<div class="container mt-3">
+    <h3>Vertical Button Group</h3>
+    <div class="btn-group-vertical">
+        <button class="btn btn-dark">Top</button>
+        <button class="btn btn-dark">Middle</button>
+        <button class="btn btn-dark">Bottom</button>
+    </div>
+</div>
+
+5. Button Group with Dropdown
+
+A button group can also include a dropdown menu.
+
+Example:
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<div class="container mt-3">
+    <h3>Button Group with Dropdown</h3>
+    <div class="btn-group">
+        <button class="btn btn-primary">Action</button>
+        <button class="btn btn-primary">Another Action</button>
+        
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Dropdown
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Option 1</a>
+                <a class="dropdown-item" href="#">Option 2</a>
+                <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+6. Button Group with Checkbox (Toggle)
+
+You can create a group of toggle buttons that function like checkboxes.
+
+Example:
+
+<div class="container mt-3">
+    <h3>Toggle Button Group</h3>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-primary">
+            <input type="checkbox"> Option 1
+        </label>
+        <label class="btn btn-outline-primary">
+            <input type="checkbox"> Option 2
+        </label>
+        <label class="btn btn-outline-primary">
+            <input type="checkbox"> Option 3
+        </label>
+    </div>
+</div>
+
+7. Button Group with Radio Buttons
+
+You can also create a button group that functions like radio buttons.
+
+Example:
+<div class="container mt-3">
+    <h3>Radio Button Group</h3>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-danger">
+            <input type="radio" name="options" id="option1"> Option 1
+        </label>
+        <label class="btn btn-outline-danger">
+            <input type="radio" name="options" id="option2"> Option 2
+        </label>
+        <label class="btn btn-outline-danger">
+            <input type="radio" name="options" id="option3"> Option 3
+        </label>
+    </div>
+</div>
+
+
+Bootstrap Images and Utilities :
+
+Bootstrap 4 provides various classes for handling images efficiently and responsively. These classes help in making images responsive, rounded, aligned, and styled properly. Additionally, Bootstrap 4 offers utilities to manipulate images for different screen sizes.
+
+1. Bootstrap Image Classes
+Bootstrap provides several built-in classes for handling images:
+
+1.1 Responsive Images (.img-fluid)
+The .img-fluid class makes an image responsive by automatically adjusting its size based on the parent container.
+
+✅ Example: Responsive Image
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2>Responsive Image</h2>
+        <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Responsive Image">
+    </div>
+
+</body>
+</html>
+✅ Effect: The image resizes automatically to fit the parent container while maintaining its aspect ratio.
+
+1.2 Rounded, Circle, and Thumbnail Images
+
+Bootstrap provides classes to apply different shapes to images.
+
+✅ Example: Rounded, Circle, and Thumbnail Images
+html
+Copy
+Edit
+<div class="container mt-4">
+    <h2>Image Shapes</h2>
+    <img src="https://via.placeholder.com/150" class="rounded" alt="Rounded Image">
+    <img src="https://via.placeholder.com/150" class="rounded-circle" alt="Circle Image">
+    <img src="https://via.placeholder.com/150" class="img-thumbnail" alt="Thumbnail Image">
+</div>
+✅ Classes Used:
+
+.rounded → Applies rounded corners.
+.rounded-circle → Creates a circular image.
+.img-thumbnail → Adds a border and padding like a thumbnail.
+
+1.3 Image Alignment
+
+Bootstrap provides .float-left, .float-right, and .mx-auto d-block for alignment.
+
+✅ Example: Left, Right, and Center-Aligned Images
+html
+Copy
+Edit
+<div class="container mt-4">
+    <h2>Image Alignment</h2>
+    
+    <img src="https://via.placeholder.com/200" class="float-left" alt="Left Aligned">
+    <img src="https://via.placeholder.com/200" class="float-right" alt="Right Aligned">
+    <img src="https://via.placeholder.com/200" class="mx-auto d-block" alt="Center Aligned">
+</div>
+✅ Classes Used:
+
+.float-left → Aligns image to the left.
+.float-right → Aligns image to the right.
+.mx-auto d-block → Centers the image.
+
+1.4 Image with Responsive Grid
+
+Bootstrap allows images to be placed inside grid columns.
+
+✅ Example: Image Inside a Grid
+html
+Copy
+Edit
+<div class="container mt-4">
+    <h2>Image Inside Grid</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://via.placeholder.com/400x250" class="img-fluid" alt="Responsive Grid Image">
+        </div>
+        <div class="col-md-6">
+            <p>This image is placed inside a Bootstrap column.</p>
+        </div>
+    </div>
+</div>
+✅ Effect: The image takes up half of the container and resizes based on the screen.
+
+2. Bootstrap 4 Image Utilities
+
+Bootstrap 4 provides additional utilities to manipulate images.
+
+2.1 Border Utilities :
+
+Bootstrap offers .border and .border-* classes.
+
+✅ Example: Border Styles
+
+<div class="container mt-4">
+    <h2>Image Borders</h2>
+    <img src="https://via.placeholder.com/150" class="border" alt="Border Image">
+    <img src="https://via.placeholder.com/150" class="border border-primary" alt="Primary Border">
+    <img src="https://via.placeholder.com/150" class="border border-danger" alt="Danger Border">
+</div>
+
+✅ Effect: Adds different border colors.
+
+2.2 Shadow Utilities
+
+Bootstrap provides .shadow-sm, .shadow, and .shadow-lg for different shadow effects.
+
+✅ Example: Image Shadows
+<div class="container mt-4">
+    <h2>Image Shadows</h2>
+    <img src="https://via.placeholder.com/150" class="shadow-sm" alt="Small Shadow">
+    <img src="https://via.placeholder.com/150" class="shadow" alt="Medium Shadow">
+    <img src="https://via.placeholder.com/150" class="shadow-lg" alt="Large Shadow">
+</div>
+✅ Effect: Adds different levels of shadows.
+
+2.3 Opacity and Transparency :
+
+Bootstrap provides .opacity-* classes.
+
+✅ Example: Image Opacity
+
+<div class="container mt-4">
+    <h2>Image Opacity</h2>
+    <img src="https://via.placeholder.com/150" class="opacity-25" alt="25% Opacity">
+    <img src="https://via.placeholder.com/150" class="opacity-50" alt="50% Opacity">
+    <img src="https://via.placeholder.com/150" class="opacity-75" alt="75% Opacity">
+</div>
+✅ Effect: Controls transparency of images.
+
+✅ Complete Code Example
+Here is the full code containing all the image examples in Bootstrap 4.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Bootstrap 4 Images & Utilities</h2>
+
+    <!-- Responsive Image -->
+    <h3>Responsive Image</h3>
+    <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Responsive Image">
+
+    <!-- Image Shapes -->
+    <h3>Image Shapes</h3>
+    <img src="https://via.placeholder.com/150" class="rounded" alt="Rounded Image">
+    <img src="https://via.placeholder.com/150" class="rounded-circle" alt="Circle Image">
+    <img src="https://via.placeholder.com/150" class="img-thumbnail" alt="Thumbnail Image">
+
+    <!-- Image Alignment -->
+    <h3>Image Alignment</h3>
+    <img src="https://via.placeholder.com/200" class="float-left" alt="Left Aligned">
+    <img src="https://via.placeholder.com/200" class="float-right" alt="Right Aligned">
+    <img src="https://via.placeholder.com/200" class="mx-auto d-block" alt="Center Aligned">
+
+    <!-- Image with Borders -->
+    <h3>Image Borders</h3>
+    <img src="https://via.placeholder.com/150" class="border" alt="Border Image">
+    <img src="https://via.placeholder.com/150" class="border border-primary" alt="Primary Border">
+
+    <!-- Image Shadows -->
+    <h3>Image Shadows</h3>
+    <img src="https://via.placeholder.com/150" class="shadow-sm" alt="Small Shadow">
+    <img src="https://via.placeholder.com/150" class="shadow" alt="Medium Shadow">
+
+    <!-- Image Opacity -->
+    <h3>Image Opacity</h3>
+    <img src="https://via.placeholder.com/150" class="opacity-50" alt="50% Opacity">
+
+</div>
+
+</body>
+</html>
+
+
+Utilities for Positioning and Responsiveness :
+
+Bootstrap 4 provides a variety of utility classes to control positioning and responsive layouts without writing custom CSS. These utilities help in aligning elements, adjusting spacing, and making layouts adaptable to different screen sizes.
+
+1. Positioning Utilities
+Bootstrap 4 includes positioning classes that control how elements are placed within a document.
+
+Available Classes
+position-static: Default positioning (normal document flow).
+position-relative: Positions the element relative to its normal position.
+position-absolute: Positions the element relative to its nearest positioned ancestor.
+position-fixed: Positions the element relative to the viewport.
+position-sticky: Sticks the element based on scroll position.
+Example: Positioning Elements
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Positioning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Positioning Example</h2>
+        <div class="position-relative bg-light p-3" style="height: 200px;">
+            <div class="box position-absolute" style="top: 50px; left: 50px;">
+                Absolute
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+Explanation: The .position-absolute class places the blue box inside its relative parent at (50px, 50px).
+
+2. Responsive Display Utilities :
+Bootstrap 4 provides classes to show/hide elements based on screen size.
+
+Available Classes :
+d-none: Hides the element.
+d-block: Displays as a block element.
+d-inline: Displays as an inline element.
+d-inline-block: Displays as an inline-block element.
+d-flex: Makes the element a flex container.
+Responsive Variations
+Class	Extra Small (<576px)	Small (≥576px)	Medium (≥768px)	Large (≥992px)	Extra Large (≥1200px)
+d-sm-none	Visible	Hidden	Hidden	Hidden	Hidden
+d-md-none	Visible	Visible	Hidden	Hidden	Hidden
+d-lg-none	Visible	Visible	Visible	Hidden	Hidden
+d-xl-none	Visible	Visible	Visible	Visible	Hidden
+Example: Responsive Visibility
+html
+Copy
+Edit
+<div class="container">
+    <h2>Responsive Display Example</h2>
+    <p class="d-none d-md-block bg-info text-white p-2">Visible on Medium (md) screens and above.</p>
+    <p class="d-block d-md-none bg-warning p-2">Visible only on Small (sm) screens.</p>
+</div>
+Explanation: The first <p> is hidden on small screens but visible on md, lg, xl. The second <p> is only visible on small screens.
+
+3. Float Utilities
+Bootstrap provides float classes to align elements to the left or right.
+
+Available Classes
+float-left: Floats the element to the left.
+float-right: Floats the element to the right.
+float-none: Removes floating.
+Example: Floating Elements
+html
+Copy
+Edit
+<div class="container">
+    <h2>Float Example</h2>
+    <img src="https://via.placeholder.com/100" class="float-left mr-3" alt="Image">
+    <p>This text wraps around the floating image to the left.</p>
+</div>
+Explanation: The image is floated to the left with .float-left, allowing text to wrap around it.
+
+4. Flexbox Utilities
+Bootstrap 4 has flexbox utilities to control layouts.
+
+Key Classes
+d-flex: Enables flexbox.
+justify-content-start: Align items to start.
+justify-content-center: Align items to center.
+justify-content-end: Align items to end.
+align-items-start: Align items at the top.
+align-items-center: Align items in the middle.
+align-items-end: Align items at the bottom.
+Example: Flexbox Centering
+html
+Copy
+Edit
+<div class="d-flex justify-content-center align-items-center bg-primary text-white" style="height: 200px;">
+    Centered Content
+</div>
+Explanation: .d-flex makes it a flex container, .justify-content-center centers content horizontally, and .align-items-center centers it vertically.
+
+5. Margin & Padding Utilities
+Bootstrap provides spacing utilities using m- (margin) and p- (padding).
+
+Example: Spacing Classes
+html
+Copy
+Edit
+<div class="container">
+    <div class="p-3 mb-2 bg-success text-white">Padding and Margin Example</div>
+</div>
+Explanation: .p-3 adds padding, .mb-2 adds margin-bottom.
+

@@ -1,0 +1,1076 @@
+Introduction to HTML5 : HTML5 (HyperText Markup Language 5) is the latest version of HTML, designed to structure web pages and applications more efficiently. It introduces new elements, attributes, and behaviors to improve the web's flexibility, multimedia capabilities, and interactivity.
+
+
+Key Features of HTML5 :
+
+1. New Semantic Elements: <header>, <footer>, <section>, <article>, <nav>, <aside>, etc.
+
+2. Improved Multimedia Support: <audio>, <video>, and <canvas> for rich media content.
+
+3. Better Form Controls: New input types like email, date, number, and search.
+
+4. Local Storage & Offline Support: localStorage and sessionStorage for data storage.
+
+5. Geolocation API: Allows web applications to access user location.
+
+6. Responsive Design Features: Works well with CSS3 and JavaScript for mobile-friendly sites.
+
+
+Basic HTML5 Structure :
+
+Every HTML5 document follows a standard structure:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML5 Page</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to HTML5</h1>
+    </header>
+    
+    <section>
+        <article>
+            <h2>Introduction</h2>
+            <p>This is a simple HTML5 document with semantic elements.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MyWebsite</p>
+    </footer>
+</body>
+</html>
+
+
+
+New HTML5 Elements Explained :
+
+
+1. Semantic Elements :
+
+HTML5 introduces semantic elements that provide meaning to the structure of a webpage:
+
+<header> - Represents introductory content or navigation.
+
+<nav> - Defines a set of navigation links.
+
+<section> - Groups related content.
+
+<article> - Represents independent content (like a blog post).
+
+<aside> - Used for sidebars or additional content.
+
+<footer> - Contains footer information.
+
+2. Multimedia Elements :
+
+<audio> and <video> allow embedding media without third-party plugins.
+
+<canvas> enables dynamic graphics using JavaScript.
+
+
+<video controls width="400">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
+3. Form Enhancements :
+
+HTML5 introduces new input types for better form validation:
+
+<form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    
+    <label for="date">Date:</label>
+    <input type="date" id="date">
+    
+    <input type="submit" value="Submit">
+</form>
+
+
+New Tags in HTML5:
+
+HTML5 introduced several new elements to enhance the structure, semantics, multimedia, and interactivity of web pages. Below is a breakdown of all new tags introduced in HTML5, categorized for better understanding.
+
+
+1. Structural & Semantic Elements :
+
+HTML5 introduced new semantic elements to define the meaning of different sections of a webpage more clearly.
+
+
+a) <header> :
+
+Represents the introductory section of a page or a section.
+Can contain headings, logos, navigation, or other introductory content.
+
+<header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+</header>
+
+
+b) <nav> :
+
+Defines a navigation section that contains links.
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+    </ul>
+</nav>
+
+
+c) <section> :
+
+Represents a section of content that typically has a heading.
+Used for grouping related content.
+
+<section>
+    <h2>Our Services</h2>
+    <p>We offer web development services.</p>
+</section>
+
+
+d) <article> :
+
+Defines a self-contained, independent content block (e.g., blog posts, news articles).
+
+<article>
+    <h2>Latest News</h2>
+    <p>HTML5 is improving web development.</p>
+</article>
+
+
+e) <aside> :
+
+Represents content that is indirectly related to the main content (e.g., sidebars, advertisements).
+
+<aside>
+    <h3>Related Articles</h3>
+    <p>Learn CSS Grid Layout.</p>
+</aside>
+
+
+f) <footer> :
+
+Represents the footer of a webpage or section.
+Often contains copyright info, links, or additional details.
+
+<footer>
+    <p>&copy; 2025 My Website. All Rights Reserved.</p>
+</footer>
+
+
+
+2. Multimedia Elements :
+
+HTML5 introduced native support for multimedia without requiring plugins like Flash.
+
+a) <audio> :
+
+Embeds audio content with controls.
+
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+
+b) <video> :
+
+Embeds video content with controls.
+
+<video controls width="400">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video element.
+</video>
+
+
+c) <source> :
+
+Specifies multiple media sources for <audio> or <video>.
+
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.ogg" type="video/ogg">
+</video>
+
+
+
+d) <track> :
+
+Provides subtitles or captions for <video>.
+
+<video controls>
+    <source src="movie.mp4" type="video/mp4">
+    <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
+</video>
+
+
+3. Interactive & Graphics Elements :
+
+These elements enhance interactivity and visual rendering.
+
+a) <canvas> :
+
+Allows drawing graphics using JavaScript.
+
+<canvas id="myCanvas" width="400" height="200"></canvas>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(50, 50, 100, 100);
+</script>
+
+
+b) <svg> :
+
+Allows rendering vector graphics.
+
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+</svg>
+
+
+c) <details> :
+
+Creates a collapsible section.
+
+<details>
+    <summary>Click to see more</summary>
+    <p>This is additional content.</p>
+</details>
+
+d) <summary> :
+
+Defines a summary inside <details>.
+
+<details>
+    <summary>More Info</summary>
+    <p>Here is the hidden content.</p>
+</details>
+
+
+e) <progress> :
+
+Displays a progress bar.
+
+<progress value="70" max="100"></progress>
+
+
+f) <meter> :
+
+Displays a gauge for measurement.
+
+<meter value="50" min="0" max="100"></meter>
+
+
+4. Form Elements :
+
+HTML5 introduced new input types and attributes for better user input handling.
+
+a) <datalist> :
+
+Provides an autocomplete feature for input fields.
+
+<input list="browsers" name="browser">
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+</datalist>
+
+
+b) <output> :
+
+Displays the result of a calculation.
+
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="number" id="a" value="10"> +
+    <input type="number" id="b" value="20"> =
+    <output name="result"></output>
+</form>
+
+
+5. Deprecated or Removed Elements in HTML5 :
+
+While adding new elements, HTML5 also removed some old elements: ❌ <acronym> (Use <abbr> instead)
+
+❌ <applet> (Use <object> instead)
+❌ <big> (Use CSS instead)
+❌ <center> (Use CSS instead)
+❌ <font> (Use CSS instead)
+❌ <strike> (Use <del> instead)
+
+
+Semantic HTML :
+
+Semantic HTML5 elements are HTML tags that provide meaning to the web page content, making it easier for developers and browsers to understand the structure of the document.
+
+1. <header>:
+
+Definition:
+Represents the introductory content of a webpage or a section. It usually contains a logo, navigation links, or heading elements.
+
+<header>
+    <h1>My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+2. <nav> :
+
+Definition:
+Defines a block of navigation links, such as a menu or table of contents.
+
+<nav>
+    <ul>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+    </ul>
+</nav>
+
+
+3. <section> :
+
+Definition:
+Represents a standalone section of a document, typically with a heading.
+
+<section>
+    <h2>About Us</h2>
+    <p>We are a company that specializes in web development.</p>
+</section>
+
+4. <article> :
+
+Definition:
+Used for self-contained, independent content such as blog posts, news articles, or forum posts.
+
+<article>
+    <h2>How to Learn HTML</h2>
+    <p>HTML is the backbone of the web...</p>
+</article>
+
+
+5. <aside> :
+
+Definition:
+Represents content that is indirectly related to the main content, like sidebars, ads, or related articles.
+
+<aside>
+    <h3>Related Articles</h3>
+    <ul>
+        <li><a href="#">CSS Basics</a></li>
+        <li><a href="#">JavaScript Introduction</a></li>
+    </ul>
+</aside>
+
+
+6. <footer> :
+
+Definition:
+Defines the footer of a webpage or a section, typically containing copyright information, contact details, or links.
+
+<footer>
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+</footer>
+
+
+7. <main> :
+
+Definition:
+Specifies the primary content of a document, excluding headers, sidebars, and footers.
+
+<main>
+    <h1>Welcome to My Website</h1>
+    <p>This is where the main content appears.</p>
+</main>
+
+
+8. <figure> & <figcaption> :
+
+Definition:
+The <figure> element is used to wrap media like images, videos, or illustrations, while <figcaption> provides a caption for it.
+
+<figure>
+    <img src="image.jpg" alt="Beautiful Landscape">
+    <figcaption>A beautiful sunset over the mountains.</figcaption>
+</figure>
+
+
+9. <mark> :
+
+Definition:
+Highlights text for emphasis or relevance.
+
+<p>HTML is the <mark>foundation</mark> of web development.</p>
+
+
+10. <time> :
+
+Definition:
+
+Represents a specific time or date.
+
+<p>Published on <time datetime="2025-02-25">February 25, 2025</time></p>
+
+
+11. <summary> & <details> :
+
+Definition:
+Used to create interactive content that can be expanded or collapsed.
+
+
+<details>
+    <summary>Click to learn more</summary>
+    <p>This is additional hidden information.</p>
+</details>
+
+
+12. <address> :
+
+Definition:
+Defines contact information for the author or owner of the document.
+
+
+<address>
+    Contact us at: <a href="mailto:info@example.com">info@example.com</a>
+</address>
+
+
+Benefits of Using Semantic HTML5 Elements :
+
+Improved Accessibility: Helps screen readers interpret the page structure better.
+
+Better SEO: Search engines prioritize well-structured, semantic content.
+
+Easier Maintenance: Clearer structure makes updates easier for developers.
+
+Consistent Styling: Makes styling with CSS more efficient.
+
+
+New Form Tags :
+
+HTML5 introduced several new form elements and attributes to improve user experience and simplify form validation.
+
+1. <datalist> – Predefined Options for Input Fields :
+
+The <datalist> tag provides a list of predefined options for an <input> element, offering users suggestions as they type.
+
+
+<label for="browser">Choose your browser:</label>
+<input list="browsers" id="browser" name="browser">
+
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
+</datalist>
+
+
+2. <output> – Display the Result of a Calculation :
+
+The <output> tag is used to display the result of a calculation performed by JavaScript.
+
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="number" id="a" name="a" value="10"> +
+    <input type="number" id="b" name="b" value="20"> =
+    <output name="result" for="a b"></output>
+</form>
+
+
+3. <progress> – Progress Bar :
+
+The <progress> tag represents the completion progress of a task.
+
+<label for="file">File Upload Progress:</label>
+<progress id="file" value="70" max="100"></progress>
+
+
+4. <meter> – Display Measurement Within a Range :
+
+The <meter> tag represents a measurement within a known range, like battery level or disk usage.
+
+<label for="battery">Battery Level:</label>
+<meter id="battery" min="0" max="100" value="80" low="30" high="90"></meter>
+
+The meter bar visually represents the battery level.
+
+
+5. New Input Types in HTML5 :
+
+HTML5 introduced several new type attributes for the <input> element to improve form validation and usability.
+
+Input Type	Description	Example
+email	Validates an email format	<input type="email" required>
+url	Ensures a valid URL is entered	<input type="url" required>
+tel	Input field for telephone numbers	<input type="tel" pattern="[0-9]{10}">
+number	Allows numeric input	<input type="number" min="1" max="100">
+range	Creates a slider for selecting a numeric range	<input type="range" min="1" max="100"> **
+date	Select a date	<input type="date">
+time	Select a time	<input type="time">
+datetime-local	Select both date and time	<input type="datetime-local">
+month	Select a month and year	<input type="month">
+week	Select a week of the year	<input type="week">
+search	Creates a search input field	<input type="search">
+color	Opens a color picker	<input type="color">
+
+
+HTML5 Audio & Video: HTML5 introduced native support for audio and video playback without requiring external plugins like Flash. The <audio> and <video> elements allow embedding and controlling multimedia content in web pages.
+
+
+1. HTML5 <audio> Element :
+
+The <audio> tag is used to embed sound content, such as music or audio recordings, into a web page.
+
+Syntax:
+
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
+
+Attributes:
+
+controls – Displays play, pause, volume, and other UI controls.
+
+autoplay – Starts playing the audio automatically.
+
+loop – Repeats the audio file when finished.
+
+muted – Starts muted by default.
+
+preload – Defines how the browser should load the audio (auto, metadata, none).
+
+
+2. HTML5 <video> Element :
+
+The <video> tag is used to embed video content.
+
+Syntax:
+
+<video width="600" height="400" controls>
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.ogg" type="video/ogg">
+    Your browser does not support the video element.
+</video>
+
+
+Attributes:
+controls – Displays play, pause, volume, and other UI controls.
+autoplay – Starts playing the video automatically.
+loop – Repeats the video.
+muted – Mutes the video by default.
+poster – Displays an image before the video starts playing.
+preload – Defines how the browser should load the video (auto, metadata, none).
+
+
+3. Example: Audio and Video Player in HTML5:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Audio & Video Example</title>
+</head>
+<body>
+
+    <h2>Audio Example</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Video Example</h2>
+    <video width="600" height="400" controls poster="thumbnail.jpg">
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.ogg" type="video/ogg">
+        Your browser does not support the video element.
+    </video>
+
+</body>
+</html>
+
+
+4. Advanced Features with JavaScript:
+
+You can control audio and video using JavaScript.
+
+Example: Play/Pause Button for Video
+
+<video id="myVideo" width="600" controls>
+    <source src="video.mp4" type="video/mp4">
+</video>
+<br>
+<button onclick="playPause()">Play/Pause</button>
+
+<script>
+    function playPause() {
+        var video = document.getElementById("myVideo");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+</script>
+
+
+Building Web Pages with HTML5 :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Full Page Example</title>
+</head>
+<body>
+
+    <header>
+        <h1>My HTML5 Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#form">Contact</a></li>
+                <li><a href="#media">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About This Page</h2>
+        <p>This is an example of a fully functional HTML5 page.</p>
+    </section>
+
+    <section id="form">
+        <h2>Contact Us</h2>
+        <form action="submit.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <section id="media">
+        <h2>Media Section</h2>
+
+        <h3>Audio</h3>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+        </audio>
+
+        <h3>Video</h3>
+        <video controls width="500">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My HTML5 Website</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+CSS:
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #444;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #555;
+}
+
+/* Media Section Styling */
+audio, video {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+
+HTML Links:
+
+HTML links (or hyperlinks) allow users to navigate from one webpage to another.
+They are an essential part of the web, enabling the connection between different
+pages or resources. Links are created using the <a> (anchor) tag in HTML.
+
+1. Basic Syntax of an HTML Link
+
+The basic structure of an HTML link consists of an opening <a> tag, an attribute
+(usually href), link text, and a closing </a> tag.
+
+<a href="URL">Link Text</a>
+
+href attribute: The href attribute specifies the destination URL where the user will
+be directed when they click the link.
+
+Link Text: The text between the opening and closing <a> tags is clickable and
+displayed to the user.
+
+2. Types of Links
+
+There are different types of links you can create:
+
+Absolute URLs: Links that point to an external website.
+
+<a href="https://www.google.com">Google</a>
+
+Relative URLs: Links that point to a page within your own website or project
+directory.
+
+<a href="/about.html">About Us</a>
+
+Email Links: These links open the user’s default email client.
+
+<a href="mailto:support@example.com">Contact Us</a>
+
+Telephone Links: Links that allow users to initiate phone calls on mobile devices.
+
+<a href="tel:+1234567890">Call Us</a>
+
+3. Opening Links in a New Tab
+
+To open a link in a new tab, the target attribute is used with the value _blank.
+
+<a href="https://www.example.com" target="_blank">Open in New Tab</a>
+
+4. Linking to Specific Sections on a Page (Anchor Links)
+
+You can link to a specific section on the same page using the id attribute.
+
+First, assign an id to the section of the page you want to link to:
+
+<h2 id="section1">Section 1</h2>
+
+Then, create a link that points to this id:
+
+<a href="#section1">Go to Section 1</a>
+
+5. Styling Links with CSS
+
+HTML links have different states that can be styled using CSS:
+
+Normal: When the link hasn’t been clicked.
+
+Hover: When the mouse is over the link.
+
+Active: When the link is clicked.
+
+Visited: After the link has been clicked.
+
+a {
+
+color: blue; /* Normal state */
+
+text-decoration: none; /* Removes the underline */
+
+}
+
+a:hover {
+
+color: red; /* Changes color on hover */
+
+}
+
+a:active {
+
+color: green; /* Changes color when clicked */
+
+}
+
+a:visited {
+
+color: purple; /* Changes color after visiting the link */
+
+}
+
+6. Linking Images
+
+You can use images as clickable links by placing the <img> tag inside the <a> tag.
+
+<a href="https://www.example.com">
+
+<img src="image.jpg" alt="Example Image">
+
+</a>
+
+In this case, clicking the image will navigate the user to https://www.example.com.
+
+7. Linking to Downloads
+
+You can also link to downloadable files such as PDFs, documents, or images. By
+using the download attribute, you prompt the browser to download the file.
+
+<a href="file.pdf" download>Download PDF</a>
+
+
+Examples of Tab Index:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabindex Example</title>
+</head>
+<body>
+    <h1>Tabindex Example</h1>
+
+    <a href="#" tabindex="3">Link 3</a>
+    <a href="#" tabindex="1">Link 1</a>
+    <a href="#" tabindex="2">Link 2</a>
+    <input type="text" tabindex="4" placeholder="Input Field">
+</body>
+</html>
+
+
+Example 1: Default Tab Order (Without tabindex)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Tab Order</title>
+</head>
+<body>
+  <h2>Default Tab Order Example</h2>
+  <input type="text" placeholder="First Name">
+  <input type="text" placeholder="Last Name">
+  <button>Submit</button>
+</body>
+</html>
+
+
+Explanation: Without tabindex, elements like inputs and buttons will follow the natural tab order, which is based on their position in the HTML source code.
+
+
+Example 2: Custom Tab Order Using tabindex
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Tab Order</title>
+</head>
+<body>
+  <h2>Custom Tab Order Example</h2>
+  <input type="text" placeholder="First Name" tabindex="2">
+  <input type="text" placeholder="Last Name" tabindex="1">
+  <button tabindex="3">Submit</button>
+</body>
+</html>
+
+Explanation: Here, we’ve changed the tab order by assigning tabindex values. The "Last Name" field gets focus first, followed by the "First Name" field, and then the "Submit" button.
+
+Example 3: Removing an Element from Tab Order
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Removing from Tab Order</title>
+</head>
+<body>
+  <h2>Remove an Element from Tab Order Example</h2>
+  <input type="text" placeholder="First Name">
+  <input type="text" placeholder="Last Name" tabindex="-1">
+  <button>Submit</button>
+</body>
+</html>
+
+Explanation: The "Last Name" field has tabindex="-1", which removes it from the tab order. The user will skip this field when navigating with the "Tab" key.
+
+
+Example 4: Adding Non-Focusable Elements to the Tab Order
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-focusable Elements in Tab Order</title>
+</head>
+<body>
+  <h2>Adding Non-focusable Elements to Tab Order Example</h2>
+  <p tabindex="1">This paragraph is focusable using the tab key.</p>
+  <div tabindex="2">This div is also focusable using the tab key.</div>
+  <a href="#" tabindex="3">This link is focusable and clickable.</a>
+</body>
+</html>
+
+
+Example 5: Using tabindex="0" for Dynamic Focus Order
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabindex 0</title>
+</head>
+<body>
+  <h2>Tabindex "0" Example</h2>
+  <p tabindex="0">This element follows the natural flow of the document for focus.</p>
+  <input type="text" placeholder="Email">
+  <button>Submit</button>
+</body>
+</html>
+
+
+Explanation: Elements with tabindex="0" are focusable and follow the natural order of the document, meaning they are inserted into the tab order where they appear in the source code.
+
+Examples of Access Key:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Key Example</title>
+</head>
+<body>
+    <h1>HTML Access Key Example</h1>
+    <p>Use the following access keys to navigate:</p>
+    <ul>
+        <li><a href="#home" accesskey="h">Home (Press Alt + H)</a></li>
+        <li><a href="#about" accesskey="a">About (Press Alt + A)</a></li>
+        <li><a href="#contact" accesskey="c">Contact (Press Alt + C)</a></li>
+    </ul>
+
+    <section id="home">
+        <h2>Home Section</h2>
+        <p>Welcome to the home section.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Section</h2>
+        <p>This section contains information about us.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Section</h2>
+        <p>This section contains contact information.</p>
+    </section>
+</body>
+</html>
+

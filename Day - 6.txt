@@ -1,0 +1,1399 @@
+What is JavaScript?
+
+JavaScript is a high-level, interpreted programming language that is primarily used to create dynamic and interactive web pages. It is a core technology of the web, along with HTML and CSS. JavaScript is widely used for client-side development, but it can also be used on the server-side with environments like Node.js.
+
+Key Features of JavaScript:
+
+Lightweight & Interpreted – It doesn’t require compilation; browsers interpret JavaScript code directly.
+
+Cross-Platform – Runs on multiple platforms, including web browsers, mobile devices, and servers.
+
+Event-Driven & Asynchronous – Supports event-driven programming and asynchronous operations using callbacks, promises, and async/await.
+
+Object-Oriented & Prototype-Based – Uses prototypes instead of traditional class-based inheritance.
+
+Dynamic Typing – Variables are dynamically typed, meaning their type is determined at runtime.
+
+Functional Programming Features – Supports first-class functions, closures, and higher-order functions.
+
+Uses of JavaScript:
+
+Client-Side Web Development – Used for creating dynamic, interactive websites.
+
+Server-Side Development – Used with Node.js for building backend applications.
+
+Game Development – Used in frameworks like Phaser.js for creating browser-based games.
+
+Mobile App Development – Used in frameworks like React Native for cross-platform mobile apps.
+
+Desktop Applications – Used in Electron.js for building desktop apps like VS Code.
+
+
+History and evolution of JavaScript :
+
+
+JavaScript (JS) is one of the most widely used programming languages today, primarily for web development. It has evolved significantly since its creation in the mid-1990s. Here’s a breakdown of its history and evolution:
+
+1. Birth of JavaScript (1995)
+
+Inventor: Brendan Eich, a developer at Netscape.
+
+Initial Name: Mocha → Later renamed to LiveScript → Finally named JavaScript (to ride the popularity of Java).
+
+Purpose: JavaScript was designed to make web pages interactive and dynamic.
+
+2. Standardization and Early Growth (1996-1999)
+
+In 1996, Netscape submitted JavaScript to ECMA (European Computer Manufacturers Association) for standardization.
+
+In 1997, ECMAScript 1 (ES1) was released as the first official JavaScript standard.
+
+Microsoft created JScript, a JavaScript variant, to compete with Netscape.
+
+The browser wars (Netscape vs. Internet Explorer) led to fragmentation in JavaScript implementations.
+
+3. Evolution of ECMAScript (2000-2010)
+
+ECMAScript 3 (ES3) (1999): Introduced important features like regular expressions, exception handling, and try-catch statements.
+
+ECMAScript 4 (ES4) (Canceled): Was too ambitious and led to disagreements, so it was abandoned.
+
+ECMAScript 5 (ES5) (2009): Brought major improvements like:
+
+Strict mode ("use strict";)
+
+JSON support (JSON.parse() and JSON.stringify())
+
+Array methods (map(), filter(), forEach(), etc.)
+
+4. The Modern JavaScript Era (2015-Present)
+
+ECMAScript 6 (ES6/ES2015) (2015): A game-changer with features like:
+
+let and const (block-scoped variables)
+
+Arrow functions (=>)
+
+Classes (class keyword)
+
+Template literals (`Hello ${name}`) 
+
+Promises (Promise.then(), async/await)
+
+Modules (import and export)
+
+ECMAScript 7+ (ES2016-ES2023): Continuous yearly updates introduced:
+
+ES7 (2016): Array.prototype.includes(), Exponentiation operator (**)
+
+ES8 (2017): async/await, Object.entries()
+ES9 (2018): Rest/Spread properties
+ES10 (2019): Optional chaining (?.)
+ES11 (2020): BigInt, Promise.allSettled()
+ES12 (2021): Logical assignment operators (&&=, ||=, ??=)
+ES13 (2022): Top-level await
+ES14 (2023): Improvements to array methods
+
+5. JavaScript Today and Future
+
+Node.js (2009): JavaScript became a server-side language.
+Frameworks & Libraries: React, Angular, Vue, Express, etc.
+Web APIs: WebAssembly, WebSockets, Fetch API, etc.
+AI & Machine Learning: TensorFlow.js enables ML in JavaScript.
+
+
+JavaScript Execution in Browsers & Node.js :
+
+JavaScript can run in two main environments:
+
+Browsers (Client-side JavaScript)
+Node.js (Server-side JavaScript)
+Each environment has its own execution model, APIs, and use cases. Let's explore both with examples.
+
+1. JavaScript Execution in Browsers (Client-side JavaScript)
+How Browsers Execute JavaScript
+Browsers have built-in JavaScript Engines (e.g., Chrome uses V8, Firefox uses SpiderMonkey).
+JavaScript runs inside an HTML document using the <script> tag.
+The browser provides DOM (Document Object Model), BOM (Browser Object Model), and Web APIs to interact with webpages.
+Example: Running JavaScript in a Browser
+
+Create an HTML file (index.html) and include JavaScript inside the <script> tag.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Execution in Browser</title>
+</head>
+<body>
+    <h1>JavaScript in Browser</h1>
+    <button onclick="showMessage()">Click Me</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello from JavaScript running in the browser!");
+            console.log("This is logged in the browser console.");
+        }
+    </script>
+</body>
+</html>
+
+Key Points:
+
+When the button is clicked, showMessage() is executed.
+alert() displays a message, and console.log() logs output to the browser console.
+
+This JavaScript interacts with the DOM (Document Object Model).
+
+2. JavaScript Execution in Node.js (Server-side JavaScript) :
+
+How Node.js Executes JavaScript :
+
+Node.js is a runtime built on Chrome's V8 engine that allows JavaScript to run outside the browser.
+
+It provides file system access, networking, and OS-level interactions (which are not available in the browser).
+Uses CommonJS modules (require()) and has built-in APIs for working with files, HTTP, and more.
+
+Example: Running JavaScript in Node.js
+
+Create a file (app.js) and run it using Node.js.
+
+
+// app.js
+console.log("JavaScript running in Node.js");
+
+const fs = require('fs');
+
+// Writing to a file
+fs.writeFileSync('message.txt', 'Hello from Node.js');
+
+console.log("File has been written.");
+
+How to Run the Script in Node.js
+Install Node.js
+
+Open a terminal or command prompt.
+
+Run the script:
+
+node app.js
+
+Key Points:
+
+console.log() prints output to the terminal (not the browser console).
+require('fs') loads the File System module, which allows writing a file (message.txt).
+Unlike the browser, Node.js can interact with the filesystem and operating system.
+
+Comparison: JavaScript in Browser vs. Node.js
+
+Feature	Browser JavaScript	Node.js JavaScript
+Execution   	Runs inside a web browser	Runs in a standalone environment (server, terminal)
+DOM Access	  Yes	  No
+File System Access	  No	  Yes
+Network Requests	AJAX / Fetch API	http module
+Modules	 ES6 Modules (import)	CommonJS (require())
+Use Cases	UI interactions, animations	Backend services, APIs, file handling
+
+
+JavaScript ES6 and beyond (ES7, ES8, ESNext) :
+
+1. ES6 (ECMAScript 2015) :
+
+ES6 introduced major improvements in JavaScript syntax and functionality.
+
+1.1. Let & Const :
+
+Before ES6, var was used for variable declaration. ES6 introduced let and const.
+
+let name = "John";  // Block-scoped
+const PI = 3.14;    // Constant value, cannot be reassigned
+
+1.2. Arrow Functions :
+
+Arrow functions provide a shorter syntax for function expressions.
+
+const add = (a, b) => a + b;
+
+console.log(add(5, 3)); // Output: 8
+
+1.3. Template Literals
+
+Allows embedding variables and expressions in strings using backticks (` `).
+
+const name = "Alice";
+console.log(`Hello, ${name}!`); // Output: Hello, Alice!
+
+1.4. Destructuring
+
+Extract values from arrays or objects.
+
+const person = { name: "Bob", age: 25 };
+const { name, age } = person;
+console.log(name, age); // Output: Bob 25
+
+1.5. Spread and Rest Operators
+
+Used for copying or merging arrays and objects.
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];  // Spread operator
+console.log(arr2); // [1, 2, 3, 4, 5]
+
+function sum(...numbers) {  // Rest operator
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // Output: 10
+
+1.6. Default Parameters :
+
+Allows functions to have default values.
+
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}!`);
+}
+greet();  // Output: Hello, Guest!
+
+1.7. Classes & Inheritance
+
+Introduces OOP-style class syntax.
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks`);
+  }
+}
+
+const dog = new Dog("Rex");
+dog.speak();  // Output: Rex barks
+
+1.8. Promises
+
+Used for handling asynchronous operations.
+
+const fetchData = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Data received"), 2000);
+});
+
+fetchData.then(data => console.log(data)); // Output: Data received (after 2s)
+
+2. ES7 (ECMAScript 2016)
+
+ES7 introduced two key features:
+
+2.1. Array.prototype.includes()
+
+Checks if an array contains a specific value.
+
+const numbers = [1, 2, 3, 4];
+console.log(numbers.includes(3)); // Output: true
+
+2.2. Exponentiation Operator
+
+Simplifies exponentiation calculations.
+
+console.log(2 ** 3); // Output: 8
+
+3. ES8 (ECMAScript 2017)
+
+ES8 introduced several powerful features.
+
+3.1. Async/Await
+
+Simplifies working with asynchronous code.
+
+const fetchData = async () => {
+  return "Hello, World!";
+};
+
+fetchData().then(console.log); // Output: Hello, World!
+
+3.2. Object.entries() & Object.values()
+
+Converts objects into arrays.
+
+const user = { name: "Alice", age: 30 };
+
+console.log(Object.entries(user)); // Output: [["name", "Alice"], ["age", 30]]
+console.log(Object.values(user)); // Output: ["Alice", 30]
+
+3.3. String Padding (padStart & padEnd)
+
+Adds padding to strings.
+
+console.log("5".padStart(3, "0")); // Output: 005
+console.log("5".padEnd(3, "0"));   // Output: 500
+
+4. ES9 (ECMAScript 2018)
+
+ES9 introduced improvements for objects and asynchronous code.
+
+4.1. Rest/Spread for Objects
+
+const user = { name: "John", age: 25 };
+const userCopy = { ...user, location: "NY" };
+
+console.log(userCopy); // Output: { name: "John", age: 25, location: "NY" }
+
+4.2. Promise.prototype.finally()
+
+Runs a function after a Promise is settled.
+
+fetchData
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
+  .finally(() => console.log("Operation Complete"));
+
+5. ES10 (ECMAScript 2019)
+
+ES10 included new methods and optimizations.
+
+5.1. Array.prototype.flat()
+
+Flattens nested arrays.
+
+const arr = [1, [2, [3, [4]]]];
+console.log(arr.flat(2)); // Output: [1, 2, 3, [4]]
+
+
+6. ES11 (ECMAScript 2020)
+
+ES11 introduced:
+
+6.1. Nullish Coalescing Operator (??)
+
+let value = null ?? "Default";
+console.log(value); // Output: Default
+
+6.2. Optional Chaining (?.)
+
+Avoids errors when accessing properties on undefined or null.
+
+const user = { profile: { name: "Alice" } };
+console.log(user.profile?.name);  // Output: Alice
+console.log(user.address?.city);  // Output: undefined
+
+
+JavaScript Basics & Fundamentals :
+
+Variables (var, let, const) :
+
+In JavaScript, variables are used to store data. There are three ways to declare variables:
+
+var (old way)
+let (modern way)
+const (constant value, cannot be reassigned)
+
+Let's explore them one by one with examples.
+
+1. var (Function-scoped) :
+
+Introduced in ES5 (old JavaScript)
+Function-scoped, meaning it is only accessible inside the function where it is declared.
+Can be redeclared and updated.
+Gets hoisted but with undefined value.
+
+Example of var :
+
+function exampleVar() {
+    var x = 10;
+    console.log(x); // Output: 10
+
+    if (true) {
+        var x = 20;  // Same variable, gets updated
+        console.log(x); // Output: 20
+    }
+
+    console.log(x); // Output: 20 (No block scope)
+}
+
+exampleVar();
+
+Issues with var :
+
+var does not respect block scope (if, for, etc.).
+It allows redeclaration in the same scope, which can lead to errors.
+
+2. let (Block-scoped)
+
+Introduced in ES6 (modern JavaScript)
+Block-scoped, meaning it is only accessible inside the {} block where it is declared.
+Can be updated, but cannot be redeclared in the same scope.
+Gets hoisted but remains uninitialized until assigned.
+
+Example of let
+
+function exampleLet() {
+    let y = 10;
+    console.log(y); // Output: 10
+
+    if (true) {
+        let y = 20;  // This is a different `y`, limited to this block
+        console.log(y); // Output: 20
+    }
+
+    console.log(y); // Output: 10 (Different `y`, block-scoped)
+}
+
+exampleLet();
+
+Advantages of let
+
+Prevents accidental variable redeclaration.
+Helps avoid bugs due to block scoping.
+
+3. const (Constant variable)
+
+Introduced in ES6
+Block-scoped, like let.
+Cannot be updated or redeclared.
+Must be initialized at the time of declaration.
+Gets hoisted, but remains uninitialized like let.
+
+Example of const
+
+function exampleConst() {
+    const z = 30;
+    console.log(z); // Output: 30
+
+    // z = 40; // ❌ Error! Cannot reassign a `const` variable.
+
+    if (true) {
+        const z = 50; // ✅ Allowed because it's a new `z` in a different block
+        console.log(z); // Output: 50
+    }
+
+    console.log(z); // Output: 30 (Original `z` remains unchanged)
+}
+
+exampleConst();
+
+Special Notes on const :
+
+You cannot reassign a const variable.
+If the variable is an object or array, its properties/elements can still be modified.
+
+Example: const with objects
+
+const person = { name: "John", age: 25 };
+person.age = 30; // ✅ Allowed
+console.log(person); // Output: { name: 'John', age: 30 }
+
+// person = {}; // ❌ Error! Cannot reassign the whole object.
+
+Key Differences Between var, let, and const
+
+Feature	var	let	const
+Scope	Function-scoped	Block-scoped	Block-scoped
+Redeclaration	✅ Allowed	❌ Not allowed	❌ Not allowed
+Reassignment	✅ Allowed	✅ Allowed	❌ Not allowed
+Hoisting	✅ Hoisted (initialized as undefined)	✅ Hoisted (but not initialized)	✅ Hoisted (but not initialized)
+Best Use Case	Avoid using var	Use when the value needs to change	Use for constants
+
+
+Data Types and Type Coercion :
+
+JavaScript is a dynamically typed language, meaning variables do not have a fixed data type. The type of a variable is determined at runtime.
+
+1. JavaScript Data Types :
+
+JavaScript has two main categories of data types:
+
+A. Primitive Data Types (Immutable):
+These are the basic types and are stored directly in memory.
+
+String – Represents a sequence of characters.
+
+let name = "John Doe";
+console.log(typeof name); // "string"
+
+Number – Represents both integers and floating-point numbers.
+
+let age = 25;
+let pi = 3.14;
+console.log(typeof age); // "number"
+console.log(typeof pi); // "number"
+Boolean – Represents true or false.
+
+let isLoggedIn = true;
+console.log(typeof isLoggedIn); // "boolean"
+Undefined – A variable that is declared but not assigned a value.
+
+let x;
+console.log(typeof x); // "undefined"
+Null – Represents an intentional absence of a value.
+
+let y = null;
+console.log(typeof y); // "object" (this is a known JavaScript bug)
+BigInt – Used for very large numbers beyond Number.MAX_SAFE_INTEGER.
+
+let bigNumber = 9007199254740991n;
+console.log(typeof bigNumber); // "bigint"
+Symbol – A unique and immutable identifier.
+
+let uniqueKey = Symbol("id");
+console.log(typeof uniqueKey); // "symbol"
+
+B. Non-Primitive (Reference) Data Types
+
+These are complex data types that store references to objects.
+
+Object – Collection of key-value pairs.
+
+let person = { name: "John", age: 30 };
+console.log(typeof person); // "object"
+Array – Special type of object used to store multiple values.
+
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(typeof fruits); // "object"
+Function – A callable object.
+
+function greet() {
+    return "Hello!";
+}
+console.log(typeof greet); // "function"
+
+2. Type Coercion (Implicit & Explicit Conversion)
+
+A. Implicit Type Coercion (Automatic)
+
+JavaScript automatically converts one type to another when needed.
+
+1. String Conversion
+
+When adding a number to a string, JavaScript converts the number to a string.
+
+console.log("5" + 3);  // "53" (number 3 is converted to string "3")
+console.log("5" + true);  // "5true" (boolean is converted to string)
+
+2. Number Conversion
+
+When using arithmetic operators (except +), JavaScript converts strings to numbers.
+console.log("10" - 5); // 5 (string "10" is converted to number 10)
+console.log("5" * "2"); // 10 (both strings are converted to numbers)
+console.log("100" / "10"); // 10
+console.log("5" - true); // 4 (true is converted to 1, so "5" - 1 = 4)
+
+3. Boolean Conversion
+
+When using logical operations, values are converted to true or false.
+
+console.log(Boolean("Hello")); // true (non-empty string is truthy)
+console.log(Boolean("")); // false (empty string is falsy)
+console.log(Boolean(0)); // false (0 is falsy)
+console.log(Boolean(1)); // true (1 is truthy)
+console.log(Boolean([])); // true (empty array is truthy)
+console.log(Boolean(null)); // false (null is falsy)
+
+B. Explicit Type Conversion (Manual)
+
+We can manually convert values using String(), Number(), or Boolean() functions.
+
+1. Convert to String
+
+let num = 100;
+console.log(String(num)); // "100"
+console.log(String(true)); // "true"
+console.log((123).toString()); // "123"
+
+2. Convert to Number
+
+console.log(Number("123")); // 123
+console.log(Number("123abc")); // NaN (Not a Number)
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+console.log(parseInt("45.67")); // 45 (integer part)
+console.log(parseFloat("45.67")); // 45.67 (float part)
+
+3. Convert to Boolean
+
+console.log(Boolean(1)); // true
+console.log(Boolean(0)); // false
+console.log(Boolean("Hello")); // true
+console.log(Boolean("")); // false
+console.log(Boolean([])); // true
+console.log(Boolean(null)); // false
+
+3. Special Cases in Type Coercion
+
+console.log(1 + "2" + "3"); // "123" (1 is converted to string, then concatenated)
+console.log("2" - 1); // 1 (string "2" is converted to number)
+console.log(5 + null); // 5 (null is treated as 0)
+console.log("5" - undefined); // NaN (undefined cannot be converted)
+console.log(0 == false); // true (Boolean conversion: false -> 0)
+console.log(null == undefined); // true (both are considered equal)
+console.log([] + {}); // "[object Object]" (empty array is converted to "")
+console.log({} + []); // "[object Object]" (empty object is converted differently)
+
+
+Operators (Arithmetic, Comparison, Logical, Assignment, etc.) :
+
+
+1. Arithmetic Operators
+These operators are used to perform mathematical operations like addition, subtraction, multiplication, etc.
+
+Operator	Description	Example (let a = 10, b = 5)
++	Addition	a + b → 10 + 5 = 15
+-	Subtraction	a - b → 10 - 5 = 5
+*	Multiplication	a * b → 10 * 5 = 50
+/	Division	a / b → 10 / 5 = 2
+%	Modulus (Remainder)	a % b → 10 % 5 = 0
+**	Exponentiation	a ** b → 10 ** 5 = 100000
+Example
+
+let a = 10;
+let b = 5;
+
+console.log(a + b); // Output: 15
+console.log(a - b); // Output: 5
+console.log(a * b); // Output: 50
+console.log(a / b); // Output: 2
+console.log(a % b); // Output: 0
+console.log(a ** b); // Output: 100000
+
+2. Comparison Operators
+
+These operators compare two values and return a Boolean (true or false).
+
+Operator	Description	Example (a = 10, b = 5)
+==	Equal to (checks value only)	a == b → false
+===	Strictly equal (checks type & value)	a === "10" → false
+!=	Not equal	a != b → true
+!==	Strictly not equal	a !== "10" → true
+>	Greater than	a > b → true
+<	Less than	a < b → false
+>=	Greater than or equal to	a >= b → true
+<=	Less than or equal to	a <= b → false
+Example
+
+let x = 10;
+let y = 5;
+console.log(x > y);  // true
+console.log(x < y);  // false
+console.log(x == "10"); // true (only checks value)
+console.log(x === "10"); // false (checks type & value)
+console.log(x !== 10); // false
+
+3. Logical Operators
+
+Logical operators are used to perform logical operations on Boolean values.
+
+Operator	Description	Example (a = true, b = false)
+&&	Logical AND (both must be true)	a && b → false
+`		`
+!	Logical NOT (reverses Boolean)	!a → false
+
+Example
+
+let p = true;
+let q = false;
+console.log(p && q); // false (both must be true)
+console.log(p || q); // true (at least one must be true)
+console.log(!p);     // false (negation)
+console.log(!q);     // true
+
+4. Assignment Operators
+
+Assignment operators are used to assign values to variables.
+
+Operator	Description	Example (let x = 10)
+=	Assign	x = 10
++=	Add and assign	x += 5 → x = 15
+-=	Subtract and assign	x -= 3 → x = 7
+*=	Multiply and assign	x *= 2 → x = 20
+/=	Divide and assign	x /= 2 → x = 5
+%=	Modulus and assign	x %= 3 → x = 1
+**=	Exponentiation and assign	x **= 2 → x = 100
+
+Example
+
+let x = 10;
+x += 5; // x = x + 5
+console.log(x); // Output: 15
+
+x *= 2; // x = x * 2
+console.log(x); // Output: 30
+
+5. Bitwise Operators
+
+Bitwise operators work on binary numbers.
+
+Operator	Description	Example (5 = 101, 1 = 001)
+&	AND	5 & 1 → 1 (001)
+`	`	OR
+^	XOR	5 ^ 1 → 4 (100)
+~	NOT (Bitwise NOT)	~5 → -6
+<<	Left Shift	5 << 1 → 10 (1010)
+>>	Right Shift	5 >> 1 → 2 (10)
+Example
+
+let a = 5; // Binary: 101
+let b = 1; // Binary: 001
+
+console.log(a & b); // Output: 1 (Binary: 001)
+console.log(a | b); // Output: 5 (Binary: 101)
+console.log(a ^ b); // Output: 4 (Binary: 100)
+console.log(~a);    // Output: -6 (Bitwise NOT)
+console.log(a << 1); // Output: 10 (Binary: 1010)
+console.log(a >> 1); // Output: 2 (Binary: 10)
+
+6. Ternary Operator (?:)
+
+The ternary operator is a shorthand for if-else.
+
+Example
+
+let age = 18;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Output: "Adult"
+
+7. Type Operators
+
+These operators are used to check the type of a variable.
+
+Operator	Description	Example (let x = "Hello";)
+typeof	Returns the type of a variable	typeof x → "string"
+instanceof	Checks if an object is an instance of a class	x instanceof String → false
+
+Example
+
+let num = 42;
+console.log(typeof num); // Output: "number"
+
+let arr = [1, 2, 3];
+console.log(arr instanceof Array); // Output: true
+
+
+Control Flow (if-else, switch-case) :
+
+
+Control flow in JavaScript determines how code is executed based on conditions. The two primary control flow statements are:
+
+if-else Statement
+switch-case Statement
+
+1. if-else Statement
+
+The if-else statement executes different blocks of code based on a given condition.
+
+Syntax:
+if (condition) {
+    // Code to execute if condition is true
+} else if (anotherCondition) {
+    // Code to execute if anotherCondition is true
+} else {
+    // Code to execute if none of the conditions are true
+}
+
+Example 1: Check if a number is positive, negative, or zero
+
+let num = 5;
+
+if (num > 0) {
+    console.log("The number is positive.");
+} else if (num < 0) {
+    console.log("The number is negative.");
+} else {
+    console.log("The number is zero.");
+}
+
+Example 2: Checking if a person is eligible to vote
+
+let age = 20;
+
+if (age >= 18) {
+    console.log("You are eligible to vote.");
+} else {
+    console.log("You are not eligible to vote.");
+}
+
+2. switch-case Statement
+
+The switch-case statement is used when multiple conditions are checked against a single value.
+
+Syntax:
+switch(expression) {
+    case value1:
+        // Code to execute if expression === value1
+        break;
+    case value2:
+        // Code to execute if expression === value2
+        break;
+    default:
+        // Code to execute if no cases match
+}
+
+Example 1: Check the day of the week
+
+let day = "Monday";
+
+switch (day) {
+    case "Monday":
+        console.log("Start of the workweek.");
+        break;
+    case "Friday":
+        console.log("Almost weekend!");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("It's the weekend!");
+        break;
+    default:
+        console.log("It's a regular weekday.");
+}
+
+Example 2: Checking grade based on marks
+
+let grade = "B";
+
+switch (grade) {
+    case "A":
+        console.log("Excellent!");
+        break;
+    case "B":
+        console.log("Good job!");
+        break;
+    case "C":
+        console.log("You can do better.");
+        break;
+    case "D":
+        console.log("Work harder.");
+        break;
+    default:
+        console.log("Invalid grade.");
+}
+
+Differences Between if-else and switch-case
+Feature	if-else	switch-case
+Used for	Complex conditions with multiple comparisons	Comparing a single expression against multiple fixed values
+Performance	Slower if many conditions are checked	Faster for multiple fixed values
+Readability	Harder to read for many conditions	More readable for multiple fixed values
+When to Use What?
+Use if-else when checking multiple conditions that involve comparison operators (>, <, >=, <=).
+Use switch-case when checking a single value against multiple possible fixed values.
+
+
+Loops (for, while, do-while, forEach) :
+
+Loops in JavaScript allow us to execute a block of code multiple times. JavaScript provides several types of loops:
+
+for Loop
+while Loop
+do-while Loop
+forEach Loop (for arrays)
+
+Let's explore each of these with examples.
+
+1. for Loop
+
+The for loop is used when the number of iterations is known beforehand.
+
+Syntax:
+
+for (initialization; condition; increment/decrement) {
+    // Code to execute
+}
+
+Example: Print numbers from 1 to 5
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+Explanation:
+
+let i = 1; → Initializes i to 1.
+i <= 5; → Condition to continue looping.
+i++ → Increments i after each iteration.
+
+Output:
+
+1
+2
+3
+4
+5
+
+2. while Loop
+
+The while loop is used when the number of iterations is unknown and depends on a condition.
+
+Syntax:
+while (condition) {
+    // Code to execute
+}
+Example: Print numbers from 1 to 5
+
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;  // Increment inside loop
+}
+Output:
+
+1
+2
+3
+4
+5
+
+3. do-while Loop
+
+The do-while loop executes the block of code at least once before checking the condition.
+
+Syntax:
+
+do {
+    // Code to execute
+} while (condition);
+
+Example: Print numbers from 1 to 5
+
+let i = 1;
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);
+Output:
+
+1
+2
+3
+4
+5
+
+Key Difference:
+
+The do-while loop runs at least once, even if the condition is false initially.
+
+4. forEach Loop (For Arrays)
+
+The forEach() method is specifically used for iterating over arrays.
+
+Syntax:
+
+array.forEach(function(element, index, array) {
+    // Code to execute
+});
+
+Example: Print array elements
+
+let numbers = [10, 20, 30, 40, 50];
+
+numbers.forEach(function(num) {
+    console.log(num);
+});
+
+Output:
+
+10
+20
+30
+40
+50
+
+Example: Print elements with index
+
+let fruits = ["Apple", "Banana", "Cherry"];
+
+fruits.forEach((fruit, index) => {
+    console.log(`Index ${index}: ${fruit}`);
+});
+
+Output:
+
+Index 0: Apple
+Index 1: Banana
+Index 2: Cherry
+
+Summary Table
+
+Loop Type	When to Use	Runs at Least Once?
+for	When the number of iterations is known	No
+while	When the number of iterations is unknown	No
+do-while	When the loop must execute at least once	Yes
+forEach	For iterating over arrays	No
+
+
+Functions (Function Declaration, Function Expression, Arrow Functions) :
+
+
+Functions in JavaScript allow you to encapsulate a block of reusable code. JavaScript provides different ways to define functions:
+
+Function Declaration
+Function Expression
+Arrow Functions
+
+1. Function Declaration
+
+A function declaration is a traditional way of defining a function using the function keyword. It is hoisted, meaning it can be used before it is defined.
+
+Syntax:
+
+function functionName(parameters) {
+    // Function body
+    return result; // optional
+}
+
+Example:
+
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet("Alice")); // Output: Hello, Alice!
+Key Points:
+✅ Hoisted: You can call the function before it is defined.
+✅ Supports this keyword (unlike arrow functions).
+✅ Can be called multiple times.
+
+2. Function Expression
+
+A function expression assigns a function to a variable. Unlike function declarations, function expressions are not hoisted.
+
+Syntax:
+
+const functionName = function(parameters) {
+    // Function body
+    return result; // optional
+};
+
+Example:
+
+const add = function(a, b) {
+    return a + b;
+};
+
+console.log(add(5, 3)); // Output: 8
+
+Key Points:
+✅ Not hoisted: You must define it before calling.
+✅ Useful when passing functions as arguments.
+✅ Can be anonymous (without a name).
+
+3. Arrow Functions
+
+Arrow functions provide a shorter syntax for writing functions. They are often used in callbacks and functional programming.
+
+Syntax:
+
+const functionName = (parameters) => {
+    // Function body
+    return result; // optional
+};
+
+Example:
+
+const multiply = (a, b) => a * b;
+
+console.log(multiply(4, 2)); // Output: 8
+
+Example with Single Parameter (No Parentheses Needed)
+
+const square = x => x * x;
+
+console.log(square(5)); // Output: 25
+
+Example with No Parameters (Empty Parentheses Required)
+
+const sayHello = () => "Hello, World!";
+
+console.log(sayHello()); // Output: Hello, World!
+
+Key Points:
+✅ Shorter syntax than traditional functions.
+✅ Implicit return if there's only one expression (no {} needed).
+✅ Does not bind this, making it useful in some cases but not for object methods.
+
+Comparison Table
+Feature	Function Declaration	Function Expression	Arrow Function
+Hoisting	✅ Yes	❌ No	❌ No
+Anonymous	❌ No (needs a name)	✅ Yes	✅ Yes
+this Binding	✅ Uses function scope	✅ Uses function scope	❌ Uses lexical scope
+Short Syntax	❌ No	❌ No	✅ Yes
+Best Use Case	General purpose	Assigning to variables	Short functions, callbacks
+
+Final Example Using All Three Types
+
+// Function Declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function Expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow Function
+const multiply = (a, b) => a * b;
+
+console.log(greet("Alice"));  // Output: Hello, Alice!
+console.log(add(4, 3));       // Output: 7
+console.log(multiply(5, 2));  // Output: 10
+
+When to Use Which?
+
+Use function declarations when defining reusable functions globally.
+Use function expressions for assigning functions to variables, passing as arguments.
+Use arrow functions for short, inline functions (especially in callbacks or array methods like .map() and .filter()).
+
+
+Advanced JavaScript Concepts :
+
+Scope (Global, Local, Block Scope) :
+
+Scope in JavaScript determines the accessibility (visibility) of variables. There are three types of scope in JavaScript:
+
+Global Scope
+Local Scope (Function Scope)
+Block Scope
+
+1. Global Scope
+
+A variable declared outside any function or block has global scope. It is accessible from anywhere in the program.
+
+Example: Global Scope
+
+let globalVar = "I am Global"; // Global variable
+
+function showGlobal() {
+    console.log(globalVar); // Accessible inside the function
+}
+
+showGlobal();
+console.log(globalVar); // Accessible outside the function
+
+Output:
+
+I am Global
+I am Global
+✅ The globalVar is accessible both inside and outside the function.
+
+2. Local Scope (Function Scope)
+
+A variable declared inside a function is local to that function and cannot be accessed outside of it.
+
+Example: Local Scope
+
+function localExample() {
+    let localVar = "I am Local"; // Local variable
+    console.log(localVar); // Accessible inside the function
+}
+
+localExample();
+console.log(localVar); // ❌ Error: localVar is not defined
+
+Output:
+
+I am Local
+
+ReferenceError: localVar is not defined
+❌ localVar is not accessible outside the function because it has function scope.
+
+3. Block Scope (let and const)
+
+Variables declared with let and const inside {} (block) have block scope, meaning they are accessible only within that block.
+
+Example: Block Scope
+
+{
+    let blockVar = "I am Block Scoped"; 
+    console.log(blockVar); // ✅ Accessible inside the block
+}
+
+console.log(blockVar); // ❌ Error: blockVar is not defined
+Output:
+
+I am Block Scoped
+ReferenceError: blockVar is not defined
+✅ blockVar is accessible only inside the {} block.
+
+🚀 Understanding var vs let in Scope
+var does NOT have block scope (it is function-scoped).
+let and const DO have block scope.
+
+Example: var vs let in Block Scope
+
+if (true) {
+    var testVar = "Using var";  
+    let testLet = "Using let";  
+}
+
+console.log(testVar); // ✅ Accessible (var is function-scoped)
+console.log(testLet); // ❌ Error: testLet is not defined
+
+Output:
+
+Using var
+
+ReferenceError: testLet is not defined
+✅ var leaks out of the block, while let remains block-scoped.
+
+Summary
+Scope	Declared With	Accessible Where?
+Global	var, let, const	Everywhere
+Local (Function Scope)	var, let, const	Inside the function only
+Block	let, const	Inside the block {} only
+
+
+Hoisting and Temporal Dead Zone (TDZ) :
+
+1. Hoisting in JavaScript
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compile phase before the code executes.
+
+Key Points of Hoisting:
+
+Function Declarations are hoisted with their definitions.
+var Declarations are hoisted, but only the declaration, not the value.
+let and const Declarations are hoisted but remain in a Temporal Dead Zone (TDZ) until they are initialized.
+
+Example of Hoisting with var
+
+console.log(a); // undefined (Declaration is hoisted, but value is not)
+var a = 10;
+console.log(a); // 10
+Explanation:
+
+var a; is hoisted to the top.
+
+The value 10 is assigned at runtime, so console.log(a) before initialization gives undefined.
+
+Example of Hoisting with Function Declaration
+
+greet(); // Works! Output: Hello
+
+function greet() {
+    console.log("Hello");
+}
+Explanation:
+
+The function greet is hoisted with its full definition, so calling it before declaration works.
+
+2. Temporal Dead Zone (TDZ) in JavaScript
+
+The Temporal Dead Zone (TDZ) is the time between when a variable is hoisted and when it is initialized. Accessing a let or const variable before declaration results in a ReferenceError.
+
+Example of Temporal Dead Zone with let
+
+console.log(x); // ReferenceError: Cannot access 'x' before initialization
+let x = 20;
+console.log(x); // 20
+
+Explanation:
+
+let x is hoisted but remains in TDZ until initialized.
+Trying to access x before initialization throws an error.
+Example of Temporal Dead Zone with const
+
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+const y = 30;
+console.log(y); // 30
+Explanation:
+
+const y is in TDZ until initialized.
+Accessing y before initialization throws an error.
+Key Differences Between var, let, and const in Hoisting
+Feature	var	let	const
+Hoisted?	✅ Yes	✅ Yes	✅ Yes
+Value Initialized?	undefined	❌ No (TDZ)	❌ No (TDZ)
+Can be Redeclared?	✅ Yes	❌ No	❌ No
+Must be Initialized?	❌ No	❌ No	✅ Yes
+
+
+Closures and Lexical Scope :
+
+Closures and lexical scope are fundamental concepts in JavaScript that help in creating modular and secure code.
+
+1. Lexical Scope :
+
+Lexical scope means that a function can access variables from its own scope, the scope of the function where it is defined (its parent), and the global scope.
+
+Example of Lexical Scope:
+
+function outerFunction() {
+    let outerVariable = "I'm from the outer function";
+
+    function innerFunction() {
+        console.log(outerVariable); // Accessible due to lexical scope
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+
+Explanation:
+
+innerFunction is inside outerFunction, so it has access to outerVariable even though outerVariable is not declared inside innerFunction.
+
+This is possible due to lexical scope, where functions have access to variables from their parent functions.
+
+2. Closures
+
+A closure is a function that retains access to its lexical scope even when the function is executed outside of its original scope.
+
+Example of Closure:
+
+function outerFunction() {
+    let count = 0; // This variable is captured by the closure
+
+    return function innerFunction() {
+        count++;
+        console.log(`Count: ${count}`);
+    };
+}
+
+const counter = outerFunction(); // `counter` now holds `innerFunction`
+counter(); // Count: 1
+counter(); // Count: 2
+counter(); // Count: 3
+Explanation:
+outerFunction has a local variable count.
+innerFunction is returned and assigned to counter.
+Even though outerFunction has finished execution, innerFunction still has access to count because of closure.
+Every time counter() is called, count is incremented, and the value is retained.
+
+3. Practical Example of Closures:
+
+Creating a Private Counter (Encapsulation using Closures)
+
+function createCounter() {
+    let count = 0;
+
+    return {
+        increment: function() {
+            count++;
+            console.log(`Incremented: ${count}`);
+        },
+        decrement: function() {
+            count--;
+            console.log(`Decremented: ${count}`);
+        },
+        getCount: function() {
+            console.log(`Current Count: ${count}`);
+        }
+    };
+}
+
+const counter = createCounter();
+counter.increment(); // Incremented: 1
+counter.increment(); // Incremented: 2
+counter.decrement(); // Decremented: 1
+counter.getCount();  // Current Count: 1
+
+Why Use Closures Here?
+
+The variable count is private and cannot be accessed directly from outside.
+The only way to modify count is through the methods (increment, decrement, getCount).
+This mimics data encapsulation, similar to private variables in object-oriented programming.
+

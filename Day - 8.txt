@@ -1,0 +1,1469 @@
+Making HTML Dynamic Using JavaScript :
+
+
+Making HTML dynamic using JavaScript means modifying HTML elements, attributes, and content dynamically using JavaScript without reloading the page. JavaScript allows us to interact with the DOM (Document Object Model) to create a more interactive and responsive user experience.
+
+Ways to Make HTML Dynamic Using JavaScript :
+
+Manipulating Inner Content (innerHTML & textContent)
+Modifying Attributes (setAttribute, getAttribute)
+Adding and Removing Elements (createElement, appendChild, removeChild)
+Handling Events (addEventListener)
+Modifying Styles (style property, classList)
+
+Example 1: Changing Content Dynamically
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Content</title>
+</head>
+<body>
+    <h1 id="heading">Hello, World!</h1>
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+        function changeText() {
+            document.getElementById("heading").innerHTML = "Hello, JavaScript!";
+        }
+    </script>
+</body>
+</html>
+
+Explanation:
+
+Clicking the button changes the text inside the <h1> tag dynamically.
+
+Example 2: Changing Attributes Dynamically
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+</head>
+<body>
+    <img id="image" src="image1.jpg" width="300" alt="Image">
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        function changeImage() {
+            document.getElementById("image").src = "image2.jpg";
+        }
+    </script>
+</body>
+</html>
+Explanation:
+
+Clicking the button changes the image dynamically by modifying the src attribute.
+
+Example 3: Adding and Removing Elements Dynamically
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add & Remove Elements</title>
+</head>
+<body>
+    <button onclick="addElement()">Add Paragraph</button>
+    <button onclick="removeElement()">Remove Paragraph</button>
+    <div id="container"></div>
+
+    <script>
+        function addElement() {
+            let p = document.createElement("p");
+            p.textContent = "This is a new paragraph!";
+            document.getElementById("container").appendChild(p);
+        }
+
+        function removeElement() {
+            let container = document.getElementById("container");
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        }
+    </script>
+</body>
+</html>
+Explanation:
+
+Clicking "Add Paragraph" adds a new paragraph dynamically.
+Clicking "Remove Paragraph" removes the last added paragraph.
+
+Example 4: Changing CSS Styles Dynamically
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Styles</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        function changeColor() {
+            document.getElementById("box").style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>
+Explanation:
+
+Clicking the button changes the background color of the box dynamically.
+
+Example 5: Handling Events and User Input
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Example</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="displayMessage()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+        function displayMessage() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("message").innerText = "Hello, " + name + "!";
+        }
+    </script>
+</body>
+</html>
+
+Explanation:
+
+User enters a name, clicks the button, and a personalized message is displayed.
+
+Summary
+
+innerHTML & textContent → Change content dynamically.
+setAttribute & getAttribute → Modify HTML attributes dynamically.
+createElement, appendChild, removeChild → Add and remove elements dynamically.
+style property & classList → Modify CSS styles dynamically.
+Event Listeners (addEventListener) → Handle user interactions.
+
+
+User Input and Form Validation :
+
+User input handling and form validation are essential aspects of web development to ensure that the data entered by users is valid and follows specific rules. JavaScript provides various methods to validate form inputs before sending them to a server.
+
+Types of Form Validation
+
+Client-Side Validation: Performed using JavaScript before submitting the form.
+Server-Side Validation: Done on the server after form submission (using PHP, Node.js, etc.).
+Client-side validation helps reduce unnecessary server load and improves user experience.
+
+JavaScript Form Validation Example
+Below is a simple example that demonstrates form validation using JavaScript.
+
+Example: Validating a Registration Form
+This example checks the following:
+
+Name should not be empty.
+Email should be in a valid format.
+Password should be at least 6 characters.
+Confirm Password should match Password.
+HTML (Form UI)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .error { color: red; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span class="error" id="emailError"></span>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span class="error" id="passwordError"></span>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span class="error" id="confirmPasswordError"></span>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+JavaScript (Form Validation)
+Create a script.js file and add the following validation logic:
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    let isValid = true;
+
+    // Get input values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+    // Clear previous errors
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("passwordError").innerText = "";
+    document.getElementById("confirmPasswordError").innerText = "";
+
+    // Name Validation
+    if (name === "") {
+        document.getElementById("nameError").innerText = "Name is required.";
+        isValid = false;
+    }
+
+    // Email Validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerText = "Enter a valid email.";
+        isValid = false;
+    }
+
+    // Password Validation
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
+        isValid = false;
+    }
+
+    // Confirm Password Validation
+    if (password !== confirmPassword) {
+        document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
+        isValid = false;
+    }
+
+    // If form is valid, submit it
+    if (isValid) {
+        alert("Registration successful!");
+        document.getElementById("registrationForm").reset(); // Clear form fields
+    }
+});
+Explanation of JavaScript Code
+Prevent Form Submission:
+event.preventDefault(); prevents the default form submission behavior.
+
+Trim Input Values:
+trim() removes extra spaces from input values.
+
+Regular Expressions for Email Validation:
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; ensures the email format is correct.
+
+Display Error Messages:
+
+If an input is invalid, an error message is shown.
+document.getElementById("nameError").innerText = "Name is required.";
+Check Password Length and Matching:
+
+Password should be at least 6 characters.
+Password and Confirm Password should match.
+Submit Form if Valid:
+
+If no errors, an alert is shown, and the form is reset.
+Key Takeaways
+✔ Real-time validation helps users correct errors before submission.
+✔ Regular expressions are useful for validating formats like email.
+✔ Prevent unnecessary form submission if validation fails.
+✔ Use JavaScript event listeners to handle user input dynamically.
+
+
+Using JavaScript for Form Validation :
+
+Form validation is a process of verifying that user input is correct before submitting the form to the server. JavaScript provides a way to perform validation on client-side, which helps improve user experience and reduce unnecessary server requests.
+
+Types of Form Validation
+Required Field Validation
+Email Validation
+Password Strength Validation
+Confirm Password Validation
+Phone Number Validation
+Checkbox Validation
+Example 1: Basic Required Field Validation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Field Validation</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            if (name === "") {
+                alert("Name is required!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+It checks if the input field is empty.
+If empty, an alert message is displayed and the form submission is stopped.
+
+Example 2: Email Validation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateEmail()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+Uses a regular expression (Regex) to check if the input is a valid email format.
+If invalid, an alert is displayed, and form submission is blocked.
+
+Example 3: Password Strength Validation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <script>
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            
+            if (!password.match(passwordPattern)) {
+                alert("Password must be at least 8 characters long and contain an uppercase letter, lowercase letter, and a number.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validatePassword()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+Password must have at least 8 characters, one uppercase letter, one lowercase letter, and one number.
+If it doesn’t match the pattern, an error message is shown.
+Example 4: Confirm Password Validation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Password Validation</title>
+    <script>
+        function validateConfirmPassword() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateConfirmPassword()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+Ensures the Confirm Password field matches the Password field.
+If they don’t match, an alert is displayed.
+
+Example 5: Phone Number Validation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+    <script>
+        function validatePhone() {
+            let phone = document.getElementById("phone").value;
+            let phonePattern = /^[0-9]{10}$/;
+
+            if (!phone.match(phonePattern)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validatePhone()">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+Checks if the input is exactly 10 digits long.
+Only allows numeric values.
+
+Example 6: Checkbox Validation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Validation</title>
+    <script>
+        function validateCheckbox() {
+            let checkBox = document.getElementById("terms");
+
+            if (!checkBox.checked) {
+                alert("You must agree to the terms and conditions.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateCheckbox()">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the terms and conditions</label>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Explanation:
+Ensures the user has checked the Terms and Conditions box before submitting the form.
+
+
+Using Pattern Recognition for Form Validation :
+
+
+Pattern recognition in JavaScript for form validation involves using regular expressions (RegEx) to validate user input fields like email, phone number, password, zip code, and more. JavaScript provides the RegExp object and methods like test() and match() to implement pattern recognition for validation.
+
+1. Basic Form Validation Using Regular Expressions
+The pattern attribute in HTML and JavaScript's RegExp object can be used to enforce specific input formats.
+
+Example 1: Validating an Email Address
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <form onsubmit="return validateEmail()">
+        <label for="email">Enter Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" style="color:red;"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid Email Format";
+                return false;
+            } else {
+                document.getElementById("emailError").innerText = "";
+                alert("Valid Email Submitted!");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
+
+Explanation:
+
+The function validateEmail() uses a regular expression (emailPattern) to check if the input follows a valid email format.
+
+If invalid, it displays an error message; otherwise, it submits the form.
+
+2. Validating a Password (Strong Password)
+
+A strong password should contain:
+
+At least 8 characters
+At least one uppercase letter
+At least one lowercase letter
+At least one number
+At least one special character
+
+Example 2: Password Validation
+
+<form onsubmit="return validatePassword()">
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password">
+    <span id="passwordError" style="color:red;"></span>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validatePassword() {
+        let password = document.getElementById("password").value;
+        let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!passwordPattern.test(password)) {
+            document.getElementById("passwordError").innerText = "Weak Password! Must contain uppercase, lowercase, number, and special character.";
+            return false;
+        } else {
+            document.getElementById("passwordError").innerText = "";
+            alert("Password is strong!");
+            return true;
+        }
+    }
+</script>
+
+Explanation:
+
+passwordPattern ensures the password meets all criteria.
+If validation fails, it shows an error message.
+
+3. Validating a Phone Number
+
+A valid phone number should:
+
+Contain only digits
+Be 10 digits long
+
+Example 3: Phone Number Validation
+
+<form onsubmit="return validatePhone()">
+    <label for="phone">Enter Phone Number:</label>
+    <input type="text" id="phone">
+    <span id="phoneError" style="color:red;"></span>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validatePhone() {
+        let phone = document.getElementById("phone").value;
+        let phonePattern = /^[0-9]{10}$/;
+
+        if (!phonePattern.test(phone)) {
+            document.getElementById("phoneError").innerText = "Invalid Phone Number! Must be 10 digits.";
+            return false;
+        } else {
+            document.getElementById("phoneError").innerText = "";
+            alert("Valid Phone Number!");
+            return true;
+        }
+    }
+</script>
+Explanation:
+phonePattern ensures only 10 numeric digits are entered.
+
+4. Validating a Zip Code (US)
+
+A valid US zip code should:
+
+Be 5 digits long
+
+Optionally have a hyphen followed by 4 more digits (e.g., 12345-6789)
+
+Example 4: Zip Code Validation
+
+<form onsubmit="return validateZipCode()">
+    <label for="zip">Enter Zip Code:</label>
+    <input type="text" id="zip">
+    <span id="zipError" style="color:red;"></span>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validateZipCode() {
+        let zip = document.getElementById("zip").value;
+        let zipPattern = /^\d{5}(-\d{4})?$/;
+
+        if (!zipPattern.test(zip)) {
+            document.getElementById("zipError").innerText = "Invalid Zip Code!";
+            return false;
+        } else {
+            document.getElementById("zipError").innerText = "";
+            alert("Valid Zip Code!");
+            return true;
+        }
+    }
+</script>
+
+Explanation:
+
+zipPattern allows either 5 digits or 5 digits + hyphen + 4 digits.
+
+5. Validating a Username
+
+A valid username should:
+
+Be alphanumeric
+Allow underscores
+Be 3 to 16 characters long
+
+Example 5: Username Validation
+
+<form onsubmit="return validateUsername()">
+    <label for="username">Enter Username:</label>
+    <input type="text" id="username">
+    <span id="usernameError" style="color:red;"></span>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validateUsername() {
+        let username = document.getElementById("username").value;
+        let usernamePattern = /^[a-zA-Z0-9_]{3,16}$/;
+
+        if (!usernamePattern.test(username)) {
+            document.getElementById("usernameError").innerText = "Invalid Username! Must be 3-16 characters long and contain only letters, numbers, and underscores.";
+            return false;
+        } else {
+            document.getElementById("usernameError").innerText = "";
+            alert("Valid Username!");
+            return true;
+        }
+    }
+</script>
+
+Explanation:
+
+usernamePattern allows letters, numbers, and underscores.
+
+Ensures length is between 3 and 16 characters.
+
+
+Working with JavaScript Date Operations :
+
+
+JavaScript provides the Date object to work with dates and times. It includes various methods to create, modify, and manipulate date and time values.
+
+1. Creating a Date Object
+JavaScript provides multiple ways to create a Date object.
+
+Example 1: Creating a Date Object
+// Create a new date object with the current date and time
+let currentDate = new Date();
+console.log(currentDate);
+
+// Create a date object with a specific date (YYYY, MM, DD)
+
+let specificDate = new Date(2023, 5, 15); // Month is 0-based (June)
+console.log(specificDate);
+
+// Create a date object using an ISO string
+
+let isoDate = new Date("2023-06-15T10:00:00Z");
+console.log(isoDate);
+
+// Create a date object using milliseconds since Unix epoch (Jan 1, 1970)
+
+let epochDate = new Date(1686825600000);
+console.log(epochDate);
+
+2. Getting Date Components
+
+JavaScript provides several methods to extract specific parts of a date.
+
+Example 2: Extracting Date Components
+
+let date = new Date();
+
+console.log("Year: " + date.getFullYear()); // 2024
+console.log("Month: " + (date.getMonth() + 1)); // 1-12 (Month is 0-based)
+console.log("Day: " + date.getDate()); // 1-31
+console.log("Weekday: " + date.getDay()); // 0-6 (0 is Sunday)
+console.log("Hours: " + date.getHours()); // 0-23
+console.log("Minutes: " + date.getMinutes()); // 0-59
+console.log("Seconds: " + date.getSeconds()); // 0-59
+console.log("Milliseconds: " + date.getMilliseconds()); // 0-999
+console.log("Time (ms since 1970): " + date.getTime()); // Timestamp
+
+3. Modifying a Date Object
+
+You can modify a Date object using setter methods.
+
+Example 3: Modifying Date Values
+
+let date = new Date();
+date.setFullYear(2025);
+date.setMonth(11); // December (0-based)
+date.setDate(25);
+date.setHours(10);
+date.setMinutes(30);
+
+console.log("Updated Date:", date);
+
+4. Formatting a Date
+
+You can format a date using built-in methods or Intl.DateTimeFormat.
+
+Example 4: Formatting a Date
+
+let date = new Date();
+
+console.log("Default toString():", date.toString());
+console.log("ISO Format:", date.toISOString());
+console.log("UTC String:", date.toUTCString());
+console.log("Locale Date String:", date.toLocaleDateString());
+console.log("Locale Time String:", date.toLocaleTimeString());
+
+// Custom Formatting
+
+let options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+console.log("Custom Format:", date.toLocaleDateString("en-US", options));
+
+5. Date Arithmetic (Adding/Subtracting)
+
+You can perform arithmetic operations on dates.
+
+Example 5: Adding/Subtracting Days, Months, Years
+
+let date = new Date();
+
+date.setDate(date.getDate() + 7); // Add 7 days
+console.log("Date after 7 days:", date);
+
+date.setMonth(date.getMonth() - 1); // Subtract 1 month
+console.log("Date after subtracting 1 month:", date);
+
+date.setFullYear(date.getFullYear() + 1); // Add 1 year
+console.log("Date after 1 year:", date);
+
+6. Comparing Dates
+
+You can compare dates using comparison operators.
+
+Example 6: Comparing Two Dates
+let date1 = new Date("2024-01-01");
+let date2 = new Date("2024-06-01");
+
+console.log("date1 is before date2:", date1 < date2); // true
+console.log("date1 is after date2:", date1 > date2); // false
+console.log("date1 equals date2:", date1.getTime() === date2.getTime()); // false
+
+7. Calculating the Difference Between Two Dates
+
+To find the difference between two dates in days, you need to convert them to milliseconds.
+
+Example 7: Finding Date Difference
+let startDate = new Date("2024-01-01");
+let endDate = new Date("2024-06-01");
+
+let differenceMs = endDate - startDate;
+let differenceDays = differenceMs / (1000 * 60 * 60 * 24);
+
+console.log("Difference in Days:", differenceDays);
+
+8. Working with Time Zones
+
+You can format a date based on different time zones.
+
+Example 8: Displaying Time in Different Time Zones
+
+let date = new Date();
+
+console.log("UTC Time:", date.toUTCString());
+console.log("New York Time:", date.toLocaleString("en-US", { timeZone: "America/New_York" }));
+console.log("India Time:", date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
+console.log("London Time:", date.toLocaleString("en-GB", { timeZone: "Europe/London" }));
+
+9. Converting a Date to a Timestamp
+
+A timestamp is the number of milliseconds since January 1, 1970.
+
+Example 9: Getting a Timestamp
+
+let date = new Date();
+let timestamp = date.getTime(); // Convert date to timestamp
+console.log("Timestamp:", timestamp);
+
+let newDate = new Date(timestamp); // Convert timestamp back to date
+console.log("Converted Date:", newDate);
+
+10. Parsing a Date String
+
+JavaScript can parse date strings into Date objects.
+
+Example 10: Parsing Different Date Formats
+let date1 = new Date("2024-06-15"); // ISO format (YYYY-MM-DD)
+console.log(date1);
+
+let date2 = new Date("June 15, 2024"); // Long format
+console.log(date2);
+
+let date3 = new Date("06/15/2024"); // MM/DD/YYYY
+console.log(date3);
+
+
+RESTful args :
+
+
+RESTful arguments (or REST parameters) in JavaScript refer to a feature introduced in ES6 (ECMAScript 2015) that allows functions to accept an indefinite number of arguments as an array. This is particularly useful when dealing with RESTful APIs where you might need to handle dynamic parameters.
+
+Syntax of Rest Parameters
+function exampleFunction(...args) {
+    console.log(args);
+}
+
+exampleFunction(1, 2, 3, 4); // Output: [1, 2, 3, 4]
+Here, ...args gathers all the arguments into an array.
+
+RESTful Args in JavaScript with Examples
+
+1. Using Rest Parameters in Functions
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sum(10, 20, 30, 40)); // Output: 100
+console.log(sum(5, 15)); // Output: 20
+
+Explanation:
+
+...numbers collects all passed arguments into an array.
+reduce() is used to sum up the numbers.
+
+2. Rest Parameters with Other Function Arguments
+
+function greetUsers(greeting, ...users) {
+    return users.map(user => `${greeting}, ${user}!`);
+}
+
+console.log(greetUsers("Hello", "Alice", "Bob", "Charlie"));
+
+// Output: ["Hello, Alice!", "Hello, Bob!", "Hello, Charlie!"]
+
+Explanation:
+
+The first argument (greeting) is assigned separately.
+The remaining arguments (...users) are collected as an array.
+
+3. RESTful Arguments in API Calls
+
+RESTful APIs often require handling dynamic parameters in endpoints. Here’s an example of how we can use RESTful args while making API calls:
+
+function fetchUserData(...userIds) {
+    userIds.forEach(id => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error fetching user:', error));
+    });
+}
+
+fetchUserData(1, 2, 3);
+
+Explanation:
+
+The function accepts multiple userIds using the ...userIds rest parameter.
+It iterates over each id and makes an API request.
+
+4. Destructuring with Rest Parameters
+
+const [first, second, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(first);  // Output: 10
+console.log(second); // Output: 20
+console.log(rest);   // Output: [30, 40, 50]
+Explanation:
+
+The first two elements are assigned to first and second.
+The rest of the values are collected into the rest array.
+
+5. Using RESTful Args in Middleware (Express.js Example)
+
+const express = require('express');
+const app = express();
+
+// Middleware that logs all request parameters
+app.get('/users/:id/:action?', (req, res) => {
+    const { id, action = "default" } = req.params;
+    res.send(`User ID: ${id}, Action: ${action}`);
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+Explanation:
+
+:id is required, while :action? is optional (? makes it optional).
+req.params collects the route parameters.
+
+6. Using RESTful Args in JavaScript Classes
+class User {
+    constructor(name, ...roles) {
+        this.name = name;
+        this.roles = roles;
+    }
+
+    getRoles() {
+        return `${this.name} has roles: ${this.roles.join(", ")}`;
+    }
+}
+
+const user1 = new User("Alice", "Admin", "Editor");
+console.log(user1.getRoles()); // Output: Alice has roles: Admin, Editor
+Explanation:
+
+The ...roles parameter allows passing multiple roles dynamically.
+Key Takeaways
+✔ Rest parameters (...args) allow functions to accept variable arguments.
+✔ They collect the arguments into an array, making them easy to manipulate.
+✔ Useful in functions, API calls, middleware, and object-oriented programming.
+✔ Simplifies handling dynamic arguments in RESTful applications.
+
+
+Default args :
+
+In JavaScript, default function parameters allow you to initialize function parameters with default values if no value or undefined is passed. This feature was introduced in ES6 (ECMAScript 2015).
+
+Basic Syntax:
+function functionName(param1 = defaultValue1, param2 = defaultValue2) {
+    // Function body
+}
+If a parameter is not provided or explicitly set to undefined, the default value is used.
+
+Example 1: Simple Default Argument
+function greet(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+greet();          // Output: Hello, Guest!
+greet("Alice");   // Output: Hello, Alice!
+Explanation:
+If no argument is passed, name takes the default value "Guest".
+If an argument is provided (e.g., "Alice"), it overrides the default value.
+
+Example 2: Multiple Default Parameters
+
+function add(a = 5, b = 10) {
+    return a + b;
+}
+
+console.log(add());       // Output: 15  (5 + 10)
+console.log(add(7));      // Output: 17  (7 + 10)
+console.log(add(7, 3));   // Output: 10  (7 + 3)
+
+Explanation:
+
+When no arguments are passed, both a and b take their default values (5 and 10).
+If only one argument is passed, the second parameter retains its default value.
+
+Example 3: Default Arguments with undefined
+
+function multiply(x = 2, y = 3) {
+    return x * y;
+}
+
+console.log(multiply(undefined, 4));  // Output: 8 (2 * 4)
+console.log(multiply(5, undefined));  // Output: 15 (5 * 3)
+console.log(multiply(null, 4));       // Output: 0 (null is treated as 0)
+
+Explanation:
+If undefined is passed, the default value is used.
+null is treated as 0, so null * 4 results in 0.
+Example 4: Using Expressions as Default Values
+
+You can use expressions (like function calls, calculations) as default values.
+
+function getRandom() {
+    return Math.floor(Math.random() * 10);
+}
+
+function showValue(value = getRandom()) {
+    console.log(value);
+}
+
+showValue();  // Output: A random number (0-9)
+showValue(7); // Output: 7
+
+Explanation:
+
+If no argument is passed, getRandom() is called to generate a default value.
+Example 5: Default Arguments with Destructuring
+
+You can also use destructuring with default values in function parameters.
+
+function displayUser({ name = "Anonymous", age = 25 } = {}) {
+    console.log(`Name: ${name}, Age: ${age}`);
+}
+
+displayUser();                     // Output: Name: Anonymous, Age: 25
+displayUser({ name: "John" });      // Output: Name: John, Age: 25
+displayUser({ age: 30 });           // Output: Name: Anonymous, Age: 30
+displayUser({ name: "Alice", age: 28 }); // Output: Name: Alice, Age: 28
+
+Explanation:
+
+The function expects an object with properties name and age.
+Default values are assigned when properties are missing.
+Example 6: Avoiding undefined with Default Parameters
+Before ES6, developers used the || operator to set default values.
+
+Pre-ES6 (Old Way) :
+
+function sayHello(name) {
+    name = name || "Guest";  // Fallback to "Guest" if falsy
+    console.log(`Hello, ${name}!`);
+}
+
+sayHello();        // Output: Hello, Guest!
+sayHello("Emma");  // Output: Hello, Emma!
+ES6+ (Modern Approach)
+function sayHello(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+sayHello();        // Output: Hello, Guest!
+sayHello("Emma");  // Output: Hello, Emma!
+Why is the ES6+ method better?
+The || operator fails if false, 0, "", or null is passed because they are falsy values.
+Default parameters only trigger if the value is explicitly undefined, making them more reliable.
+
+
+Template Strings :
+
+
+Template strings, also known as template literals, were introduced in ES6 and allow embedding expressions and multi-line strings in JavaScript.
+
+They are defined using backticks (`) instead of single (') or double (") quotes.
+
+1. Basic Syntax
+
+let name = "John";
+let greeting = `Hello, ${name}!`;
+console.log(greeting); // Output: Hello, John!
+🔹 ${expression} is used to embed JavaScript expressions inside the string.
+
+2. Multi-line Strings
+
+Before ES6, multi-line strings were created using \n or string concatenation.
+With template literals, we can directly use multi-line strings.
+
+let message = `This is a multi-line string.
+It spans across multiple lines.
+No need for concatenation.`;
+console.log(message);
+Output
+This is a multi-line string.
+It spans across multiple lines.
+No need for concatenation.
+
+3. Expression Interpolation
+You can perform calculations, function calls, or access object properties inside ${}.
+
+let a = 10, b = 20;
+console.log(`The sum of ${a} and ${b} is ${a + b}.`);
+
+// Function inside template literals
+function getName() {
+    return "Alice";
+}
+console.log(`Hello, ${getName()}!`);
+Output
+The sum of 10 and 20 is 30.
+Hello, Alice!
+
+4. Nested Template Literals
+
+Template literals can be nested within each other.
+
+let user = {
+    name: "John",
+    age: 25
+};
+
+let message = `User details: ${user.name}, Age: ${user.age}, Status: ${user.age > 18 ? `Adult` : `Minor`}`;
+console.log(message);
+Output
+User details: John, Age: 25, Status: Adult
+
+5. Tagged Templates
+
+Tagged templates allow us to process template literals with a custom function.
+
+function highlight(strings, ...values) {
+    return strings.reduce((result, str, i) => `${result}${str}<b>${values[i] || ""}</b>`, "");
+}
+
+let name = "Alice";
+let age = 30;
+console.log(highlight`My name is ${name} and I am ${age} years old.`);
+
+Output
+
+My name is <b>Alice</b> and I am <b>30</b> years old.
+🔹 Tagged templates are useful in escaping characters, internationalization, and custom formatting.
+
+6. Using Template Literals with Arrays & Objects
+
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(`I like ${fruits.join(", ")}.`);
+
+let user = { name: "John", age: 25 };
+console.log(`User Info: Name - ${user.name}, Age - ${user.age}`);
+
+Output
+
+I like Apple, Banana, Cherry.
+User Info: Name - John, Age - 25
+
+7. Template Literals in HTML Templates
+
+let title = "JavaScript";
+let template = `
+    <div>
+        <h1>${title} Template Literals</h1>
+        <p>Learn how to use template literals in JS.</p>
+    </div>
+`;
+console.log(template);
+
+🔹 This approach is useful for dynamically generating HTML in JavaScript.
+
+📌 Summary
+✅ Use backticks (``) instead of quotes
+✅ Multi-line support without escape characters
+✅ String interpolation using ${}
+✅ Supports expressions, functions, and object properties
+✅ Useful for HTML templates and formatted strings
+
+
+Destructuring :
+
+Destructuring is a JavaScript feature that allows you to extract values from arrays or properties from objects and assign them to variables in a concise way. It was introduced in ES6 (ECMAScript 2015).
+
+1. Array Destructuring
+Array destructuring allows you to extract values from an array into separate variables.
+
+Example 1: Basic Array Destructuring
+const numbers = [10, 20, 30];
+
+// Destructuring assignment
+const [a, b, c] = numbers;
+
+console.log(a); // 10
+console.log(b); // 20
+console.log(c); // 30
+
+Example 2: Skipping Elements
+const numbers = [10, 20, 30, 40];
+
+// Skipping the second element
+const [first, , third] = numbers;
+
+console.log(first); // 10
+console.log(third); // 30
+Example 3: Using Default Values
+If the array does not contain enough elements, you can assign default values.
+
+const numbers = [10];
+
+// Default values
+const [a = 1, b = 2, c = 3] = numbers;
+
+console.log(a); // 10
+console.log(b); // 2 (default value)
+console.log(c); // 3 (default value)
+Example 4: Swapping Variables Using Destructuring
+let x = 5, y = 10;
+
+[x, y] = [y, x];
+
+console.log(x); // 10
+console.log(y); // 5
+
+2. Object Destructuring
+
+Object destructuring allows you to extract properties from an object and assign them to variables.
+
+Example 1: Basic Object Destructuring
+const person = {
+    name: "John",
+    age: 25,
+    city: "New York"
+};
+
+// Destructuring
+const { name, age, city } = person;
+
+console.log(name); // John
+console.log(age); // 25
+console.log(city); // New York
+
+Example 2: Renaming Variables
+
+const person = {
+    fullName: "Alice",
+    age: 30
+};
+
+// Assigning new variable names
+const { fullName: name, age: years } = person;
+
+console.log(name);  // Alice
+console.log(years); // 30
+
+Example 3: Using Default Values
+
+If a property is missing from the object, you can provide a default value.
+
+const person = {
+    name: "Bob"
+};
+
+// Assigning default values
+const { name, age = 40 } = person;
+
+console.log(name); // Bob
+console.log(age);  // 40 (default value)
+
+Example 4: Nested Object Destructuring
+
+const employee = {
+    name: "Emma",
+    position: "Developer",
+    address: {
+        city: "Los Angeles",
+        country: "USA"
+    }
+};
+
+// Destructuring nested object
+const { name, address: { city, country } } = employee;
+
+console.log(name);    // Emma
+console.log(city);    // Los Angeles
+console.log(country); // USA
+
+3. Function Parameter Destructuring
+
+Destructuring can be used in function parameters to extract values directly.
+
+Example 1: Array Destructuring in Function
+function sum([a, b]) {
+    return a + b;
+}
+
+console.log(sum([5, 10])); // 15
+
+Example 2: Object Destructuring in Function
+function printDetails({ name, age }) {
+    console.log(`Name: ${name}, Age: ${age}`);
+}
+
+const person = { name: "Sophia", age: 22 };
+printDetails(person);
+// Output: Name: Sophia, Age: 22
+4. Combining Both Array & Object Destructuring
+const users = [
+    { id: 1, name: "Alex" },
+    { id: 2, name: "Brian" }
+];
+
+// Extracting first user's name
+const [{ name: firstUserName }] = users;
+
+console.log(firstUserName); // Alex
+
+
+Arrow expressions :
+
+Arrow functions, introduced in ES6, provide a shorter syntax for writing functions in JavaScript. They use the => ("arrow") syntax and automatically bind this to the surrounding lexical scope.
+
+1. Basic Syntax
+const add = (a, b) => a + b;
+console.log(add(5, 3)); // Output: 8
+The add function takes two arguments a and b and returns their sum.
+The return statement is implicit when there is only one expression.
+2. Single Parameter
+const square = x => x * x;
+console.log(square(4)); // Output: 16
+Parentheses around the parameter can be omitted if there is only one argument.
+3. No Parameters
+const greet = () => "Hello, World!";
+console.log(greet()); // Output: Hello, World!
+When there are no parameters, use empty parentheses ().
+4. Multiline Function Body
+const multiply = (a, b) => {
+    let result = a * b;
+    return result;
+};
+console.log(multiply(3, 4)); // Output: 12
+When using {} (block body), an explicit return statement is required.
+5. Returning an Object
+const getUser = (name, age) => ({ name, age });
+console.log(getUser("John", 25)); // Output: { name: "John", age: 25 }
+Wrap the object inside () to return it implicitly.
+
+6. Lexical this in Arrow Functions
+
+Arrow functions do not bind their own this. Instead, they inherit this from the surrounding scope.
+
+function Person(name) {
+    this.name = name;
+    
+    setTimeout(() => {
+        console.log("Hello, " + this.name);
+    }, 1000);
+}
+
+const person = new Person("Alice"); 
+// Output after 1 second: Hello, Alice
+The arrow function inside setTimeout uses this from the surrounding Person function.
+
+7. Arrow Function vs Regular Function
+
+Example 1: this Behavior
+const obj = {
+    value: 10,
+    regularFunc: function() {
+        console.log(this.value);
+    },
+    arrowFunc: () => {
+        console.log(this.value);
+    }
+};
+
+obj.regularFunc(); // Output: 10 (this refers to obj)
+obj.arrowFunc(); // Output: undefined (this refers to the global object)
+regularFunc refers to obj, while arrowFunc refers to the outer scope (window or global).
+Example 2: Arrow Function inside Event Listener
+document.getElementById("btn").addEventListener("click", function() {
+    console.log(this); // Refers to the clicked element
+});
+
+document.getElementById("btn").addEventListener("click", () => {
+    console.log(this); // Refers to the outer scope (window)
+});
+Regular functions work well with event listeners.
+Arrow functions do not have their own this and take it from the surrounding scope.
+
+8. Using Arrow Functions with map, filter, and reduce
+
+const numbers = [1, 2, 3, 4, 5];
+
+const squared = numbers.map(num => num * num);
+console.log(squared); // Output: [1, 4, 9, 16, 25]
+
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // Output: [2, 4]
+
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // Output: 15
+Arrow functions simplify array operations.
+When NOT to Use Arrow Functions
+Object Methods (Arrow functions do not have their own this):
+
+const user = {
+    name: "Alice",
+    sayHi: () => console.log("Hi, " + this.name)
+};
+user.sayHi(); // Output: Hi, undefined
+Use regular functions for object methods.
+
+Prototype Methods
+
+function User(name) {
+    this.name = name;
+}
+User.prototype.sayHi = () => {
+    console.log("Hi, " + this.name);
+};
+
+const user = new User("Alice");
+user.sayHi(); // Output: Hi, undefined
+this is taken from the outer lexical scope.
+
+Using arguments
+
+function sum() {
+    console.log(arguments); // Works in regular function
+}
+
+const sumArrow = () => {
+    console.log(arguments); // Error: arguments is not defined
+};
+Arrow functions do not have arguments. Use rest parameters instead:
+const sumArrow = (...args) => console.log(args);
+sumArrow(1, 2, 3); // Output: [1, 2, 3]
+

@@ -1,0 +1,2312 @@
+Introduction to CSS3: CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of HTML documents. It allows developers to apply styles such as colors, fonts, spacing, and positioning to web pages, ensuring a consistent and visually appealing design.
+
+Key Features of CSS:
+Separation of Content and Design – CSS keeps the design separate from the HTML structure, making code cleaner and easier to maintain.
+Cascading Nature – Styles are applied based on priority rules, allowing multiple stylesheets to work together.
+Selectors and Properties – CSS uses selectors to target HTML elements and properties to define styles.
+Responsive Design – CSS enables mobile-friendly designs using media queries.
+Animations and Effects – CSS allows adding transitions, animations, and visual effects without JavaScript.
+
+Example of CSS:
+
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+This CSS snippet changes the background color of the page to light blue, sets the font style, and applies styling to h1 elements.
+
+
+
+Evolution of CSS (CSS1, CSS2, and CSS3):
+
+CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of HTML documents. Since its introduction, CSS has evolved through multiple versions, each improving and expanding its capabilities. Let's explore the evolution of CSS from the beginning.
+
+1. CSS1 (Cascading Style Sheets Level 1) – 1996
+Introduction
+CSS1 was first released by the World Wide Web Consortium (W3C) in December 1996. It introduced basic styling features to separate content (HTML) from presentation.
+
+Features of CSS1:
+✅ Selectors: Element-based styling using tag names (e.g., p { color: blue; })
+✅ Properties: Basic properties like color, background-color, font-family, text-align, etc.
+✅ Box Model: Introduced margin, padding, border, and width/height properties.
+✅ Font Styling: Font size, font weight, and font family were supported.
+✅ Limited Positioning: Allowed basic alignment but lacked advanced layout controls.
+
+Limitations of CSS1:
+❌ Lacked advanced layout features like flexbox and grid.
+❌ No support for media queries (could not create responsive designs).
+❌ No robust selectors like descendant (div p), child (div > p), or attribute ([type="text"]).
+
+CSS1 laid the foundation, but it was limited in styling capabilities.
+
+2. CSS2 (Cascading Style Sheets Level 2) – 1998
+Introduction
+CSS2 was released in May 1998, expanding on CSS1 with more powerful features and better control over page layouts.
+
+New Features in CSS2:
+✅ Selectors: Introduced advanced selectors like child selectors (>), adjacent sibling selectors (+), and attribute selectors ([attr=value]).
+✅ Positioning (Static, Relative, Absolute, Fixed): Improved control over element placement using position: relative;, absolute;, and fixed;.
+✅ Z-index: Allowed stacking of elements in layers.
+✅ Media Types: Introduced media types like screen, print, and speech to control how styles appear on different devices.
+✅ Better Styling for Tables: Allowed improved table layouts and styling.
+✅ Hover & Focus States: Introduced pseudo-classes like :hover and :focus for interactive styling.
+
+Limitations of CSS2:
+❌ No support for rounded corners, shadows, or transparency effects.
+❌ Limited support for complex animations and transitions.
+❌ No native support for responsive web design (e.g., flexbox or grid).
+
+3. CSS3 (Cascading Style Sheets Level 3) – 1999-Present
+Introduction
+CSS3 was introduced in 1999, but unlike previous versions, it was divided into separate modules, making it easier to develop and update. It brought major advancements in web design, including animations, responsive layouts, and better performance.
+
+Key Features of CSS3:
+✅ Modular Approach: CSS3 is divided into multiple modules (Selectors, Backgrounds, Text Effects, Flexbox, Grid, etc.), making updates independent.
+✅ Advanced Selectors: Added nth-child(), nth-of-type(), not(), and other pseudo-classes for better element targeting.
+✅ Flexbox & Grid Layout: Introduced display: flex; and display: grid; for efficient and flexible layouts.
+✅ Animations & Transitions: Enabled animations using @keyframes, transition, and transform properties.
+✅ Border Radius & Box Shadows: Allowed rounded corners (border-radius) and shadows (box-shadow).
+✅ RGBA & Opacity: Supported transparent colors with rgba() and opacity properties.
+✅ Gradient Backgrounds: Allowed linear-gradient() and radial-gradient() effects.
+✅ Media Queries (Responsive Design): Made it possible to create responsive designs using @media rules.
+
+Advantages of CSS3:
+✔️ Enabled modern, interactive, and visually appealing designs.
+✔️ Improved performance with lightweight styling.
+✔️ Allowed better control over web responsiveness.
+✔️ Eliminated the need for many JavaScript-based UI effects.
+
+
+Advantages of CSS3:
+
+CSS3 is the latest version of CSS (Cascading Style Sheets) that enhances the styling capabilities of web pages. It introduces several new features and improvements over CSS2, making web development more efficient, flexible, and visually appealing.
+
+Key Advantages of CSS3
+
+1. Improved Design & Aesthetics
+CSS3 introduces new properties like border-radius, box-shadow, text-shadow, and gradient backgrounds, allowing designers to create visually stunning effects without relying on images.
+
+2. Faster Page Load Speed
+CSS3 eliminates the need for extra images, JavaScript, and external files by offering built-in effects such as transitions, animations, and gradients, which reduces the page load time and improves performance.
+
+3. Responsive Web Design (RWD)
+CSS3 introduces media queries that enable developers to create websites that automatically adapt to different screen sizes (desktops, tablets, and mobile devices), improving the user experience.
+
+4. Enhanced User Experience with Animations & Transitions
+CSS3 allows smooth animations and transitions using properties like @keyframes, transition, and animation, which were previously only possible with JavaScript or Flash.
+
+5. Modular & Organized Structure
+CSS3 is divided into separate modules (e.g., Selectors, Box Model, Backgrounds & Borders, Text Effects, Animations), making it easier to learn, update, and maintain.
+
+6. Better Typography with Web Fonts
+With the @font-face rule, CSS3 enables the use of custom fonts directly from the web without requiring users to have them installed on their devices.
+
+7. Cross-Browser Compatibility
+CSS3 is designed to work across modern browsers like Chrome, Firefox, Edge, Safari, and Opera, ensuring consistency in design and layout.
+
+8. Grid & Flexbox for Advanced Layouts
+The introduction of CSS Grid and Flexbox provides powerful tools for creating responsive and flexible layouts without using floats or positioning hacks.
+9. Less Dependency on JavaScript
+Many features like transitions, animations, and hover effects can be achieved using CSS3 alone, reducing the need for complex JavaScript code.
+10. Multiple Backgrounds & Transparency
+CSS3 allows multiple background images (background-image) and transparency effects using rgba() and opacity, improving design flexibility.
+
+
+How CSS works with HTML:
+
+
+CSS (Cascading Style Sheets) is used to style HTML elements and enhance the visual appearance of web pages. It allows developers to define how HTML elements should be displayed in terms of colors, fonts, layout, spacing, and animations.
+
+1. How CSS Works with HTML?
+When a web page loads, the HTML provides the structure, while CSS applies styles to make it visually appealing.
+
+Process:
+The browser reads the HTML document to create the structure.
+The browser then applies CSS styles to the elements based on the linked or embedded styles.
+The styled web page is rendered and displayed to the user.
+
+2. Ways to Apply CSS in HTML
+There are three primary ways to apply CSS in an HTML document:
+
+(a) Inline CSS (Within the HTML tag)
+CSS is added directly inside an HTML element using the style attribute.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inline CSS Example</title>
+</head>
+<body>
+    <h1 style="color: blue; font-size: 24px;">This is a Heading</h1>
+    <p style="color: green; font-weight: bold;">This is a paragraph with inline CSS.</p>
+</body>
+</html>
+
+When to Use?
+For quick fixes or single-use styles.
+Not recommended for large-scale styling due to code redundancy.
+
+(b) Internal CSS (Inside the <style> tag in the <head> section)
+
+CSS is written inside the <style> tag within the <head> of the HTML document.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Internal CSS Example</title>
+    <style>
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+        p {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph with internal CSS.</p>
+</body>
+</html>
+When to Use?
+When styling a single page without needing external CSS files.
+(c) External CSS (Using a Separate .css File)
+CSS is written in an external file and linked to the HTML file using the <link> tag.
+
+Example:
+Step 1: Create an external CSS file (styles.css)
+
+/* styles.css */
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+p {
+    color: green;
+    font-weight: bold;
+}
+Step 2: Link the CSS file in HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>External CSS Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph with external CSS.</p>
+</body>
+</html>
+When to Use?
+
+Best for large projects where styles need to be reused across multiple pages.
+Helps in maintaining clean and organized code.
+
+3. CSS Selectors
+
+Selectors define which HTML elements the styles will apply to.
+
+Selector Type	Example	Description
+Element Selector	h1 { color: red; }	Targets all <h1> elements.
+Class Selector	.myClass { color: green; }	Targets elements with class="myClass".
+ID Selector	#myId { color: blue; }	Targets an element with id="myId".
+Universal Selector	* { margin: 0; }	Targets all elements.
+Group Selector	h1, p { color: black; }	Styles multiple elements at once.
+Example: Using Different Selectors
+
+/* styles.css */
+h1 {
+    color: red; /* Element selector */
+}
+
+.myClass {
+    color: green; /* Class selector */
+    font-size: 20px;
+}
+
+#myId {
+    color: blue; /* ID selector */
+    font-weight: bold;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Selectors Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>This is a Heading</h1>
+    <p class="myClass">This is a paragraph with a class selector.</p>
+    <p id="myId">This is a paragraph with an ID selector.</p>
+</body>
+</html>
+
+4. CSS Box Model (Layout)
+
+The CSS Box Model is essential for understanding layout and spacing. Every HTML element is a box with:
+
+Content (text, image, etc.)
+Padding (space inside the border)
+Border (around the element)
+Margin (space outside the border)
+
+Example: Understanding the Box Model
+
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 30px;
+    background-color: lightblue;
+}
+
+<div class="box">This is a box</div>
+
+5. Responsive CSS with Media Queries
+Media queries help make websites responsive based on different screen sizes.
+
+Example:
+
+/* Default style */
+body {
+    background-color: white;
+    font-size: 16px;
+}
+
+/* Apply styles for screens smaller than 600px */
+@media (max-width: 600px) {
+    body {
+        background-color: lightgray;
+        font-size: 14px;
+    }
+}
+This ensures the background changes on smaller devices.
+
+6. Advanced CSS Features
+
+(a) CSS Flexbox (For Layouts)
+
+Flexbox helps in aligning and distributing items efficiently.
+
+Example: Centering Items Using Flexbox
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+}
+
+<div class="container">
+    <h2>Centered Content</h2>
+</div>
+
+(b) CSS Grid (For Complex Layouts)
+
+CSS Grid helps create structured layouts easily.
+
+Example: Simple Grid Layout
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.grid-item {
+    background-color: lightcoral;
+    padding: 20px;
+    text-align: center;
+}
+<div class="grid-container">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+</div>
+
+
+CSS3 Selectors & Properties:
+
+Universal, Element, ID, and Class Selectors:
+
+
+CSS selectors define how you target elements in an HTML document to apply styles. Let's explore Universal, Element, ID, and Class selectors with examples.
+
+1️⃣ Universal Selector (*)
+The universal selector (*) applies styles to all elements in the document.
+It is useful when you want to apply global styles.
+
+Example: Applying a universal style
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Selector</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Universal Selector</h1>
+    <p>This paragraph and all elements will inherit the universal styles.</p>
+</body>
+</html>
+✅ Effect: Every element in the document will have Arial font and darkblue text color.
+
+2️⃣ Element Selector (Tag Selector):
+
+The element selector applies styles to all instances of a specific HTML tag.
+Example: Styling h1 and p tags
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selector</title>
+    <style>
+        h1 {
+            color: green;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is an H1 heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+✅ Effect:
+
+All <h1> elements will be green and centered.
+All <p> elements will have a font size of 18px.
+
+3️⃣ ID Selector (#)
+The ID selector (#) is used to apply styles to a single, unique element.
+Each ID should be unique in the HTML document.
+Example: Styling an element using an ID
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Selector</title>
+    <style>
+        #unique-heading {
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="unique-heading">This is a Unique Heading</h1>
+    <p>This paragraph is not affected by the ID selector.</p>
+</body>
+</html>
+
+✅ Effect: The <h1> with id="unique-heading" will be red with a font size of 24px, while other elements remain unchanged.
+
+4️⃣ Class Selector (.)
+
+The class selector (.) is used to style multiple elements with the same class name.
+Example: Styling multiple elements using a class
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selector</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p class="highlight">This paragraph has a yellow background.</p>
+    <p>This paragraph is not affected by the class.</p>
+    <span class="highlight">This span also has the same highlight effect.</span>
+</body>
+</html>
+✅ Effect:
+
+All elements with class highlight will have a yellow background and bold text.
+Other elements remain unchanged.
+Summary of Selectors
+Selector	Syntax	Applies to	Example
+Universal	*	All elements	* { margin: 0; }
+Element	tagname	Specific elements	h1 { color: blue; }
+ID	#idname	A single unique element	#header { font-size: 20px; }
+Class	.classname	Multiple elements	.button { background: red; }
+
+Final Thoughts :
+
+Use the universal selector (*) carefully as it applies to everything.
+Use element selectors for general styles.
+Use ID selectors only for unique elements.
+Use class selectors for reusable styles across multiple elements.
+
+
+Attribute Selectors:
+
+
+CSS Attribute Selectors allow you to style HTML elements based on their attributes and attribute values. These selectors are useful for targeting specific elements without relying on classes or IDs.
+
+Types of Attribute Selectors
+1. [attribute] – Select elements with a specific attribute
+This selector targets elements that have a specified attribute, regardless of its value.
+
+Example
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector Example</title>
+    <style>
+        /* Selects all input elements that have the 'required' attribute */
+        input[required] {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Attribute Selector: `[attribute]`</h2>
+    <input type="text" placeholder="Optional field">
+    <input type="text" required placeholder="Required field">
+</body>
+</html>
+✅ Explanation: The input[required] selector applies styles to inputs with the required attribute.
+
+2. [attribute="value"] – Select elements with an exact attribute value
+This selector targets elements where the attribute value matches exactly.
+
+Example
+<style>
+    /* Selects input elements where type is exactly 'text' */
+    input[type="text"] {
+        background-color: lightblue;
+    }
+</style>
+
+<h2>Exact Attribute Value Selector</h2>
+<input type="text" placeholder="Text input">
+<input type="password" placeholder="Password input">
+✅ Explanation: Only text inputs are affected because they exactly match type="text".
+
+3. [attribute~="value"] – Select elements where the attribute contains a word
+
+This selector matches an attribute value that contains a specific word in a space-separated list.
+
+Example
+<style>
+    /* Selects elements with a title containing 'tooltip' as a separate word */
+    p[title~="tooltip"] {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+<h2>Word in Attribute Selector</h2>
+<p title="tooltip text">This paragraph has a tooltip.</p>
+<p title="no-tooltip">This one does not match.</p>
+✅ Explanation: The first <p> matches because tooltip appears as a separate word.
+
+4. [attribute|="value"] – Select elements where the attribute starts with a value
+This selector targets elements where the attribute starts with the given value, followed by a hyphen (-).
+
+Example
+<style>
+    /* Selects lang attributes starting with 'en-' (English variations) */
+    p[lang|="en"] {
+        color: blue;
+    }
+</style>
+
+<h2>Language-based Attribute Selector</h2>
+<p lang="en-US">This text is in American English.</p>
+<p lang="en-UK">This text is in British English.</p>
+<p lang="fr">This text is in French.</p>
+✅ Explanation: The selector applies styles to English variations (en-US, en-UK), but not fr.
+
+5. [attribute^="value"] – Select elements where the attribute starts with a value
+This selector targets elements whose attribute value starts with a specific string.
+
+Example
+<style>
+    /* Selects links that start with 'https' */
+    a[href^="https"] {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+<h2>Start-with Attribute Selector</h2>
+<a href="https://example.com">Secure HTTPS link</a>
+<a href="http://example.com">Not secure HTTP link</a>
+✅ Explanation: The first <a> is styled because it starts with "https".
+
+6. [attribute$="value"] – Select elements where the attribute ends with a value
+This selector targets elements whose attribute values end with a specific string.
+
+Example
+<style>
+    /* Selects all image files that end with '.png' */
+    img[src$=".png"] {
+        border: 3px solid orange;
+    }
+</style>
+
+<h2>Ends-with Attribute Selector</h2>
+<img src="image1.png" alt="PNG Image">
+<img src="photo.jpg" alt="JPG Image">
+✅ Explanation: Only the PNG image gets the border.
+
+7. [attribute*="value"] – Select elements where the attribute contains a value
+This selector matches elements where the attribute contains the given substring anywhere.
+
+Example
+<style>
+    /* Selects all links containing 'shop' in the URL */
+    a[href*="shop"] {
+        background-color: yellow;
+    }
+</style>
+
+<h2>Contains Attribute Selector</h2>
+<a href="https://myshop.com">Shop Now</a>
+<a href="https://example.com">Regular Link</a>
+✅ Explanation: The first <a> matches because it contains "shop" in the URL.
+
+Summary Table of Attribute Selectors
+Selector	Description	Example
+[attribute]	Select elements with an attribute	input[required]
+[attribute="value"]	Exact attribute match	input[type="text"]
+[attribute~="value"]	Attribute contains a word	p[title~="tooltip"]
+`[attribute	="value"]`	Attribute starts with a value followed by -
+[attribute^="value"]	Attribute starts with a value	a[href^="https"]
+[attribute$="value"]	Attribute ends with a value	img[src$=".png"]
+[attribute*="value"]	Attribute contains a value anywhere	a[href*="shop"]
+These attribute selectors provide flexibility in styling HTML elements based on their attributes, making CSS more powerful and dynamic.
+
+
+Pseudo-Classes and Pseudo-Elements:
+
+1. What are Pseudo-Classes?
+Pseudo-classes define a special state of an element. They allow you to apply styles based on user interaction or element properties that aren't directly available in the document structure.
+
+Common Pseudo-Classes
+:hover – Applies styles when the user hovers over an element.
+:focus – Targets an element when it receives focus.
+:nth-child(n) – Styles the nth child of a parent.
+:first-child – Targets the first child of an element.
+:last-child – Targets the last child.
+:checked – Styles checked <input> elements.
+Example of Pseudo-Classes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes Example</title>
+    <style>
+        /* Hover effect */
+        button:hover {
+            background-color: green;
+            color: white;
+        }
+
+        /* Focus effect */
+        input:focus {
+            border: 2px solid blue;
+            outline: none;
+        }
+
+        /* nth-child */
+        ul li:nth-child(odd) {
+            background-color: lightgray;
+        }
+
+        /* first-child */
+        p:first-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button>Hover Me</button>
+    <br><br>
+
+    <input type="text" placeholder="Click to focus">
+    <br><br>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <div>
+        <p>First paragraph (Bold using first-child)</p>
+        <p>Second paragraph</p>
+    </div>
+
+</body>
+</html>
+
+2. What are Pseudo-Elements?
+
+Pseudo-elements allow you to style specific parts of an element, such as adding content before or after an element.
+
+Common Pseudo-Elements
+
+::before – Inserts content before an element.
+::after – Inserts content after an element.
+::first-letter – Styles the first letter of text.
+::first-line – Styles the first line of a block of text.
+::selection – Styles the text when highlighted.
+
+Example of Pseudo-Elements
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Elements Example</title>
+    <style>
+        /* ::before and ::after */
+        h1::before {
+            content: "🔥 ";
+            color: red;
+        }
+
+        h1::after {
+            content: " 🎉";
+            color: blue;
+        }
+
+        /* First letter styling */
+        p::first-letter {
+            font-size: 2em;
+            color: darkred;
+        }
+
+        /* First line styling */
+        p::first-line {
+            font-weight: bold;
+        }
+
+        /* Selection styling */
+        p::selection {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Pseudo-Elements</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat ex nec lacus volutpat.</p>
+
+</body>
+</html>
+Key Differences Between Pseudo-Classes and Pseudo-Elements
+Feature	Pseudo-Class	Pseudo-Element
+Syntax	: (single colon)	:: (double colon)
+Purpose	Targets an element's state	Targets a specific part of an element
+Example	:hover, :nth-child(2)	::before, ::first-letter
+
+
+
+Grouping and Combining Selectors:
+
+CSS allows you to group and combine selectors to apply styles efficiently and reduce redundancy in your code. Below are different ways of grouping and combining selectors in HTML5:
+
+1. Grouping Selectors (, - Comma Operator)
+Grouping selectors means applying the same style to multiple elements at once, rather than writing separate rules for each.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Selectors</title>
+    <style>
+        h1, h2, p {
+            color: blue;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+Explanation
+h1, h2, p are grouped together.
+The styles (color: blue; font-family: Arial;) apply to all three elements.
+
+2. Descendant Selector ( - Space)
+
+A descendant selector targets elements that are inside another element.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descendant Selector</title>
+    <style>
+        div p {
+            color: green;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>This paragraph inside a div will be green.</p>
+    </div>
+    <p>This paragraph is outside the div, so it remains unchanged.</p>
+</body>
+</html>
+Explanation
+The selector div p applies styles only to <p> inside <div>.
+
+3. Child Selector (> - Greater Than)
+
+A child selector applies styles only to direct child elements (not deeper levels).
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Selector</title>
+    <style>
+        div > p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>This paragraph inside a div is a direct child and will be red.</p>
+        <section>
+            <p>This paragraph inside a section (nested inside div) is NOT a direct child.</p>
+        </section>
+    </div>
+</body>
+</html>
+
+Explanation
+
+div > p applies styles only to <p> that is a direct child of <div>, not nested ones.
+
+4. Adjacent Sibling Selector (+ - Plus Sign)
+
+This selector targets an element that immediately follows another element.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjacent Sibling Selector</title>
+    <style>
+        h1 + p {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <p>This paragraph follows h1 directly and will be orange.</p>
+    <p>This paragraph is NOT immediately after h1, so it's unchanged.</p>
+</body>
+</html>
+Explanation
+h1 + p applies styles only to the first <p> that appears immediately after <h1>.
+
+5. General Sibling Selector (~ - Tilde)
+This selector targets all siblings that appear after a specific element.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Sibling Selector</title>
+    <style>
+        h1 ~ p {
+            color: purple;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <p>This paragraph follows h1 and will be purple.</p>
+    <p>This paragraph also follows h1 and will be purple.</p>
+</body>
+</html>
+Explanation
+h1 ~ p applies styles to all <p> elements that appear after <h1> (not just the first one).
+
+6. Attribute Selector ([])
+
+You can style elements based on their attributes.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+    <style>
+        input[type="text"] {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="This input will have a green border">
+    <input type="password" placeholder="This input remains default">
+</body>
+</html>
+Explanation
+input[type="text"] applies styles only to <input> fields of type "text".
+
+7. Combining Different Selectors
+
+You can combine different types of selectors to create powerful CSS rules.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combining Selectors</title>
+    <style>
+        div p.special {
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="special">This paragraph inside a div has a special class and will be styled.</p>
+        <p>This paragraph inside div but without class won't be affected.</p>
+    </div>
+    <p class="special">This paragraph has the class but is outside div, so it won't be affected.</p>
+</body>
+</html>
+Explanation
+div p.special applies styles only to <p> elements that:
+Are inside a <div>.
+Have the class "special".
+
+
+
+Styling Text and Fonts:
+
+In HTML5, fonts are controlled using CSS. The main font-related properties are:
+
+Font Family (font-family)
+Font Size (font-size)
+Font Weight (font-weight)
+Font Style (font-style)
+Each of these properties defines how text appears on a webpage. Below, we explain each with examples.
+
+1️⃣ Font Family (font-family)
+The font-family property specifies the typeface of the text. You can define multiple font choices, separated by commas, to ensure browser compatibility.
+
+Example: Using Different Font Families
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Family Example</title>
+    <style>
+        .serif { font-family: "Times New Roman", serif; }
+        .sans-serif { font-family: "Arial", sans-serif; }
+        .monospace { font-family: "Courier New", monospace; }
+        .cursive { font-family: "Brush Script MT", cursive; }
+    </style>
+</head>
+<body>
+
+    <p class="serif">This is a Serif font (Times New Roman).</p>
+    <p class="sans-serif">This is a Sans-serif font (Arial).</p>
+    <p class="monospace">This is a Monospace font (Courier New).</p>
+    <p class="cursive">This is a Cursive font (Brush Script MT).</p>
+
+</body>
+</html>
+✅ Output:
+Each paragraph appears in different fonts.
+
+2️⃣ Font Size (font-size):
+The font-size property defines the text size. It can be specified in:
+
+Pixels (px) - Fixed size (e.g., 16px)
+Em (em) - Relative to the parent element
+Rem (rem) - Relative to the root element (<html>)
+Percentage (%) - Relative to the parent element
+Example: Different Font Sizes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Example</title>
+    <style>
+        .small { font-size: 12px; }
+        .medium { font-size: 20px; }
+        .large { font-size: 30px; }
+        .relative { font-size: 1.5em; } /* Relative to parent */
+    </style>
+</head>
+<body>
+
+    <p class="small">This text is small (12px).</p>
+    <p class="medium">This text is medium (20px).</p>
+    <p class="large">This text is large (30px).</p>
+    <p class="relative">This text is relative (1.5em).</p>
+
+</body>
+</html>
+✅ Output:
+Text sizes vary according to the specified values.
+
+3️⃣ Font Weight (font-weight) :
+The font-weight property controls how bold the text appears. Common values are:
+
+normal (default)
+bold
+lighter
+bolder
+Numeric values (100 to 900) for precise control.
+Example: Different Font Weights
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Weight Example</title>
+    <style>
+        .thin { font-weight: 100; }
+        .normal { font-weight: 400; }
+        .bold { font-weight: bold; }
+        .extra-bold { font-weight: 900; }
+    </style>
+</head>
+<body>
+
+    <p class="thin">This is thin text (100).</p>
+    <p class="normal">This is normal text (400).</p>
+    <p class="bold">This is bold text (bold).</p>
+    <p class="extra-bold">This is extra bold text (900).</p>
+
+</body>
+</html>
+✅ Output:
+Each text appears with a different boldness.
+
+4️⃣ Font Style (font-style)
+The font-style property controls whether text appears normal, italic, or oblique.
+
+Example: Different Font Styles
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style Example</title>
+    <style>
+        .normal { font-style: normal; }
+        .italic { font-style: italic; }
+        .oblique { font-style: oblique; }
+    </style>
+</head>
+<body>
+
+    <p class="normal">This is normal text.</p>
+    <p class="italic">This is italic text.</p>
+    <p class="oblique">This is oblique text.</p>
+
+</body>
+</html>
+✅ Output:
+Each text appears with a different style.
+
+
+Google Fonts Integration:
+
+Google Fonts is a free library of web fonts provided by Google, which allows developers to easily integrate custom fonts into their websites using CSS3. It eliminates the need for locally installed fonts and ensures consistent typography across different devices and browsers.
+
+How to Integrate Google Fonts?
+There are two primary ways to integrate Google Fonts into your HTML5 and CSS3 projects:
+
+Using <link> in HTML
+Using @import in CSS
+1. Using <link> in HTML
+The easiest way to integrate Google Fonts is by adding a <link> tag inside the <head> section of your HTML file.
+
+Example 1: Using a Single Google Font
+Steps to Follow:
+Visit Google Fonts.
+Select a font (e.g., Roboto).
+Copy the <link> tag provided.
+Paste it inside the <head> of your HTML file.
+Use the font in your CSS.
+Code Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, Google Fonts!</h1>
+    <p>This text is using the Roboto font.</p>
+</body>
+</html>
+2. Using @import in CSS
+Instead of adding a <link> tag in HTML, you can use the @import rule inside your CSS file.
+
+Example 2: Using @import for Google Fonts
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts with @import</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        
+        body {
+            font-family: 'Lobster', cursive;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Google Fonts</h1>
+    <p>This text is styled with the Lobster font.</p>
+</body>
+</html>
+
+3. Using Multiple Google Fonts
+
+You can include multiple fonts by separating them with a | in the Google Fonts URL.
+
+Example 3: Combining Multiple Fonts
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Google Fonts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Fonts Combination</h1>
+    <p>This paragraph uses Roboto, while the heading uses Pacifico.</p>
+</body>
+</html>
+
+4. Using Different Font Weights and Styles
+
+Google Fonts allows you to use different font weights and styles (bold, italic, etc.).
+
+Example 4: Using Font Weights
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Weights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .light {
+            font-weight: 300;
+        }
+        .bold {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <p class="light">This is a light-weight text.</p>
+    <p class="bold">This is a bold-weight text.</p>
+</body>
+</html>
+
+5. Using Google Fonts with Fallback Fonts :
+
+It’s a good practice to include fallback fonts in case the Google Font fails to load.
+
+Example 5: Fallback Font
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts with Fallback</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fallback Font Example</h1>
+    <p>If Montserrat fails to load, Arial will be used.</p>
+</body>
+</html>
+
+6. Using Google Fonts in an External CSS File
+Instead of embedding Google Fonts in the <head>, you can include them in an external CSS file.
+
+Example 6: External CSS File
+HTML File (index.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts in External CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>External CSS Example</h1>
+    <p>This paragraph is styled using Google Fonts.</p>
+</body>
+</html>
+CSS File (styles.css)
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+
+Text Formatting (Color, Alignment, Spacing, Shadow):
+
+CSS3 provides various properties for formatting text, including setting colors, aligning text, adjusting spacing, and adding shadows. Below, I'll explain these properties with different examples using HTML5 and CSS3.
+
+1. Text Color (color)
+The color property sets the text color using:
+
+Named colors (red, blue, green)
+Hexadecimal values (#ff0000)
+RGB (rgb(255, 0, 0))
+HSL (hsl(0, 100%, 50%))
+Example: Setting Text Color
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Color Example</title>
+    <style>
+        .named-color { color: red; }
+        .hex-color { color: #ff5733; }
+        .rgb-color { color: rgb(0, 128, 255); }
+        .hsl-color { color: hsl(120, 50%, 50%); }
+    </style>
+</head>
+<body>
+    <p class="named-color">This text is red using a named color.</p>
+    <p class="hex-color">This text is orange using a hex code.</p>
+    <p class="rgb-color">This text is blue using RGB.</p>
+    <p class="hsl-color">This text is green using HSL.</p>
+</body>
+</html>
+2. Text Alignment (text-align)
+The text-align property specifies the horizontal alignment of text.
+
+Values:
+
+left: Aligns text to the left (default).
+right: Aligns text to the right.
+center: Centers the text.
+justify: Stretches text to fit the container.
+Example: Text Alignment
+<style>
+    .left { text-align: left; }
+    .right { text-align: right; }
+    .center { text-align: center; }
+    .justify { text-align: justify; width: 50%; }
+</style>
+
+<p class="left">This text is aligned to the left.</p>
+<p class="right">This text is aligned to the right.</p>
+<p class="center">This text is centered.</p>
+<p class="justify">This text is justified, meaning it stretches to fill the width of the container.</p>
+
+3. Text Spacing (Letter, Word, Line Height)
+CSS provides properties to control spacing:
+
+letter-spacing: Adjusts space between characters.
+word-spacing: Adjusts space between words.
+line-height: Adjusts space between lines of text.
+Example: Text Spacing
+<style>
+    .letter-spacing { letter-spacing: 3px; }
+    .word-spacing { word-spacing: 10px; }
+    .line-height { line-height: 2; }
+</style>
+
+<p class="letter-spacing">This text has increased letter spacing.</p>
+<p class="word-spacing">This text has increased word spacing.</p>
+<p class="line-height">This text has increased line height for better readability.</p>
+
+4. Text Shadow (text-shadow)
+
+The text-shadow property adds shadows to text.
+
+Syntax:
+
+text-shadow: X-offset Y-offset Blur-radius Color;
+X-offset: Horizontal shadow position.
+Y-offset: Vertical shadow position.
+Blur-radius: Optional blur effect.
+Color: Shadow color.
+Example: Text Shadow
+<style>
+    .shadow1 { text-shadow: 2px 2px 5px gray; }
+    .shadow2 { text-shadow: 4px 4px 10px red; }
+    .shadow3 { text-shadow: 3px 3px 5px blue, -3px -3px 5px green; } /* Multiple shadows */
+</style>
+
+<p class="shadow1">This text has a gray shadow.</p>
+<p class="shadow2">This text has a red shadow.</p>
+<p class="shadow3">This text has multiple shadows.</p>
+
+5. Combining All Properties
+Example: Combining Color, Alignment, Spacing, and Shadow
+<style>
+    .styled-text {
+        color: #ff5733;
+        text-align: center;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+        line-height: 1.8;
+        text-shadow: 2px 2px 5px black;
+    }
+</style>
+
+<p class="styled-text">This is a well-formatted text with various CSS3 properties applied.</p>
+
+
+Line Height, Letter Spacing, and Word Spacing:
+
+
+In CSS3, line-height, letter-spacing, and word-spacing are properties used for controlling the spacing and layout of text content. Below is a detailed explanation of each property along with different HTML5 examples.
+
+1. Line Height (line-height)
+The line-height property controls the amount of space between lines of text. It can be defined in multiple ways:
+
+Normal (default)
+A number (multiplier of the font size)
+A length (px, em, rem, etc.)
+A percentage (% of the font size)
+Example: Using Line Height
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Line Height Example</title>
+    <style>
+        .normal {
+            line-height: normal; /* Default */
+        }
+        .double {
+            line-height: 2; /* 2 times the font size */
+        }
+        .pixels {
+            line-height: 30px; /* Fixed pixel value */
+        }
+        .percentage {
+            line-height: 150%; /* 150% of font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Line Height Example</h2>
+    <p class="normal">This is an example of normal line height.</p>
+    <p class="double">This text has double the normal line height.</p>
+    <p class="pixels">This text has a line height of 30px.</p>
+    <p class="percentage">This text has a line height of 150%.</p>
+</body>
+</html>
+
+2. Letter Spacing (letter-spacing)
+
+The letter-spacing property controls the space between individual letters in a word. It can take:
+
+Normal (default spacing)
+
+A positive or negative length value (px, em, rem, etc.)
+
+Example: Using Letter Spacing
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Letter Spacing Example</title>
+    <style>
+        .normal {
+            letter-spacing: normal; /* Default */
+        }
+        .wide {
+            letter-spacing: 5px; /* Increased letter spacing */
+        }
+        .narrow {
+            letter-spacing: -1px; /* Reduced letter spacing */
+        }
+        .percentage {
+            letter-spacing: 0.2em; /* Relative to font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Letter Spacing Example</h2>
+    <p class="normal">This is an example of normal letter spacing.</p>
+    <p class="wide">This text has a letter spacing of 5px.</p>
+    <p class="narrow">This text has a letter spacing of -1px.</p>
+    <p class="percentage">This text has a letter spacing of 0.2em.</p>
+</body>
+</html>
+
+3. Word Spacing (word-spacing)
+
+The word-spacing property controls the space between words in a sentence. It can take:
+
+Normal (default spacing)
+A positive or negative length value (px, em, rem, etc.)
+Example: Using Word Spacing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Word Spacing Example</title>
+    <style>
+        .normal {
+            word-spacing: normal; /* Default */
+        }
+        .wide {
+            word-spacing: 10px; /* Increased word spacing */
+        }
+        .narrow {
+            word-spacing: -2px; /* Reduced word spacing */
+        }
+        .percentage {
+            word-spacing: 0.5em; /* Relative to font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Word Spacing Example</h2>
+    <p class="normal">This is an example of normal word spacing.</p>
+    <p class="wide">This text has a word spacing of 10px.</p>
+    <p class="narrow">This text has a word spacing of -2px.</p>
+    <p class="percentage">This text has a word spacing of 0.5em.</p>
+</body>
+</html>
+
+
+Line Height, Letter Spacing, and Word Spacing:
+
+In CSS3, line-height, letter-spacing, and word-spacing are properties used for controlling the spacing and layout of text content. Below is a detailed explanation of each property along with different HTML5 examples.
+
+1. Line Height (line-height)
+The line-height property controls the amount of space between lines of text. It can be defined in multiple ways:
+
+Normal (default)
+A number (multiplier of the font size)
+A length (px, em, rem, etc.)
+A percentage (% of the font size)
+Example: Using Line Height
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Line Height Example</title>
+    <style>
+        .normal {
+            line-height: normal; /* Default */
+        }
+        .double {
+            line-height: 2; /* 2 times the font size */
+        }
+        .pixels {
+            line-height: 30px; /* Fixed pixel value */
+        }
+        .percentage {
+            line-height: 150%; /* 150% of font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Line Height Example</h2>
+    <p class="normal">This is an example of normal line height.</p>
+    <p class="double">This text has double the normal line height.</p>
+    <p class="pixels">This text has a line height of 30px.</p>
+    <p class="percentage">This text has a line height of 150%.</p>
+</body>
+</html>
+2. Letter Spacing (letter-spacing)
+The letter-spacing property controls the space between individual letters in a word. It can take:
+
+Normal (default spacing)
+A positive or negative length value (px, em, rem, etc.)
+Example: Using Letter Spacing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Letter Spacing Example</title>
+    <style>
+        .normal {
+            letter-spacing: normal; /* Default */
+        }
+        .wide {
+            letter-spacing: 5px; /* Increased letter spacing */
+        }
+        .narrow {
+            letter-spacing: -1px; /* Reduced letter spacing */
+        }
+        .percentage {
+            letter-spacing: 0.2em; /* Relative to font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Letter Spacing Example</h2>
+    <p class="normal">This is an example of normal letter spacing.</p>
+    <p class="wide">This text has a letter spacing of 5px.</p>
+    <p class="narrow">This text has a letter spacing of -1px.</p>
+    <p class="percentage">This text has a letter spacing of 0.2em.</p>
+</body>
+</html>
+3. Word Spacing (word-spacing)
+The word-spacing property controls the space between words in a sentence. It can take:
+
+Normal (default spacing)
+A positive or negative length value (px, em, rem, etc.)
+Example: Using Word Spacing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Word Spacing Example</title>
+    <style>
+        .normal {
+            word-spacing: normal; /* Default */
+        }
+        .wide {
+            word-spacing: 10px; /* Increased word spacing */
+        }
+        .narrow {
+            word-spacing: -2px; /* Reduced word spacing */
+        }
+        .percentage {
+            word-spacing: 0.5em; /* Relative to font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Word Spacing Example</h2>
+    <p class="normal">This is an example of normal word spacing.</p>
+    <p class="wide">This text has a word spacing of 10px.</p>
+    <p class="narrow">This text has a word spacing of -2px.</p>
+    <p class="percentage">This text has a word spacing of 0.5em.</p>
+</body>
+</html>
+
+
+CSS Box Model :
+
+Understanding Margins, Borders, Padding, and Content :
+
+In CSS3, the Box Model is a fundamental concept that explains how elements are structured and spaced in a webpage. The box model consists of the following properties:
+
+Content - The actual content of the element (text, image, etc.).
+Padding - Space between the content and the border.
+Border - A line surrounding the padding and content.
+Margin - Space outside the border, separating the element from others.
+📌 1. Content
+The content is what’s inside the element, like text, images, or other HTML elements.
+
+<div class="content-box">This is content</div>
+.content-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 100px;
+}
+📌 2. Padding (Inner Spacing)
+Padding creates space inside the element, between the content and the border.
+
+<div class="padding-box">Padding Example</div>
+.padding-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgreen;
+  padding: 20px;
+  border: 2px solid black;
+}
+Explanation:
+
+padding: 20px; means 20px padding on all sides.
+The actual size of the element becomes (200 + 40)px × (100 + 40)px due to padding.
+📌 3. Border (Outline around the Element)
+Borders are lines that surround the padding and content.
+
+<div class="border-box">Border Example</div>
+.border-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 5px solid red;
+  background-color: yellow;
+}
+Explanation:
+
+border: 5px solid red; adds a 5px solid red border.
+The actual size increases due to the border.
+Different border styles:
+
+.border-box {
+  border: 5px dashed blue;   /* Dashed border */
+  border: 5px dotted green;  /* Dotted border */
+  border: 5px double black;  /* Double border */
+}
+📌 4. Margin (Outer Spacing)
+Margin creates space outside the element, pushing it away from other elements.
+
+<div class="margin-box">Margin Example</div>
+.margin-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightcoral;
+  padding: 10px;
+  border: 3px solid black;
+  margin: 30px;
+}
+Explanation:
+
+margin: 30px; means 30px space on all sides.
+📌 Example: Complete Box Model
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            padding: 20px;
+            border: 5px solid blue;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Box Model Example</div>
+</body>
+</html>
+📌 Shorthand Syntax
+Instead of specifying values separately, we can use shorthand properties:
+
+/* Padding */
+padding: 10px;  /* All sides */
+padding: 10px 20px;  /* Top-Bottom | Left-Right */
+padding: 10px 15px 20px 25px;  /* Top | Right | Bottom | Left */
+
+/* Margin */
+margin: 20px;  /* All sides */
+margin: 10px auto;  /* Center horizontally */
+
+/* Border */
+border: 3px solid black;
+🔥 Final Summary
+Property	Description
+Content	The actual content (text, image, etc.)
+Padding	Space between content and border
+Border	Line surrounding padding & content
+Margin	Space outside the border
+
+
+Outline vs. Border:
+
+
+In CSS3, both outline and border are used to define the visual boundaries of an HTML element, but they have distinct differences in behavior and usage.
+
+Key Differences Between outline and border
+Feature	border	outline
+Placement	Surrounds the content and padding of an element.	Drawn outside the border edge and does not affect layout.
+Affects Box Model?	Yes, it affects the box model by adding width.	No, it does not take up space in the box model.
+Can Be Offset?	No	Yes, using outline-offset.
+Can Be Rounded?	Yes, using border-radius.	No, outline-radius does not exist.
+Can Be Individualized?	Yes, with border-top, border-left, etc.	No, outline applies uniformly to all sides.
+Impact on Layout?	Adds to the element's size.	Does not change element size or position.
+Examples of border and outline Using HTML5 & CSS3
+1. Basic border Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Example</title>
+    <style>
+        .border-box {
+            width: 200px;
+            padding: 10px;
+            border: 5px solid blue;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-box">
+        This box has a blue solid border.
+    </div>
+</body>
+</html>
+🔹 Explanation: The border is inside the box model, affecting the total width and height of the element.
+
+2. Basic outline Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline Example</title>
+    <style>
+        .outline-box {
+            width: 200px;
+            padding: 10px;
+            outline: 5px solid red;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="outline-box">
+        This box has a red outline.
+    </div>
+</body>
+</html>
+🔹 Explanation: The outline does not affect the element's size, and it appears outside of the border.
+
+3. Using outline-offset to Create Space
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline Offset Example</title>
+    <style>
+        .outline-offset-box {
+            width: 200px;
+            padding: 10px;
+            outline: 5px dashed green;
+            outline-offset: 10px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="outline-offset-box">
+        Outline is spaced from the element.
+    </div>
+</body>
+</html>
+🔹 Explanation: The outline-offset: 10px; moves the outline away from the element.
+
+4. Rounded Borders vs. Non-Rounded Outline
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border vs Outline</title>
+    <style>
+        .border-radius-box {
+            width: 200px;
+            padding: 10px;
+            border: 5px solid blue;
+            border-radius: 20px;
+            outline: 5px solid red;
+            outline-offset: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-radius-box">
+        Border is rounded, outline is not.
+    </div>
+</body>
+</html>
+🔹 Explanation: border-radius applies only to the border, while outline remains square.
+
+5. Interactive Outline Example (Focus Highlight)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Outline Example</title>
+    <style>
+        input {
+            padding: 8px;
+            border: 2px solid gray;
+        }
+        input:focus {
+            outline: 3px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Click me to see outline">
+</body>
+</html>
+🔹 Explanation: When the input field is focused, an outline appears without affecting the layout.
+
+When to Use border vs. outline?
+Use Case	Use border	Use outline
+Creating a box with a clear boundary	✅ Yes	❌ No
+Adding decoration inside the layout	✅ Yes	❌ No
+Highlighting an element on focus (like accessibility)	❌ No	✅ Yes
+Ensuring no layout shift when styling focus states	❌ No	✅ Yes
+Adding extra space between the boundary and the highlight	❌ No	✅ Yes (outline-offset)
+
+
+Overflow Handling (Visible, Hidden, Scroll, Auto):
+
+In CSS, the overflow property controls how content that exceeds the boundaries of an element is handled. The four main values are:
+
+visible – Content overflows the element’s box and is not clipped.
+hidden – Content that exceeds the element’s box is clipped and not visible.
+scroll – Scrollbars appear, allowing users to scroll through the overflowing content.
+auto – Scrollbars appear only when needed.
+1. overflow: visible; (Default Behavior)
+The content is not clipped and overflows outside the container.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Visible</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid blue;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overflow: Visible</h3>
+    <div class="box">
+        This content is too long for the container but will still be displayed outside of the box.
+    </div>
+</body>
+</html>
+📌 Output: The content spills outside of the box.
+
+2. overflow: hidden; (Content Clipped)
+Content that exceeds the element’s dimensions is clipped and not visible.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Hidden</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid red;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overflow: Hidden</h3>
+    <div class="box">
+        This text is longer than the container size, but the extra content is hidden.
+    </div>
+</body>
+</html>
+📌 Output: The overflowing text is clipped and not visible outside the box.
+
+3. overflow: scroll; (Always Shows Scrollbars)
+Scrollbars appear even if the content does not overflow.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Scroll</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid green;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overflow: Scroll</h3>
+    <div class="box">
+        This content is longer than the box, so scrollbars will always be visible.
+    </div>
+</body>
+</html>
+📌 Output: Scrollbars are always visible, even if not needed.
+
+4. overflow: auto; (Shows Scrollbars Only If Needed)
+Scrollbars appear only when the content overflows.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Auto</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid orange;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overflow: Auto</h3>
+    <div class="box">
+        This content is long, so scrollbars will appear only when needed.
+    </div>
+</body>
+</html>
+📌 Output: Scrollbars appear only if content overflows.
+
+Overflow in Both Directions (overflow-x, overflow-y)
+You can control the overflow horizontally (overflow-x) and vertically (overflow-y) separately.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow X and Y</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid purple;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overflow-X: Scroll, Overflow-Y: Hidden</h3>
+    <div class="box">
+        This is a very long text that will create a horizontal scrollbar, but no vertical scrollbar.
+    </div>
+</body>
+</html>
+📌 Output: Only a horizontal scrollbar appears.
+
+
+CSS Layout Techniques:
+
+Display Property (Block, Inline, Inline-Block, None) :
+
+The display property in CSS defines how an HTML element should be displayed in the document. It has several values, but the most commonly used ones are:
+
+block
+inline
+inline-block
+none
+1. display: block;
+Elements that have display: block; always start on a new line and take up the full width available.
+Examples: <div>, <p>, <h1> to <h6>, <section>, <article>, etc.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Block Example</title>
+    <style>
+        .block-element {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="block-element">I am a block element</div>
+    <p class="block-element">Paragraphs are block elements</p>
+    <h2 class="block-element">Headings are block elements</h2>
+</body>
+</html>
+📝 Output:
+Each element appears on a new line and takes the full width available.
+
+2. display: inline;
+Elements that have display: inline; do not start on a new line.
+They take only as much width as needed and ignore width and height properties.
+Examples: <span>, <a>, <strong>, <em>
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Inline Example</title>
+    <style>
+        .inline-element {
+            background-color: lightgreen;
+            padding: 5px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <span class="inline-element">I am inline</span>
+    <a href="#" class="inline-element">Links are inline</a>
+    <strong class="inline-element">Strong is inline</strong>
+</body>
+</html>
+📝 Output:
+Elements appear next to each other without breaking to a new line.
+
+3. display: inline-block;
+Similar to inline, but allows width and height to be set.
+This means it behaves like an inline element but respects block properties like padding, margin, width, and height.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Inline-Block Example</title>
+    <style>
+        .inline-block-element {
+            background-color: lightcoral;
+            padding: 10px;
+            width: 150px;
+            height: 50px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="inline-block-element">Item 1</div>
+    <div class="inline-block-element">Item 2</div>
+    <div class="inline-block-element">Item 3</div>
+</body>
+</html>
+📝 Output:
+Elements appear inline but allow width and height to be applied.
+
+4. display: none;
+Hides the element completely (removes it from the DOM layout).
+The space occupied by the element is also removed.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display None Example</title>
+    <style>
+        .hidden-element {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>This paragraph is visible.</p>
+    <p class="hidden-element">This paragraph is hidden.</p>
+</body>
+</html>
+📝 Output:
+Only the first paragraph is visible; the second paragraph is completely hidden.
+
+Summary Table
+display Value	Starts New Line?	Respects Width & Height?	Space Occupied?
+block	✅ Yes	✅ Yes	✅ Yes
+inline	❌ No	❌ No	✅ Yes
+inline-block	❌ No	✅ Yes	✅ Yes
+none	❌ No	❌ No	❌ No
+
+
+Positioning (Static, Relative, Absolute, Fixed, Sticky) :
+
+CSS provides various ways to position elements on a webpage. The main types of positioning in CSS3 are:
+
+Static Positioning (default)
+Relative Positioning
+Absolute Positioning
+Fixed Positioning
+Sticky Positioning
+
+Each of these positioning types controls how an element is placed in the document flow. Let’s go through them one by one with examples.
+
+1. Static Positioning (Default)
+Static is the default positioning of all elements. Elements positioned statically follow the normal document flow and are not affected by top, right, bottom, or left properties.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Positioning</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Static Position</div>
+</body>
+</html>
+🔹 Explanation: The element appears in the normal document flow.
+
+2. Relative Positioning:
+
+With position: relative, the element stays in the normal flow but can be moved using top, bottom, left, and right properties.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Positioning</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+            border: 2px solid green;
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Relative Position</div>
+</body>
+</html>
+🔹 Explanation: The element moves 20px down and 30px to the right from its normal position.
+
+3. Absolute Positioning:
+With position: absolute, the element is removed from the normal document flow and positioned relative to the nearest positioned ancestor (not static). If no such ancestor exists, it will be positioned relative to <html>.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Positioning</title>
+    <style>
+        .container {
+            position: relative; /* Necessary for absolute child */
+            width: 400px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Absolute Position</div>
+    </div>
+</body>
+</html>
+🔹 Explanation: The .box element is positioned 20px from the top and 50px from the left of .container.
+
+4. Fixed Positioning
+With position: fixed, the element is completely removed from the normal document flow and remains fixed relative to the viewport (browser window), regardless of scrolling.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Positioning</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 50px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Fixed Position</div>
+    <p style="margin-top:1000px;">Scroll Down to see the effect</p>
+</body>
+</html>
+🔹 Explanation: The element stays fixed at the top-right corner of the viewport even when scrolling.
+
+5. Sticky Positioning
+With position: sticky, the element behaves like relative positioning until a specified scroll position is reached, after which it becomes fixed.
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Positioning</title>
+    <style>
+        .box {
+            width: 100%;
+            height: 50px;
+            background-color: purple;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Sticky Header</div>
+    <p style="margin-top:1000px;">Scroll down to see sticky effect.</p>
+</body>
+</html>
+🔹 Explanation: The .box acts as a normal element but sticks to the top when scrolling down.
+
+Comparison Table
+Position Type	In Document Flow?	Moves with Scroll?	Positioned Relative To
+static	✅ Yes	✅ Yes	Default (normal flow)
+relative	✅ Yes	✅ Yes	Own normal position
+absolute	❌ No	✅ Yes	Nearest positioned ancestor (or <html>)
+fixed	❌ No	❌ No	Viewport (browser window)
+sticky	✅ Yes	✅ No (after scroll)	Nearest scrollable ancestor
+
+

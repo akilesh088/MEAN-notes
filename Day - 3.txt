@@ -1,0 +1,2938 @@
+Gradients in CSS3:
+
+CSS3 provides gradients that allow smooth transitions between multiple colors, creating visually appealing backgrounds without using images. Gradients are broadly classified into:
+
+Linear Gradients
+Radial Gradients
+Conic Gradients
+1. Linear Gradient
+A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal).
+
+Syntax:
+background: linear-gradient(direction, color1, color2, ...);
+
+Example: Vertical Linear Gradient
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Gradient Example</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, red, yellow);
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+Explanation:
+
+to bottom → The gradient flows from top to bottom.
+red, yellow → Starts with red and transitions into yellow.
+
+Example: Diagonal Gradient
+
+background: linear-gradient(to bottom right, blue, pink);
+
+Example: Multi-Color Gradient
+
+background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+
+2. Radial Gradient
+
+A radial gradient transitions colors from a central point outward.
+
+Syntax:
+
+background: radial-gradient(shape size at position, color1, color2, ...);
+Example: Circular Radial Gradient
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial Gradient Example</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, blue, white);
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+Explanation:
+
+circle → Defines a circular gradient.
+blue, white → Starts with blue at the center and fades to white at the edges.
+
+Example: Elliptical Radial Gradient
+
+background: radial-gradient(ellipse, red, yellow, green);
+
+3. Conic Gradient
+
+A conic gradient transitions colors around a center point in a circular motion.
+
+Syntax:
+
+background: conic-gradient(from angle at position, color1, color2, ...);
+Example: Pie Chart Effect
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conic Gradient Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .gradient-box {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(red, yellow, green, blue, purple);
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-box"></div>
+</body>
+</html>
+Explanation:
+
+The colors transition in a circular (pie-chart-like) manner.
+
+Using Gradients in Buttons:
+
+<button style="background: linear-gradient(to right, #ff7e5f, #feb47b); padding: 10px 20px; border: none; color: white; font-size: 16px;">
+    Gradient Button
+</button>
+
+
+Transforms:
+
+CSS3 transforms allow you to visually manipulate elements using functions like rotation, scaling, skewing, and translation. They enhance the appearance and interactivity of web pages without relying on JavaScript.
+
+Types of Transforms in CSS3
+1. Translate (Move an Element)
+The translate(x, y) function moves an element along the X and Y axes.
+
+Example: Translate an Element
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - Translate</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: translate(50px, 50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Move Me</div>
+</body>
+</html>
+📌 Hovering over the box moves it 50px right and 50px down.
+
+2. Rotate (Rotate an Element)
+
+The rotate(angle) function rotates an element by a specified degree.
+
+Example: Rotate an Element
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - Rotate</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Rotate Me</div>
+</body>
+</html>
+📌 Hovering over the box rotates it by 45 degrees.
+
+3. Scale (Resize an Element)
+The scale(x, y) function increases or decreases the size of an element.
+
+Example: Scale an Element
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - Scale</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Zoom Me</div>
+</body>
+</html>
+📌 Hovering over the box increases its size by 1.5x.
+
+4. Skew (Slant an Element)
+The skew(x, y) function skews an element along the X and Y axes.
+
+Example: Skew an Element
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - Skew</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: skew(20deg, 10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Skew Me</div>
+</body>
+</html>
+📌 Hovering over the box skews it by 20 degrees along the X-axis and 10 degrees along the Y-axis.
+
+5. Multiple Transforms
+
+You can combine multiple transform functions.
+
+Example: Combine Multiple Transforms
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - Multiple</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: rotate(45deg) scale(1.2) translate(20px, 20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Hover Me</div>
+</body>
+</html>
+📌 Hovering over the box rotates, scales, and moves it at the same time.
+
+6. 3D Transforms
+
+CSS3 also supports 3D transformations like rotateX(), rotateY(), and rotateZ().
+
+Example: 3D Rotate
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transform - 3D Rotate</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            transition: transform 0.5s;
+        }
+        .box:hover {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Flip Me</div>
+</body>
+</html>
+📌 Hovering over the box flips it 180 degrees along the X-axis.
+
+
+Form Inputs :
+
+In HTML5, form inputs are used to collect user data. CSS3 allows you to style these inputs in various ways, enhancing the user experience. Below are different types of form inputs with CSS3 examples.
+
+1. Basic Input Styling
+We can style form inputs using CSS properties like border, padding, background-color, font-size, and outline.
+
+Example: Basic Styling
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Input Styling</title>
+    <style>
+        input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #28A745;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name">
+</body>
+</html>
+🔹 Explanation:
+
+border-radius creates rounded edges.
+border-color changes when the input is focused.
+
+2. Styling Different Input Types
+
+We can target specific input types using attribute selectors.
+
+Example: Styling Different Input Types
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types Styling</title>
+    <style>
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+
+        input[type="email"] {
+            border: 2px solid green;
+        }
+
+        input[type="password"] {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Name"><br><br>
+    <input type="email" placeholder="Email"><br><br>
+    <input type="password" placeholder="Password">
+</body>
+</html>
+🔹 Explanation:
+
+Each input[type="..."] is styled differently.
+
+3. Styling Input Placeholder
+
+The ::placeholder pseudo-element allows us to style placeholder text.
+
+Example: Custom Placeholder Styling
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Styling</title>
+    <style>
+        input::placeholder {
+            color: gray;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name">
+</body>
+</html>
+🔹 Explanation:
+
+The placeholder text is italicized and has a gray color.
+
+4. Styling a Focused Input Field
+
+We can change the appearance of an input when it is clicked or focused.
+
+Example: Highlighting Focused Input
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Effect</title>
+    <style>
+        input {
+            padding: 10px;
+            border: 2px solid gray;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: orange;
+            box-shadow: 0 0 5px orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Click to focus">
+</body>
+</html>
+🔹 Explanation:
+
+:focus changes the border color and adds a shadow when the input is clicked.
+
+5. Styling Disabled and Read-Only Inputs
+
+CSS can differentiate between normal, disabled, and read-only inputs.
+
+Example: Styling Disabled & Read-Only Inputs
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled & Readonly Styling</title>
+    <style>
+        input:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        input[readonly] {
+            background-color: lightyellow;
+            border: 2px dashed orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Editable"><br><br>
+    <input type="text" placeholder="Disabled" disabled><br><br>
+    <input type="text" placeholder="Read-Only" readonly>
+</body>
+</html>
+🔹 Explanation:
+
+Disabled inputs are gray and not clickable.
+Read-only inputs have a dashed border.
+
+6. Styling Checkbox and Radio Buttons:
+
+Checkboxes and radio buttons can be styled using CSS.
+
+Example: Custom Checkboxes & Radios
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Checkbox & Radio</title>
+    <style>
+        input[type="checkbox"], input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <label><input type="checkbox"> Accept Terms</label><br><br>
+    <label><input type="radio" name="gender"> Male</label>
+    <label><input type="radio" name="gender"> Female</label>
+</body>
+</html>
+🔹 Explanation:
+
+accent-color changes the default color of checkboxes and radio buttons.
+
+7. Styling File Input
+
+File inputs can be customized using CSS.
+
+Example: Custom File Input Button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom File Input</title>
+    <style>
+        input[type="file"] {
+            border: 2px solid blue;
+            padding: 5px;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="file">
+</body>
+</html>
+🔹 Explanation:
+
+The file input gets a background color and border.
+
+8. Custom Submit Button
+
+Submit buttons can be customized using CSS.
+
+Example: Stylish Submit Button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Submit Button</title>
+    <style>
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <input type="submit" value="Submit">
+</body>
+</html>
+🔹 Explanation:
+
+The submit button has a hover effect.
+
+
+Z-Index and Layering :
+
+In CSS, the z-index property controls the vertical stacking order of elements. It is particularly useful when elements overlap each other. The higher the z-index value, the closer (on top) the element appears to the user.
+
+How Layering Works :
+
+Elements with a higher z-index appear above elements with a lower z-index.
+The position property must be set to relative, absolute, fixed, or sticky for z-index to work.
+Elements with the same z-index follow the order in which they appear in the HTML.
+Example 1: Basic Z-Index
+Here’s a simple example where one box overlaps another using z-index.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Example</title>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+
+        .box1 {
+            background-color: red;
+            top: 50px;
+            left: 50px;
+            z-index: 1; /* Lower z-index */
+        }
+
+        .box2 {
+            background-color: blue;
+            top: 80px;
+            left: 80px;
+            z-index: 2; /* Higher z-index */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+    </div>
+</body>
+</html>
+Explanation:
+
+The red box (.box1) has a z-index: 1, so it is placed behind.
+The blue box (.box2) has a z-index: 2, so it appears above the red box.
+Example 2: Negative Z-Index
+
+Elements with a negative z-index are placed behind other elements.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative Z-Index</title>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+
+        .box1 {
+            background-color: green;
+            top: 50px;
+            left: 50px;
+            z-index: -1; /* Lower than default */
+        }
+
+        .box2 {
+            background-color: orange;
+            top: 80px;
+            left: 80px;
+            z-index: 0; /* Default */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+    </div>
+</body>
+</html>
+Explanation
+.box1 (green) has a z-index: -1, so it is pushed behind all other content.
+.box2 (orange) has a default z-index: 0, so it appears in front.
+
+Example 3: Using Z-Index with Images
+
+You can use z-index to stack images on top of each other.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index with Images</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+        }
+
+        .img1, .img2, .img3 {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+        }
+
+        .img1 {
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .img2 {
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+        }
+
+        .img3 {
+            top: 60px;
+            left: 60px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/200x150/ff0000/ffffff" alt="Image 1" class="img1">
+        <img src="https://via.placeholder.com/200x150/0000ff/ffffff" alt="Image 2" class="img2">
+        <img src="https://via.placeholder.com/200x150/00ff00/ffffff" alt="Image 3" class="img3">
+    </div>
+</body>
+</html>
+
+Explanation :
+
+The images are stacked based on z-index, with .img3 appearing on top.
+
+Example 4: Z-Index with Fixed Navigation Bar
+
+A z-index can ensure a fixed navigation bar stays on top.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index with Fixed Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* High value to stay on top */
+        }
+
+        .content {
+            padding-top: 60px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            top: 50px;
+            left: 50px;
+            z-index: 500; /* Still behind navbar */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Fixed Navbar</div>
+    <div class="content">
+        <div class="box"></div>
+        <p>Scroll down to see the navbar remains on top.</p>
+    </div>
+</body>
+</html>
+Explanation
+The .navbar has z-index: 1000, making sure it stays above all other content.
+
+
+Float and Clear Properties :
+
+The float and clear properties in CSS3 are used for positioning elements on a webpage. The float property allows elements to be positioned to the left or right of a container, while the clear property is used to control the behavior of elements following a floated element.
+
+1. float Property
+The float property is used to place an element to the left or right within its container, allowing text or inline elements to wrap around it.
+
+Values of float:
+left → Floats the element to the left.
+right → Floats the element to the right.
+none (default) → The element does not float.
+inherit → Inherits the float property from its parent.
+
+Example 1: Floating an Image to the Left
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Example</title>
+    <style>
+        img {
+            float: left;
+            margin-right: 10px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://via.placeholder.com/150" alt="Example Image">
+    <p>This is a paragraph. The image is floated to the left, so the text wraps around it.</p>
+</body>
+</html>
+Output: The image appears on the left, and the text wraps around it.
+
+Example 2: Floating a Box to the Right
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Right Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            float: right;
+            text-align: center;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph. The blue box is floated to the right.</p>
+    <div class="box">Float Right</div>
+</body>
+</html>
+Output: The blue box is aligned to the right, and the paragraph text flows around it.
+
+2. clear Property:
+
+The clear property is used to prevent elements from floating next to floated elements.
+
+Values of clear:
+
+left → Clears left float.
+right → Clears right float.
+both → Clears both left and right floats.
+none (default) → No clearing.
+
+Example 3: Using clear to Prevent Overlapping
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Example</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: lightgreen;
+            float: left;
+            margin-right: 10px;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <p class="clear">This paragraph is below the floated boxes because of the `clear` property.</p>
+</body>
+</html>
+Output: The paragraph is positioned below the floated elements because clear: both was applied.
+
+3. Float with a Simple Layout Example
+
+This example shows how float can be used to create a basic 3-column layout.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Column Layout</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .column {
+            width: 30%;
+            padding: 10px;
+            background-color: lightcoral;
+            float: left;
+            margin-right: 5%;
+        }
+        .column:last-child {
+            margin-right: 0;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">Column 1</div>
+        <div class="column">Column 2</div>
+        <div class="column">Column 3</div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>
+Output: Three columns aligned next to each other with proper spacing.
+
+
+Flexbox (Container & Items, Alignments, Ordering) :
+
+Flexbox is a CSS3 layout model designed to align and distribute items efficiently within a container, even when their sizes are dynamic. It provides powerful alignment, ordering, and spacing capabilities for both row-based and column-based layouts.
+
+1. Flex Container & Flex Items
+
+Flex Container: The parent element that holds the flex items. It is defined using display: flex or display: inline-flex.
+
+Flex Items: The direct children of the flex container.
+
+Example: Basic Flex Container & Items
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Container & Items</title>
+    <style>
+        .container {
+            display: flex;
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .item {
+            background-color: steelblue;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+</body>
+</html>
+Explanation:
+
+The .container is a flex container.
+The .item elements inside the container are flex items.
+
+2. Flexbox Alignment Properties :
+
+Flexbox provides several properties for aligning and distributing space between items.
+
+2.1 Justify Content (Horizontal Alignment)
+
+The justify-content property aligns items along the main axis.
+
+flex-start (default) - Items start from the left.
+flex-end - Items align to the right.
+center - Items are centered.
+space-between - Items are evenly spaced, first and last item touching edges.
+space-around - Items have equal space around them.
+space-evenly - Equal space between all items.
+Example: Justify Content
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center; /* Change to flex-start, flex-end, etc. */
+        background-color: lightgray;
+        padding: 10px;
+    }
+</style>
+
+2.2 Align Items (Vertical Alignment)
+
+The align-items property aligns items along the cross axis.
+
+stretch (default) - Items stretch to fit the container.
+flex-start - Items align at the top.
+flex-end - Items align at the bottom.
+center - Items align to the center.
+baseline - Items align according to text baseline.
+Example: Align Items
+
+<style>
+    .container {
+        display: flex;
+        height: 200px;
+        align-items: center; /* Change to flex-start, flex-end, etc. */
+        background-color: lightgray;
+    }
+</style>
+
+2.3 Align Self (Individual Item Alignment)
+
+The align-self property allows individual flex items to override align-items.
+
+Example: Align Self
+
+<style>
+    .item:nth-child(2) {
+        align-self: flex-end; /* Overrides align-items */
+    }
+</style>
+
+3. Flex Direction & Wrap
+
+3.1 Flex Direction
+
+The flex-direction property controls the main axis direction.
+
+row (default) - Items are in a row (left to right).
+row-reverse - Items are in a row (right to left).
+column - Items are stacked vertically (top to bottom).
+column-reverse - Items are stacked bottom to top.
+
+Example: Flex Direction
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column; /* Change to row, row-reverse, etc. */
+        height: 300px;
+        background-color: lightgray;
+    }
+</style>
+
+3.2 Flex Wrap
+
+The flex-wrap property controls if items should wrap onto the next line.
+
+nowrap (default) - Items stay in a single line.
+wrap - Items wrap to the next line if needed.
+wrap-reverse - Items wrap in reverse order.
+
+Example: Flex Wrap
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* Change to nowrap or wrap-reverse */
+        width: 300px;
+    }
+</style>
+
+4. Ordering of Flex Items
+
+The order property changes the position of individual items.
+
+Example: Ordering Items
+
+<style>
+    .item:nth-child(1) { order: 3; }
+    .item:nth-child(2) { order: 1; }
+    .item:nth-child(3) { order: 2; }
+</style>
+
+order: 1 means the lowest value will appear first.
+
+5. Grow, Shrink, and Basis
+
+5.1 Flex Grow
+
+The flex-grow property allows an item to grow and take extra space.
+
+Default is 0 (do not grow).
+
+A higher value means more growth.
+
+Example: Flex Grow
+
+<style>
+    .item:nth-child(1) { flex-grow: 2; } /* Grows twice as much */
+    .item:nth-child(2) { flex-grow: 1; }
+    .item:nth-child(3) { flex-grow: 1; }
+</style>
+5.2 Flex Shrink
+The flex-shrink property allows an item to shrink if necessary.
+
+Example: Flex Shrink
+
+<style>
+    .item:nth-child(1) { flex-shrink: 3; } /* Shrinks faster */
+    .item:nth-child(2) { flex-shrink: 1; }
+    .item:nth-child(3) { flex-shrink: 1; }
+</style>
+
+5.3 Flex Basis
+
+The flex-basis property sets the initial size of an item.
+
+Can be a length (px, %, auto, etc.).
+
+Example: Flex Basis
+
+<style>
+    .item {
+        flex-basis: 150px; /* Each item starts at 150px width */
+    }
+</style>
+
+6. Full Example: Responsive Layout
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Flexbox Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .item {
+            background-color: steelblue;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            font-size: 20px;
+            flex: 1 1 150px; /* Grow, Shrink, Basis */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+</body>
+</html>
+
+
+CSS Grid Layout (Rows, Columns, Areas) :
+
+CSS Grid is a powerful layout system in CSS3 that allows developers to create complex web layouts with ease. It provides a two-dimensional grid-based layout system, which means you can control both rows and columns simultaneously.
+
+Key Concepts of CSS Grid:
+Grid Container – The parent element that has display: grid;.
+Grid Items – The child elements inside the grid container.
+Rows & Columns – Defined using grid-template-rows and grid-template-columns.
+Grid Areas – Named sections of the grid using grid-template-areas.
+
+1. Creating a Basic Grid with Rows and Columns
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Basic Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 200px 200px; /* Three columns */
+            grid-template-rows: 100px 100px; /* Two rows */
+            gap: 10px; /* Space between grid items */
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: steelblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+</body>
+</html>
+Explanation:
+The .grid-container uses grid-template-columns: 200px 200px 200px;, creating 3 fixed-width columns.
+grid-template-rows: 100px 100px; creates 2 fixed-height rows.
+gap: 10px; adds spacing between grid items.
+Each .grid-item is styled for better visibility.
+
+2. Creating a Responsive Grid Using fr (Fractional Units)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Responsive Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* First and third columns take 1 part, middle column takes 2 parts */
+            grid-template-rows: auto; /* Rows adjust dynamically */
+            gap: 15px;
+            background-color: lightgray;
+            padding: 15px;
+        }
+
+        .grid-item {
+            background-color: darkorange;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+
+</body>
+</html>
+Explanation:
+grid-template-columns: 1fr 2fr 1fr; makes the middle column twice as wide as the other two.
+grid-template-rows: auto; allows rows to expand dynamically.
+fr (fraction) is used to create flexible layouts.
+
+3. Creating a Grid Layout with Named Areas
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Grid Areas</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer";
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: 80px auto 60px;
+            gap: 10px;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: darkslategray;
+            color: white;
+            padding: 20px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: teal;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: maroon;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Main Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>
+Explanation:
+grid-template-areas defines the layout:
+
+"header header header"
+"sidebar content content"
+"footer footer footer"
+grid-area is assigned to individual elements, allowing a semantic layout.
+
+4. Creating a Responsive Grid Using repeat()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Responsive Repeat</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        .grid-item {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+</body>
+</html>
+Explanation:
+repeat(auto-fit, minmax(150px, 1fr)); automatically fits items into rows based on screen width.
+minmax(150px, 1fr); ensures each column is at least 150px wide but can expand.
+
+
+Backgrounds and Borders :
+
+Background Color, Image, Repeat, Size, Position :
+
+CSS3 provides powerful background properties that allow us to customize the appearance of elements with colors, images, and positioning options. Let's explore these properties with practical examples using HTML5 and CSS3.
+
+1. Background Color (background-color)
+The background-color property is used to set the background color of an element.
+
+Example: Applying Background Color
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Example</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 100px;
+            background-color: lightblue; /* Solid color */
+        }
+        .box2 {
+            width: 300px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5); /* Transparent Red */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1">Light Blue Background</div>
+    <div class="box2">Semi-transparent Red Background</div>
+
+</body>
+</html>
+2. Background Image (background-image)
+The background-image property allows us to set an image as a background.
+
+Example: Adding a Background Image
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Example</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300'); /* External Image */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>
+3. Background Repeat (background-repeat)
+By default, the background image repeats both horizontally and vertically. We can control this using background-repeat.
+
+Example: Controlling Background Repeat
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Repeat Example</title>
+    <style>
+        .repeat {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/50');
+            background-repeat: repeat; /* Default: Repeats both horizontally & vertically */
+        }
+
+        .no-repeat {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/50');
+            background-repeat: no-repeat; /* No repetition */
+        }
+
+        .repeat-x {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/50');
+            background-repeat: repeat-x; /* Repeats horizontally */
+        }
+
+        .repeat-y {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/50');
+            background-repeat: repeat-y; /* Repeats vertically */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="repeat">Repeating Both Directions</div>
+    <div class="no-repeat">No Repeat</div>
+    <div class="repeat-x">Repeat Horizontally</div>
+    <div class="repeat-y">Repeat Vertically</div>
+
+</body>
+</html>
+
+4. Background Size (background-size)
+
+The background-size property defines the size of the background image.
+
+Example: Controlling Background Size
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Size Example</title>
+    <style>
+        .cover {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: cover; /* Scales to cover the entire div */
+        }
+
+        .contain {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: contain; /* Scales to fit inside without cropping */
+        }
+
+        .custom-size {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: 100px 50px; /* Custom width and height */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cover">Background Size: Cover</div>
+    <div class="contain">Background Size: Contain</div>
+    <div class="custom-size">Custom Background Size</div>
+
+</body>
+</html>
+
+5. Background Position (background-position)
+
+The background-position property sets the starting position of the background image.
+
+Example: Setting Background Position
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Position Example</title>
+    <style>
+        .top-left {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: cover;
+            background-position: top left;
+        }
+
+        .center {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bottom-right {
+            width: 400px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300');
+            background-size: cover;
+            background-position: bottom right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">Top Left</div>
+    <div class="center">Center</div>
+    <div class="bottom-right">Bottom Right</div>
+
+</body>
+</html>
+
+
+Border Radius and Border Styles :
+
+In CSS3, the border-radius property allows you to create rounded corners, while the border-style property defines the appearance of borders.
+
+1. Border Radius (border-radius)
+The border-radius property allows you to round the corners of an element.
+
+Syntax
+
+border-radius: value;
+Single Value: Applies the same radius to all corners.
+Two Values: First value applies to top-left/bottom-right, second to top-right/bottom-left.
+Four Values: Applies to each corner in this order: top-left, top-right, bottom-right, bottom-left.
+Elliptical Radius: Use two values separated by / for different horizontal and vertical radii.
+
+Examples
+
+Example 1: Basic Rounded Corners
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Radius Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            border-radius: 20px; /* Rounded corners */
+            text-align: center;
+            line-height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Rounded Corners</div>
+</body>
+</html>
+Example 2: Different Border Radius for Each Corner
+
+border-radius: 10px 20px 30px 40px;
+Top-left: 10px
+Top-right: 20px
+Bottom-right: 30px
+Bottom-left: 40px
+
+Example 3: Circular Border
+
+For a perfect circle, make width and height equal and set border-radius: 50%.
+
+border-radius: 50%;
+
+2. Border Styles (border-style)
+
+The border-style property defines the type of border.
+
+Different Border Styles
+Style	Description
+solid	A single solid line
+dotted	A series of dots
+dashed	A series of dashes
+double	Two solid lines
+groove	A 3D effect that appears carved in
+ridge	A 3D effect that appears raised
+inset	   The border makes the element appear embedded
+outset	The border makes the element appear raised
+
+Example: Different Border Styles
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Styles Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 10px;
+        }
+        .solid { border: 3px solid black; }
+        .dotted { border: 3px dotted red; }
+        .dashed { border: 3px dashed blue; }
+        .double { border: 6px double green; }
+        .groove { border: 6px groove purple; }
+        .ridge { border: 6px ridge brown; }
+        .inset { border: 6px inset orange; }
+        .outset { border: 6px outset teal; }
+    </style>
+</head>
+<body>
+    <div class="box solid">Solid Border</div>
+    <div class="box dotted">Dotted Border</div>
+    <div class="box dashed">Dashed Border</div>
+    <div class="box double">Double Border</div>
+    <div class="box groove">Groove Border</div>
+    <div class="box ridge">Ridge Border</div>
+    <div class="box inset">Inset Border</div>
+    <div class="box outset">Outset Border</div>
+</body>
+</html>
+Combining Border Styles and Border Radius
+You can combine border-radius and border-style for more creative designs.
+
+Example: Styled Button with Rounded Borders
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounded Button Example</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            border: 3px solid #4CAF50;
+            border-radius: 25px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: white;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">Click Me</button>
+</body>
+</html>
+
+
+Box Shadow and Text Shadow Effects:
+
+CSS3 provides powerful shadow effects to enhance the visual appeal of web elements. Two key shadow properties are:
+
+box-shadow: Adds shadow effects to elements like div, section, button, etc.
+text-shadow: Adds shadow effects to text content.
+
+1. Box Shadow in CSS3
+
+The box-shadow property allows adding a shadow effect around an element. The syntax is:
+
+box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [spread-radius] [color];
+Example 1: Simple Box Shadow
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 50px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* x-offset, y-offset, blur-radius, color */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Box Shadow</div>
+</body>
+</html>
+✅ Explanation:
+
+The shadow is shifted 5px to the right, 5px down, with a 10px blur radius and semi-transparent black color.
+Example 2: Multiple Shadows
+box-shadow: 5px 5px 10px red, -5px -5px 10px blue;
+This adds two shadows: one red shadow to the bottom-right and another blue shadow to the top-left.
+
+<style>
+    .box-multiple {
+        width: 200px;
+        height: 100px;
+        background-color: lightgray;
+        margin: 50px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 5px 5px 10px red, -5px -5px 10px blue;
+    }
+</style>
+<div class="box-multiple">Multiple Shadows</div>
+Example 3: Inset Shadow
+
+The inset keyword moves the shadow inside the element.
+
+box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+<style>
+    .box-inset {
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        margin: 50px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+        border: 1px solid black;
+    }
+</style>
+<div class="box-inset">Inset Shadow</div>
+✅ Effect: The shadow appears inside the box, giving a depth effect.
+
+2. Text Shadow in CSS3
+The text-shadow property applies shadow effects to text.
+
+Syntax
+text-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [color];
+Example 1: Simple Text Shadow
+<style>
+    .text {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        color: darkblue;
+        text-shadow: 3px 3px 5px gray; /* x-offset, y-offset, blur-radius, color */
+    }
+</style>
+<div class="text">Text Shadow</div>
+✅ Effect: The text appears elevated with a gray shadow.
+
+Example 2: Neon Glow Effect
+
+text-shadow: 0px 0px 10px cyan, 0px 0px 20px blue;
+
+<style>
+    .text-glow {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 20px;
+        text-shadow: 0px 0px 10px cyan, 0px 0px 20px blue;
+    }
+</style>
+<div class="text-glow">Glowing Text</div>
+✅ Effect: The text appears glowing in cyan and blue.
+
+Example 3: Embossed (3D Effect)
+text-shadow: 2px 2px 0px gray, -2px -2px 0px white;
+<style>
+    .text-embossed {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        text-shadow: 2px 2px 0px gray, -2px -2px 0px white;
+    }
+</style>
+<div class="text-embossed">Embossed Text</div>
+✅ Effect: The text appears engraved or embossed.
+
+Summary
+Property	Description	Example
+box-shadow	Adds shadow around elements	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+box-shadow: inset	Adds shadow inside elements	box-shadow: inset 5px 5px 10px gray;
+text-shadow	Adds shadow to text	text-shadow: 3px 3px 5px gray;
+text-shadow (Neon)	Creates a glow effect	text-shadow: 0px 0px 10px cyan;
+🎯 Final Thoughts
+Use box-shadow to create depth and highlight elements.
+Use text-shadow for stylish, glowing, or embossed effects.
+Combine multiple shadows to create rich UI designs.
+
+
+CSS Transitions and Animations:
+
+Introduction to Transitions:
+
+CSS3 Transitions allow smooth animation between different states of an element without using JavaScript or Flash. They help in enhancing the user experience by creating visually appealing effects when properties of an element change.
+
+1. What is a CSS3 Transition?
+A CSS transition is a way to change property values smoothly (over a given duration) instead of making the change instantly.
+
+For example, when a button’s background color changes on hover, a transition makes the color shift gradually rather than abruptly.
+
+2. Basic Syntax of CSS Transitions
+selector {
+  transition: property duration timing-function delay;
+}
+property – The CSS property to animate (e.g., background-color, width, opacity).
+duration – The time (in seconds or milliseconds) for the transition effect (e.g., 0.5s, 1s).
+timing-function (optional) – Defines how the transition progresses (e.g., ease, linear, ease-in-out).
+delay (optional) – Specifies the time to wait before starting the transition (e.g., 0.3s).
+3. Example: Simple Color Transition
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.5s ease-in-out;
+}
+
+button:hover {
+  background-color: red;
+}
+👉 When the user hovers over the button, its background color smoothly transitions from blue to red over 0.5 seconds.
+
+4. Transitioning Multiple Properties
+You can apply a transition to multiple properties by separating them with a comma.
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  transition: width 0.5s ease, background-color 1s linear;
+}
+
+div:hover {
+  width: 200px;
+  background-color: yellow;
+}
+👉 The width changes over 0.5 seconds and the background color changes over 1 second.
+
+5. Using transition with all Property
+Instead of specifying individual properties, you can use all to apply the transition to every changing property.
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  transition: all 0.5s ease-in-out;
+}
+
+.box:hover {
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+}
+👉 The width, height, and background color change smoothly on hover.
+
+6. Understanding Timing Functions
+The timing function defines the speed curve of the transition.
+
+Timing Function	Description
+ease	Starts slow, speeds up, then slows down (default).
+linear	Constant speed from start to end.
+ease-in	Starts slow, then speeds up.
+ease-out	Starts fast, then slows down.
+ease-in-out	Starts slow, speeds up, then slows down.
+Example:
+
+div {
+  transition: width 1s ease-in-out;
+}
+7. Transition Delay
+You can delay the start of a transition using the delay parameter.
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 1s ease-in 0.5s; /* Delay of 0.5s */
+}
+
+.box:hover {
+  background-color: red;
+}
+👉 The color transition starts 0.5 seconds after hovering.
+
+
+Transition Properties (Duration, Timing, Delay) :
+
+
+CSS transitions allow smooth animation between different CSS property values. The three key transition properties are:
+
+transition-duration – Specifies the time the transition takes to complete.
+transition-timing-function – Defines the speed curve of the transition.
+transition-delay – Specifies a delay before the transition starts.
+Example 1: Basic Transition Using transition-duration
+The transition-duration property determines how long a transition takes.
+
+HTML + CSS Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition Duration</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: background-color 2s; /* Transition duration of 2 seconds */
+        }
+
+        .box:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+Explanation:
+When the user hovers over the .box, it changes from blue to red over 2 seconds.
+Example 2: Using transition-timing-function
+The transition-timing-function property defines the speed curve of the transition. Common values:
+
+ease (default) – Slow start and end, fast middle.
+linear – Constant speed.
+ease-in – Slow start, then speeds up.
+ease-out – Fast start, then slows down.
+ease-in-out – Slow start, fast middle, slow end.
+HTML + CSS Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition Timing Function</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transition: width 2s ease-in-out;
+        }
+
+        .box:hover {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+Explanation:
+When hovered, the .box expands from 100px to 300px over 2 seconds.
+The ease-in-out function makes the transition start and end slowly but move faster in the middle.
+Example 3: Using transition-delay
+The transition-delay property sets a delay before the transition starts.
+
+HTML + CSS Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition Delay</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: background-color 2s ease-in-out 1s; /* Delay of 1 second */
+        }
+
+        .box:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+Explanation:
+When hovered, the box color transition from orange to purple happens after a 1-second delay.
+Example 4: Combining Multiple Transition Properties
+You can apply transitions to multiple properties using a comma-separated list.
+
+HTML + CSS Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple CSS Transitions</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            transform: rotate(0deg);
+            transition: background-color 2s ease, transform 3s ease-in-out;
+        }
+
+        .box:hover {
+            background-color: magenta;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+Explanation:
+
+Background color transition takes 2 seconds (ease).
+
+Rotation transition takes 3 seconds (ease-in-out).
+
+
+
+Creating Smooth Hover Effects:
+
+Creating smooth hover effects in CSS3 enhances user experience by adding subtle animations and transitions. Below are different types of hover effects with detailed examples using HTML5 and CSS3.
+
+1. Basic Hover Effect (Color Change)
+This is the simplest hover effect where the background color of a button changes when hovered.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Hover Effect</title>
+    <style>
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">Hover Me</button>
+</body>
+</html>
+Explanation:
+
+transition: background-color 0.3s ease-in-out; ensures a smooth transition when the background color changes.
+2. Scale on Hover
+This effect makes the element grow slightly when hovered.
+
+Example
+<style>
+    .scale-button {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    .scale-button:hover {
+        transform: scale(1.1);
+    }
+</style>
+<button class="scale-button">Hover Me</button>
+Explanation:
+
+transform: scale(1.1); enlarges the button when hovered.
+3. Rotate on Hover
+This effect rotates an element when hovered.
+
+Example
+<style>
+    .rotate-box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .rotate-box:hover {
+        transform: rotate(360deg);
+    }
+</style>
+<div class="rotate-box"></div>
+Explanation:
+
+transform: rotate(360deg); rotates the box completely when hovered.
+4. Hover with Box Shadow
+Adding a shadow effect on hover to create a lifting appearance.
+
+Example
+<style>
+    .shadow-box {
+        width: 150px;
+        height: 150px;
+        background-color: purple;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow-box:hover {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<div class="shadow-box"></div>
+Explanation:
+
+box-shadow creates a 3D lifting effect.
+5. Image Hover Zoom Effect
+A common effect in galleries where the image zooms in when hovered.
+
+Example
+<style>
+    .image-container {
+        overflow: hidden;
+        width: 300px;
+        height: 200px;
+    }
+
+    .image-container img {
+        width: 100%;
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.2);
+    }
+</style>
+<div class="image-container">
+    <img src="https://via.placeholder.com/300x200" alt="Sample Image">
+</div>
+Explanation:
+
+The overflow: hidden; prevents the image from expanding beyond the container.
+6. Text Reveal on Hover
+A cool effect where text is revealed when hovering over an element.
+
+Example
+<style>
+    .text-box {
+        width: 200px;
+        height: 50px;
+        background-color: #ff6600;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .text-box:hover {
+        background-color: #cc5500;
+    }
+
+    .text-box::after {
+        content: "Hovered!";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        transition: top 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-box:hover::after {
+        top: 0;
+    }
+</style>
+<div class="text-box">Hover Me</div>
+Explanation:
+
+::after is used to create a hidden overlay that appears when hovered.
+7. Button with Gradient Hover Effect
+A gradient transition when hovered.
+
+Example
+<style>
+    .gradient-button {
+        background: linear-gradient(to right, red, orange);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.5s ease-in-out;
+    }
+
+    .gradient-button:hover {
+        background: linear-gradient(to right, orange, red);
+    }
+</style>
+<button class="gradient-button">Hover Me</button>
+Explanation:
+
+The linear-gradient changes direction on hover.
+8. Floating Effect on Hover
+A floating-like effect where an element moves up slightly.
+
+Example
+<style>
+    .float-effect {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .float-effect:hover {
+        transform: translateY(-5px);
+    }
+</style>
+<div class="float-effect">Hover Me</div>
+Explanation:
+
+transform: translateY(-5px); moves the element upwards when hovered.
+9. Border Animation on Hover
+A border expands when the button is hovered.
+
+Example
+<style>
+    .border-animate {
+        padding: 10px 20px;
+        border: 2px solid transparent;
+        position: relative;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .border-animate:hover {
+        border-color: red;
+    }
+</style>
+<button class="border-animate">Hover Me</button>
+Explanation:
+
+border-color transitions smoothly.
+10. Glowing Effect on Hover
+A glowing effect around a button.
+
+Example
+<style>
+    .glow-effect {
+        background-color: darkblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .glow-effect:hover {
+        box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.8);
+    }
+</style>
+<button class="glow-effect">Hover Me</button>
+Explanation:
+
+box-shadow creates the glowing effect when hovered.
+
+
+Keyframes and Animation Properties:
+
+What is @keyframes in CSS?
+
+The @keyframes rule in CSS3 is used to create animations by defining intermediate steps between the start and end states of an element. Each keyframe represents a percentage of the total animation duration.
+
+CSS Animation Properties
+CSS provides several animation properties to control animations:
+
+animation-name: Specifies the name of the @keyframes animation.
+animation-duration: Defines how long an animation should take to complete.
+animation-timing-function: Specifies the speed curve (ease, linear, ease-in, ease-out, ease-in-out).
+animation-delay: Sets a delay before the animation starts.
+animation-iteration-count: Determines how many times the animation should run (number or infinite).
+animation-direction: Specifies whether the animation should run normally, in reverse, alternate, or alternate-reverse.
+animation-fill-mode: Controls how styles are applied before/after the animation.
+animation-play-state: Specifies whether the animation is running or paused.
+Example 1: Basic Animation - Moving a Box Left to Right
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Animation Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: moveBox 3s linear infinite;
+        }
+
+        @keyframes moveBox {
+            0% { left: 0px; }
+            100% { left: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+Explanation:
+The .box moves from left: 0px to left: 300px over 3s, looping infinite times.
+Example 2: Bounce Animation Using ease-in-out
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { top: 0px; }
+            50% { top: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>
+Explanation:
+The .ball moves up and down like a bouncing effect using ease-in-out timing.
+Example 3: Color Changing Animation
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Animation</title>
+    <style>
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            animation: colorChange 3s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% { color: red; }
+            50% { color: green; }
+            100% { color: blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">Color Changing Text</div>
+</body>
+</html>
+Explanation:
+The text color changes from red → green → blue over 3s, alternating infinitely.
+Example 4: Rotation Animation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Animation</title>
+    <style>
+        .rotate-box {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 50px auto;
+            animation: rotateBox 2s linear infinite;
+        }
+
+        @keyframes rotateBox {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="rotate-box"></div>
+</body>
+</html>
+Explanation:
+The box rotates continuously from 0deg to 360deg.
+Example 5: Scaling Animation (Zoom In & Out)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Animation</title>
+    <style>
+        .scale-box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            animation: scaleEffect 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes scaleEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scale-box"></div>
+</body>
+</html>
+Explanation:
+The box scales up from 1x to 1.5x and back.
+Example 6: Fade In & Fade Out Animation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade In and Out</title>
+    <style>
+        .fade-text {
+            font-size: 30px;
+            font-weight: bold;
+            animation: fadeEffect 3s infinite alternate;
+        }
+
+        @keyframes fadeEffect {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-text">Fading Text</div>
+</body>
+</html>
+Explanation:
+The text fades in (opacity: 0 → 1) and out continuously.
+Example 7: Multiple Animations
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Animations</title>
+    <style>
+        .multi-box {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            position: relative;
+            animation: moveUpDown 3s ease-in-out infinite alternate,
+                       changeColor 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveUpDown {
+            0% { top: 0px; }
+            100% { top: 200px; }
+        }
+
+        @keyframes changeColor {
+            0% { background-color: cyan; }
+            100% { background-color: pink; }
+        }
+    </style>
+</head>
+<body>
+    <div class="multi-box"></div>
+</body>
+</html>
+Explanation:
+The .multi-box moves up/down and changes color simultaneously.
+
+
+Infinite and One-Time Animations:
+
+
+CSS3 animations allow you to animate HTML elements without using JavaScript or external libraries. These animations can either run once or repeat infinitely depending on the configuration of the animation-iteration-count property.
+
+1. One-Time Animation
+A one-time animation runs only once when triggered and stops at the final state.
+
+Example: Button Shake (Runs Once)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Animation</title>
+    <style>
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            animation: shake 0.5s ease-in-out 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Hover Me</button>
+</body>
+</html>
+Explanation:
+The @keyframes shake moves the button left and right slightly.
+The .btn:hover applies animation: shake 0.5s ease-in-out 1; meaning the animation runs only once when the button is hovered.
+2. Infinite Animation
+An infinite animation runs continuously without stopping.
+
+Example: Rotating Loading Spinner (Infinite Animation)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Animation</title>
+    <style>
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ddd;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="spinner"></div>
+</body>
+</html>
+Explanation:
+The @keyframes rotate rotates the .spinner element from 0° to 360°.
+The animation: rotate 1s linear infinite; ensures the animation loops indefinitely.
+3. Mixed Example (Both One-Time & Infinite Animations)
+Here’s a combined example where:
+
+A one-time animation occurs when clicking a button.
+An infinite animation runs continuously.
+Example: Expanding Button with Loader
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time & Infinite Animations</title>
+    <style>
+        @keyframes expand {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            animation: expand 0.5s ease-in-out 1;
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ddd;
+            border-top: 4px solid #e74c3c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Click Me</button>
+    <div class="loader"></div>
+</body>
+</html>
+Explanation:
+The .btn:active applies animation: expand 0.5s ease-in-out 1;, making the button slightly expand once when clicked.
+The .loader uses animation: spin 1s linear infinite;, making it rotate continuously.
+Key Properties of CSS Animations
+Property	Description
+animation-name	Specifies the name of the keyframe animation.
+animation-duration	Defines how long the animation should run.
+animation-timing-function	Controls the speed curve (e.g., ease, linear).
+animation-delay	Specifies the delay before the animation starts.
+animation-iteration-count	Number of times the animation runs (1, infinite, etc.).
+animation-direction	Defines whether the animation should play forward, backward, or alternate.
+
+
+Pausing and Restarting Animations:
+
+Pausing and restarting animations in CSS3 can be achieved using the animation-play-state property. It allows you to control whether an animation is running or paused. The values it supports are:
+
+running: The animation is actively running.
+paused: The animation is paused at the current frame.
+Let's go through different examples demonstrating how to pause and restart animations in CSS3 using HTML5.
+
+Example 1: Pausing and Resuming on Hover
+In this example, we pause the animation when the user hovers over the animated element.
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause and Restart CSS3 Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="box">Hover me</div>
+</body>
+</html>
+CSS
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: moveBox 3s infinite linear;
+}
+
+@keyframes moveBox {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200px); }
+}
+
+/* Pause animation on hover */
+.box:hover {
+    animation-play-state: paused;
+}
+Explanation
+The .box element moves horizontally from 0px to 200px.
+When the user hovers over it, animation-play-state: paused; stops the animation.
+Example 2: Toggle Animation on Button Click
+In this example, we use JavaScript to toggle between running and paused states.
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause and Restart Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ball"></div>
+    <button onclick="toggleAnimation()">Pause/Resume</button>
+
+    <script>
+        function toggleAnimation() {
+            let ball = document.querySelector('.ball');
+            if (ball.style.animationPlayState === 'paused') {
+                ball.style.animationPlayState = 'running';
+            } else {
+                ball.style.animationPlayState = 'paused';
+            }
+        }
+    </script>
+</body>
+</html>
+CSS
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 2s infinite alternate ease-in-out;
+    animation-play-state: running;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(200px); }
+}
+Explanation
+A bouncing ball animation runs continuously.
+When the button is clicked, JavaScript toggles animationPlayState between running and paused.
+Example 3: Pausing After a Few Seconds Automatically
+In this example, the animation pauses automatically after 5 seconds using CSS animations and JavaScript.
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause After Delay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="square"></div>
+
+    <script>
+        setTimeout(() => {
+            document.querySelector('.square').style.animationPlayState = 'paused';
+        }, 5000);
+    </script>
+</body>
+</html>
+CSS
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    animation: slide 3s infinite alternate ease-in-out;
+    animation-play-state: running;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(300px); }
+}
+Explanation
+The square moves back and forth horizontally.
+After 5 seconds, JavaScript pauses the animation.
+Example 4: Restart Animation on Click
+To restart an animation, we remove and re-add the animation class.
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restart Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="circle"></div>
+    <button onclick="restartAnimation()">Restart</button>
+
+    <script>
+        function restartAnimation() {
+            let circle = document.querySelector('.circle');
+            circle.style.animation = 'none'; // Remove animation
+            setTimeout(() => {
+                circle.style.animation = 'spin 2s infinite linear'; // Re-add animation
+            }, 10); // Small delay to ensure reflow
+        }
+    </script>
+</body>
+</html>
+CSS
+.circle {
+    width: 70px;
+    height: 70px;
+    background-color: purple;
+    border-radius: 50%;
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+Explanation
+The circle rotates continuously.
+When the button is clicked, we remove and then reapply the animation to restart it.
+Summary
+Example	Technique Used
+1. Pause on Hover	animation-play-state: paused
+2. Toggle with Button	JavaScript toggles animationPlayState
+3. Pause After Time	JavaScript pauses animation after 5s
+4. Restart on Click	JavaScript resets animation property
+
+
+
+

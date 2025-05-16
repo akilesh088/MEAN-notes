@@ -1,0 +1,1230 @@
+Need for Bootstrap 4:
+
+1. What is Bootstrap 4?
+
+Bootstrap 4 is a front-end framework that helps developers create responsive, mobile-first websites quickly and efficiently. It includes CSS and JavaScript components like grids, buttons, forms, modals, and navigation bars.
+
+2. Why Do We Need Bootstrap 4?
+
+a) Mobile-First Design :
+
+Bootstrap 4 is built with a mobile-first approach, ensuring that websites look great on all screen sizes.
+The responsive grid system automatically adjusts the layout based on the device screen.
+
+b) Faster Development :
+
+Predefined CSS classes and JavaScript components reduce the time required to build a website.
+Developers can focus on business logic instead of writing styles from scratch.
+
+c) Responsive Grid System :
+
+Uses a 12-column grid system that adapts to different screen sizes (Extra Small, Small, Medium, Large, Extra Large).
+Supports flexbox, making layout management more efficient.
+
+d) Modern and Flexible :
+
+Uses Flexbox for better alignment and spacing.
+Improved card components replace panels, thumbnails, and wells.
+More customizable compared to previous versions.
+
+e) Cross-Browser Compatibility :
+
+Works seamlessly in all modern browsers like Chrome, Firefox, Edge, Safari.
+
+f) Pre-Styled Components
+
+Includes a wide range of components like buttons, alerts, forms, modals, tooltips, etc.
+These components are already optimized and styled.
+
+g) Improved JavaScript Plugins
+
+Uses Vanilla JavaScript (ES6+), removing jQuery dependency for better performance.
+Enhanced modals, tooltips, popovers, and dropdowns.
+
+h) Customization
+
+Uses SASS variables for better customization.
+Developers can modify styles without overriding base styles.
+
+i) Open-Source and Free
+
+Bootstrap 4 is open-source and maintained by a large developer community.
+Frequent updates ensure better security and new features.
+
+3. Key Features of Bootstrap 4
+
+Responsive Grid System (Flexbox-based)
+Customizable via SASS
+Mobile-First Approach
+Pre-Styled UI Components
+JavaScript Plugins (No jQuery)
+Cross-Browser Compatibility
+Lightweight and Fast Performance
+
+4. Example: Creating a Simple Page with Bootstrap 4
+
+Here’s a simple Bootstrap 4 webpage using a responsive grid and pre-styled components:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Website</a>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Welcome to Bootstrap 4</h2>
+                <p>Bootstrap makes front-end development faster and easier.</p>
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/400" class="img-fluid" alt="Example Image">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        &copy; 2025 My Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
+
+
+Understand the benefits and the fundamentals of using Responsive Web Design :
+
+What is Responsive Web Design (RWD)?
+
+Responsive Web Design (RWD) is a web development approach that ensures websites provide an optimal viewing and interaction experience across different devices and screen sizes. It enables websites to adjust their layout, content, and design dynamically based on the user's device, whether it's a desktop, tablet, or smartphone.
+
+Fundamentals of Responsive Web Design :
+
+RWD is based on three core principles:
+
+1. Fluid Grid Layouts :
+
+Instead of fixed-width layouts, responsive designs use relative units (like percentages, em, rem) to create flexible grids.
+
+This allows elements to resize proportionally rather than being fixed to a specific pixel width.
+
+Example:
+
+.container {
+  width: 80%;  /* Adapts to the screen size */
+  margin: auto;
+}
+
+2. Flexible Images and Media
+
+Images and other media elements must be able to scale within their containing elements.
+CSS max-width: 100% ensures images resize while maintaining aspect ratios.
+
+Example:
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+3. Media Queries
+
+Media queries allow websites to apply different styles based on the device's screen size.
+Uses @media rules in CSS to define breakpoints.
+
+Example:
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightgray;
+  }
+}
+
+Benefits of Responsive Web Design :
+
+1. Improved User Experience
+
+Ensures readability and usability on all devices.
+No need for zooming or horizontal scrolling.
+
+2. Cost-Effective and Time-Saving :
+
+A single responsive site eliminates the need to maintain separate mobile and desktop versions.
+
+3. Better SEO Rankings :
+
+Google recommends RWD and gives preference to mobile-friendly websites in search rankings.
+
+4. Increased Reach to Mobile Users
+
+With the majority of users accessing websites via mobile, RWD ensures accessibility.
+
+5. Faster Load Times
+
+Optimized images and responsive techniques improve performance.
+
+6. Higher Conversion Rates
+
+A seamless browsing experience leads to lower bounce rates and more conversions.
+
+How to Implement Responsive Web Design?
+
+1. Use a Mobile-First Approach
+
+Design for smaller screens first, then scale up for larger screens.
+Helps in performance optimization.
+
+2. Utilize CSS Flexbox and Grid
+
+Flexbox and Grid Layouts simplify responsive layouts.
+
+Flexbox Example:
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+3. Optimize Typography
+
+Use relative units like em, rem, or vw instead of px.
+
+Example:
+
+body {
+  font-size: 1.2rem; /* Adapts to screen size */
+}
+
+4. Test Across Devices
+
+Use tools like Chrome DevTools, BrowserStack, or real devices for testing.
+
+
+What is Responsive Web Design (RWD)?
+
+Responsive Web Design (RWD) is a web development approach that ensures websites provide an optimal viewing and interaction experience across different devices and screen sizes. It enables websites to adjust their layout, content, and design dynamically based on the user's device, whether it's a desktop, tablet, or smartphone.
+
+Fundamentals of Responsive Web Design :
+
+RWD is based on three core principles:
+
+1. Fluid Grid Layouts
+
+Instead of fixed-width layouts, responsive designs use relative units (like percentages, em, rem) to create flexible grids.
+
+This allows elements to resize proportionally rather than being fixed to a specific pixel width.
+
+Example:
+
+.container {
+  width: 80%;  /* Adapts to the screen size */
+  margin: auto;
+}
+
+2. Flexible Images and Media
+
+Images and other media elements must be able to scale within their containing elements.
+
+CSS max-width: 100% ensures images resize while maintaining aspect ratios.
+
+Example:
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+3. Media Queries
+
+Media queries allow websites to apply different styles based on the device's screen size.
+Uses @media rules in CSS to define breakpoints.
+
+Example:
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightgray;
+  }
+}
+
+Benefits of Responsive Web Design
+
+1. Improved User Experience
+
+Ensures readability and usability on all devices.
+No need for zooming or horizontal scrolling.
+
+2. Cost-Effective and Time-Saving
+
+A single responsive site eliminates the need to maintain separate mobile and desktop versions.
+
+3. Better SEO Rankings
+
+Google recommends RWD and gives preference to mobile-friendly websites in search rankings.
+
+4. Increased Reach to Mobile Users
+
+With the majority of users accessing websites via mobile, RWD ensures accessibility.
+
+5. Faster Load Times
+
+Optimized images and responsive techniques improve performance.
+
+6. Higher Conversion Rates
+
+A seamless browsing experience leads to lower bounce rates and more conversions.
+
+How to Implement Responsive Web Design?
+
+1. Use a Mobile-First Approach
+
+Design for smaller screens first, then scale up for larger screens.
+Helps in performance optimization.
+
+2. Utilize CSS Flexbox and Grid
+
+Flexbox and Grid Layouts simplify responsive layouts.
+
+Flexbox Example:
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+3. Optimize Typography
+
+Use relative units like em, rem, or vw instead of px.
+
+Example:
+
+body {
+  font-size: 1.2rem; /* Adapts to screen size */
+}
+
+4. Test Across Devices
+
+Use tools like Chrome DevTools, BrowserStack, or real devices for testing.
+
+
+Learn responsive layout techniques including liquid and adaptive layouts :
+
+Bootstrap 4 is a powerful front-end framework that helps developers build responsive web applications easily. It offers different layout techniques like Liquid Layouts, Adaptive Layouts, and Responsive Layouts using its grid system and flexible components.
+
+1. Understanding Bootstrap 4 Grid System
+
+Bootstrap 4 uses a flexbox-based grid system, which consists of 12 columns and different breakpoints:
+
+Extra Small (XS): <576px
+Small (SM): ≥576px
+Medium (MD): ≥768px
+Large (LG): ≥992px
+Extra Large (XL): ≥1200px
+
+The .container and .container-fluid classes play a crucial role in responsive design.
+
+2. Liquid Layout in Bootstrap 4
+
+What is a Liquid Layout?
+
+A liquid layout (fluid layout) uses percentage-based widths instead of fixed units, ensuring that the layout expands or contracts based on the viewport size.
+
+Example of Liquid Layout using .container-fluid
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Liquid Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 bg-primary text-white text-center p-3">Column 1</div>
+        <div class="col-md-4 bg-success text-white text-center p-3">Column 2</div>
+        <div class="col-md-4 bg-danger text-white text-center p-3">Column 3</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+Explanation:
+
+container-fluid: Makes the container full-width, ensuring it adapts to any screen size.
+col-md-4: Each column takes 4 out of 12 grid spaces.
+📌 Liquid layouts are great for dynamic content but can sometimes lead to excessive stretching on large screens.
+
+3. Adaptive Layout in Bootstrap 4
+
+What is an Adaptive Layout?
+
+An adaptive layout uses fixed-width breakpoints. Instead of smoothly resizing like a liquid layout, it switches to a predefined layout at different breakpoints.
+
+Example of Adaptive Layout using .container
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Adaptive Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-12 bg-warning text-center p-3">Adaptive Column</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+Explanation:
+
+container: Uses a fixed width at different breakpoints.
+col-lg-6: Takes half the screen (6 out of 12) for large screens.
+col-md-8: Takes 8 columns for medium screens.
+col-sm-12: Takes full width on small screens.
+
+📌 Adaptive layouts work well when you want a consistent structure for different screen sizes. However, they may not always be fluidly responsive.
+
+4. Responsive Layout in Bootstrap 4
+
+What is a Responsive Layout?
+
+A responsive layout dynamically adjusts to different screen sizes and devices using a mix of fluid grids, media queries, and flexible components.
+
+Example of a Responsive Layout
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Responsive Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 bg-info text-white text-center p-3">Column 1</div>
+        <div class="col-lg-4 col-md-6 col-sm-12 bg-secondary text-white text-center p-3">Column 2</div>
+        <div class="col-lg-4 col-md-12 col-sm-12 bg-dark text-white text-center p-3">Column 3</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+Explanation:
+
+col-lg-4: Three columns for large screens.
+col-md-6: Two columns for medium screens.
+col-sm-12: One column per row for small screens.
+📌 Responsive layouts are the best approach for modern web development, as they ensure usability across different devices.
+
+5. Bootstrap 4 Utility Classes for Responsiveness
+
+In addition to the grid system, Bootstrap 4 provides various utility classes to enhance responsiveness:
+
+Hiding Elements on Different Devices
+
+<p class="d-none d-md-block">This text is only visible on medium and larger screens.</p>
+
+Responsive Display Classes :
+
+<img src="image.jpg" class="img-fluid" alt="Responsive Image">
+
+Flexbox Utilities for Responsive Layout :
+
+<div class="d-flex flex-column flex-md-row">
+    <div class="p-2">Item 1</div>
+    <div class="p-2">Item 2</div>
+</div>
+
+
+Use Bootstrap layout techniques :
+
+Bootstrap 4 provides powerful layout techniques using containers, rows, columns, flexbox utilities, grid system, and responsive classes. Below are some key layout techniques with practical examples.
+
+1. Using Container for Layout
+Bootstrap provides two types of containers:
+
+container: Fixed-width container.
+container-fluid: Full-width container.
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Container Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container bg-light p-3">
+    <h2>Fixed Container</h2>
+    <p>This container will have a fixed width depending on the screen size.</p>
+</div>
+
+<div class="container-fluid bg-primary text-white p-3">
+    <h2>Fluid Container</h2>
+    <p>This container will take the full width of the screen.</p>
+</div>
+
+</body>
+</html>
+
+2. Grid System in Bootstrap 4
+
+Bootstrap’s grid system is based on 12 columns.
+
+Example: Basic Grid Layout
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 bg-success text-white p-3">Column 1</div>
+        <div class="col-md-4 bg-warning text-dark p-3">Column 2</div>
+        <div class="col-md-4 bg-danger text-white p-3">Column 3</div>
+    </div>
+</div>
+On medium (md) screens, each column will take 4 out of 12 columns.
+The grid automatically adjusts on smaller screens.
+
+3. Responsive Grid Layout
+
+You can define different column sizes for different screen sizes.
+
+Example: Responsive Grid
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-info text-white p-3">Column 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-secondary text-white p-3">Column 2</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-dark text-white p-3">Column 3</div>
+        <div class="col-sm-6 col-md-12 col-lg-3 bg-primary text-white p-3">Column 4</div>
+    </div>
+</div>
+Small (sm): 6 columns
+Medium (md): 4 columns
+Large (lg): 3 columns
+
+4. Using Flexbox for Alignment
+
+Bootstrap 4 uses Flexbox for alignment.
+
+Example: Centering Items Using Flexbox
+
+<div class="d-flex justify-content-center align-items-center bg-light" style="height: 200px;">
+    <div class="p-3 bg-success text-white">Centered Content</div>
+</div>
+
+justify-content-center: Centers content horizontally.
+align-items-center: Centers content vertically.
+
+5. Nesting Grids
+
+You can nest grids inside other grid columns.
+
+Example: Nested Grid
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-info text-white p-3">
+            Parent Column
+            <div class="row">
+                <div class="col-6 bg-light text-dark p-2">Nested Column 1</div>
+                <div class="col-6 bg-dark text-white p-2">Nested Column 2</div>
+            </div>
+        </div>
+        <div class="col-md-6 bg-primary text-white p-3">Parent Column 2</div>
+    </div>
+</div>
+
+The nested row creates additional layout inside a column.
+
+6. Creating Equal-Height Columns
+
+Flexbox utilities help create equal-height columns.
+
+Example: Equal Height Columns
+
+<div class="container">
+    <div class="row d-flex align-items-stretch">
+        <div class="col-md-4 bg-success text-white p-3">Column 1</div>
+        <div class="col-md-4 bg-warning text-dark p-3">Column 2 with more content</div>
+        <div class="col-md-4 bg-danger text-white p-3">Column 3</div>
+    </div>
+</div>
+align-items-stretch makes all columns equal height.
+
+7. Creating a Sidebar Layout
+
+A common layout pattern is a sidebar and content area.
+
+Example: Sidebar Layout
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 bg-dark text-white p-3">Sidebar</div>
+        <div class="col-md-9 bg-light p-3">Main Content Area</div>
+    </div>
+</div>
+
+The sidebar takes 3/12 of the width.
+The main content area takes 9/12.
+
+8. Using Offset for Spacing
+
+You can use offset classes to create spacing.
+
+Example: Using Offset
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-2 bg-primary text-white p-3">Offset by 2</div>
+    </div>
+</div>
+
+offset-md-2 shifts the column 2 columns to the right.
+
+9. Using Order Classes
+
+You can rearrange columns using order-* classes.
+
+Example: Changing Column Order
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 order-md-3 bg-danger text-white p-3">Column 3</div>
+        <div class="col-md-4 order-md-1 bg-success text-white p-3">Column 1</div>
+        <div class="col-md-4 order-md-2 bg-warning text-dark p-3">Column 2</div>
+    </div>
+</div>
+
+Order changes on medium (md) screens.
+
+10. Creating a Simple Responsive Navbar
+
+Example: Bootstrap Navbar
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MySite</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+The navbar collapses on small screens.
+
+
+Create responsive tables :
+
+
+Bootstrap 4 provides built-in classes to make tables responsive, styled, and interactive. We can use the .table class to style tables and .table-responsive to make them scrollable on smaller screens.
+
+Basic Bootstrap Table
+
+The simplest Bootstrap table uses the .table class.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Basic Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h3>Basic Bootstrap Table</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>jane@example.com</td>
+                <td>Los Angeles</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+Responsive Table
+
+To make a table responsive on small screens, wrap it with the .table-responsive class.
+
+
+<div class="container mt-4">
+    <h3>Responsive Table</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Phone</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john@example.com</td>
+                    <td>New York</td>
+                    <td>USA</td>
+                    <td>+1 123 456 7890</td>
+                    <td>ABC Corp</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane@example.com</td>
+                    <td>Los Angeles</td>
+                    <td>USA</td>
+                    <td>+1 987 654 3210</td>
+                    <td>XYZ Ltd</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+💡 Note: On small screens, horizontal scrolling will be enabled.
+
+Striped Table:
+
+Adding .table-striped creates alternate row shading.
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Los Angeles</td>
+        </tr>
+    </tbody>
+</table>
+
+Bordered Table :
+
+Adding .table-bordered adds borders to all table cells.
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Los Angeles</td>
+        </tr>
+    </tbody>
+</table>
+
+Hover Table :
+
+Adding .table-hover highlights rows on hover.
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Los Angeles</td>
+        </tr>
+    </tbody>
+</table>
+
+Dark Table :
+
+Using .table-dark applies a dark theme.
+
+html
+Copy
+Edit
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Los Angeles</td>
+        </tr>
+    </tbody>
+</table>
+
+Table with Different Colors :
+
+Bootstrap 4 allows using contextual classes to style table rows or cells:
+
+<table class="table">
+    <thead>
+        <tr class="table-primary">
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-success">
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>New York</td>
+        </tr>
+        <tr class="table-warning">
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Los Angeles</td>
+        </tr>
+        <tr class="table-danger">
+            <td>3</td>
+            <td>Mike Ross</td>
+            <td>mike@example.com</td>
+            <td>Chicago</td>
+        </tr>
+    </tbody>
+</table>
+
+
+Bootstrap Containers :
+
+
+In Bootstrap 4, a container is a fundamental building block that helps in structuring and aligning content properly. Containers are used to wrap the site’s content and provide proper padding and alignment within the grid system.
+
+There are three types of containers in Bootstrap 4:
+
+.container (Fixed-width container)
+.container-fluid (Full-width container)
+.container-{breakpoint} (Responsive container)
+1. .container (Fixed-Width Container)
+The .container class provides a responsive fixed-width container.
+It adapts to different screen sizes but has a maximum width for larger screens.
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Container Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container bg-light border">
+        <h2>Fixed Container</h2>
+        <p>This container adjusts its width based on the screen size but remains centered.</p>
+    </div>
+
+</body>
+</html>
+💡 Output: The content remains within a fixed maximum width and centers itself on the page.
+
+2. .container-fluid (Full-Width Container)
+
+The .container-fluid class provides a full-width container that spans 100% of the screen width.
+
+It is useful when you want the content to stretch across the entire viewport.
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Container Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container-fluid bg-primary text-white p-3">
+        <h2>Fluid Container</h2>
+        <p>This container stretches across the entire width of the viewport.</p>
+    </div>
+
+</body>
+</html>
+💡 Output: The content spans across the entire width of the screen.
+
+3. .container-{breakpoint} (Responsive Container)
+
+Bootstrap 4 provides responsive containers for different breakpoints.
+These allow you to define different widths at different screen sizes.
+
+Available breakpoints:
+
+Class Name	Extra Small (<576px)	Small (≥576px)	Medium (≥768px)	Large (≥992px)	Extra Large (≥1200px)
+.container-sm	100%	Fixed width	Fixed width	Fixed width	Fixed width
+.container-md	100%	100%	Fixed width	Fixed width	Fixed width
+.container-lg	100%	100%	100%	Fixed width	Fixed width
+.container-xl	100%	100%	100%	100%	Fixed width
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Containers Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container-sm bg-warning p-3">
+        <h2>Small Container</h2>
+        <p>This container adjusts based on the small breakpoint.</p>
+    </div>
+
+    <div class="container-md bg-success text-white p-3">
+        <h2>Medium Container</h2>
+        <p>This container adjusts based on the medium breakpoint.</p>
+    </div>
+
+    <div class="container-lg bg-danger text-white p-3">
+        <h2>Large Container</h2>
+        <p>This container adjusts based on the large breakpoint.</p>
+    </div>
+
+</body>
+</html>
+💡 Output: Depending on the screen size, the containers behave differently, adapting to the breakpoint rules.
+
+✅ Key Differences:
+Container Type	Behavior
+.container	Fixed width with responsive breakpoints
+.container-fluid	100% width (full screen width)
+.container-{size}	Changes width at different breakpoints
+🔥 When to Use Which Container?
+
+Use .container when you want a centered, responsive layout with a maximum width.
+Use .container-fluid when you need a full-width layout.
+Use .container-{breakpoint} when you need different widths based on the screen size.
+
+
+Bootstrap Grid System :
+
+The Bootstrap 4 Grid System is a flexible layout system that helps in creating responsive and mobile-first designs easily. It is built using Flexbox and allows developers to create dynamic layouts with rows and columns.
+
+Key Features of Bootstrap 4 Grid System :
+
+Uses a 12-column layout – The screen is divided into 12 columns.
+Responsive – Columns adjust dynamically based on screen size.
+Breakpoints for different screen sizes:
+col- (Extra Small) → <576px
+col-sm- (Small) → ≥576px
+col-md- (Medium) → ≥768px
+col-lg- (Large) → ≥992px
+col-xl- (Extra Large) → ≥1200px
+
+Rows and Columns – Content must be placed inside .row, and columns are defined using .col-* classes.
+
+Nesting – Columns can be nested within other columns.
+
+Basic Grid Example (Equal Columns)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 Grid Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 bg-primary text-white text-center p-3">Column 1</div>
+        <div class="col-md-4 bg-success text-white text-center p-3">Column 2</div>
+        <div class="col-md-4 bg-danger text-white text-center p-3">Column 3</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+Explanation:
+
+The .container provides a responsive fixed-width container.
+The .row acts as a wrapper for columns.
+The .col-md-4 means each column takes 4 out of 12 columns (1/3 of the width).
+The background colors help visualize the layout.
+
+Different Layouts Using Bootstrap Grid :
+
+1. Unequal Column Widths
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-primary text-white text-center p-3">50% Width</div>
+        <div class="col-md-3 bg-success text-white text-center p-3">25% Width</div>
+        <div class="col-md-3 bg-danger text-white text-center p-3">25% Width</div>
+    </div>
+</div>
+
+Explanation:
+
+col-md-6: Takes 6 out of 12 columns (50%).
+col-md-3: Takes 3 out of 12 columns (25% each).
+
+2. Auto-Sizing Columns
+
+<div class="container">
+    <div class="row">
+        <div class="col bg-warning text-dark text-center p-3">Auto Column</div>
+        <div class="col bg-info text-white text-center p-3">Auto Column</div>
+        <div class="col bg-secondary text-white text-center p-3">Auto Column</div>
+    </div>
+</div>
+
+Explanation:
+
+.col automatically distributes the available space evenly.
+
+3. Responsive Columns with Different Breakpoints
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-primary text-white text-center p-3">Responsive Column 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-success text-white text-center p-3">Responsive Column 2</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 bg-danger text-white text-center p-3">Responsive Column 3</div>
+        <div class="col-sm-6 col-md-12 col-lg-3 bg-warning text-dark text-center p-3">Responsive Column 4</div>
+    </div>
+</div>
+Explanation:
+
+On small screens (col-sm-6), each column takes 6 columns (50%).
+On medium screens (col-md-4), each takes 4 columns (33.33%).
+On large screens (col-lg-3), each takes 3 columns (25%).
+
+4. Nested Grid System
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-dark text-white text-center p-3">
+            Parent Column
+            <div class="row">
+                <div class="col-md-6 bg-secondary text-white text-center p-2">Nested Column 1</div>
+                <div class="col-md-6 bg-light text-dark text-center p-2">Nested Column 2</div>
+            </div>
+        </div>
+        <div class="col-md-6 bg-primary text-white text-center p-3">Parent Column</div>
+    </div>
+</div>
+Explanation:
+
+The first column (col-md-6) contains a nested row inside it.
+
+5. Offset Columns
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-2 bg-info text-white text-center p-3">Offset by 2 Columns</div>
+        <div class="col-md-4 bg-success text-white text-center p-3">Regular Column</div>
+    </div>
+</div>
+
+Explanation:
+
+.offset-md-2 moves the column 2 columns to the right.
+
+6. Column Ordering
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 order-md-3 bg-danger text-white text-center p-3">Third</div>
+        <div class="col-md-4 order-md-1 bg-primary text-white text-center p-3">First</div>
+        <div class="col-md-4 order-md-2 bg-success text-white text-center p-3">Second</div>
+    </div>
+</div>
+Explanation:
+
+.order-md-* changes the column order on medium screens and above.
+
+
+Bootstrap Typography :
+
+Bootstrap 4 provides powerful typography utilities that help in styling text efficiently. It includes global styles for headings, paragraphs, text alignment, lists, and much more.
+
+1. Basic Typography Classes
+Bootstrap 4 applies some basic typography styles to improve readability.
+
+Example: Default Text Styling
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 Typography</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="p-3">
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>This is a standard paragraph. Bootstrap provides default styling for paragraphs with proper margin and line height.</p>
+
+    <p class="lead">This is a lead paragraph. It provides extra emphasis and is slightly larger.</p>
+
+</body>
+</html>
+
+2. Display Headings
+
+Display headings are larger, more prominent headings for key sections.
+
+Example: Display Headings
+
+<h1 class="display-1">Display 1</h1>
+<h1 class="display-2">Display 2</h1>
+<h1 class="display-3">Display 3</h1>
+<h1 class="display-4">Display 4</h1>
+🔹 display-1 is the largest, while display-4 is the smallest.
+
+3. Inline Text Elements
+
+Bootstrap provides various classes for inline text formatting.
+
+Example: Inline Text Elements
+
+<p><mark>Highlighted text</mark> using the `<mark>` tag.</p>
+<p><small>This is small text.</small></p>
+<p><strong>This is bold text.</strong></p>
+<p><em>This is italic text.</em></p>
+
+4. Text Alignment
+
+You can align text using .text-left, .text-center, and .text-right.
+
+Example: Text Alignment
+Edit
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text. This text is aligned on both left and right margins.</p>
+<p class="text-nowrap">No wrap text. The text will not wrap to the next line.</p>
+
+5. Text Transformation
+
+You can modify the text case using .text-uppercase, .text-lowercase, and .text-capitalize.
+
+Example: Text Transformation
+
+<p class="text-uppercase">Uppercase text</p>
+<p class="text-lowercase">Lowercase text</p>
+<p class="text-capitalize">capitalize text</p>
+
